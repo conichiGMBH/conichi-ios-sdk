@@ -3,7 +3,7 @@
 ### Dependency
 
 This `kit` is dependent on the following:
-* [CNISDKCoreKit](https://github.com/conichiGMBH/ios-sdk/blob/master/CNISDKCoreKit/docs/CNISDKCoreKit.md)
+* [CNISDKCoreKit](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/CNISDKCoreKit.md)
 
 ### Overview
 
@@ -13,7 +13,7 @@ The idea of the `conichiSDK GeoFencingKit` is to track the user and notify about
 
 #### Install as a framework
 
-To use `conichiSDK CoreKit`, head on over to the [releases](https://github.com/conichiGMBH/ios-sdk/releases) page, and download the latest build of `CNISDKCoreKit.framework.zip` and `CNISDKGeoFencingKit.framework.zip`. Copy the extracted frameworks into your project.
+To use `conichiSDK CoreKit`, head on over to the [releases](https://github.com/conichiGMBH/conichi-ios-sdk/releases) page, and download the latest build of `CNISDKCoreKit.framework.zip` and `CNISDKGeoFencingKit.framework.zip`. Copy the extracted frameworks into your project.
 
 #### Install via CocoaPods
 
@@ -27,7 +27,7 @@ Run `pod install`, and you should now have the latest `conichiSDK GeoFencingKit`
 
 ### Getting Started
 
-Sections below explain major and the most important parts of the `conichiSDK GeoFencingKit`. For the complete documentation please refer to this [page](https://github.com/conichiGMBH/ios-sdk/blob/master/CNISDKGeoFencingKit/docs/apple_doc/html/index.html). Also, it can be useful to read the overview about [CNISDKCoreKit](https://github.com/conichiGMBH/ios-sdk/blob/master/CNISDKCoreKit/docs/CNISDKCoreKit.md).
+Sections below explain major and the most important parts of the `conichiSDK GeoFencingKit`. For the complete documentation please refer to this [page](https://github.com/conichiGMBH/ios-sdk/blob/master/CNISDKGeoFencingKit/docs/apple_doc/html/index.html). Also, it can be useful to read the overview about [CNISDKCoreKit](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/CNISDKCoreKit.md).
 
 #### Initialization
 
