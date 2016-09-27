@@ -8,7 +8,7 @@ This is a heart of the `conichiSDK`. It contains the base models, base helpers a
 
 #### Install as a framework
 
-To use `conichiSDK CoreKit`, head on over to the [releases](https://github.com/conichiGMBH/ios-sdk/releases) page, and download the latest build of `CNISDKCoreKit.framework.zip`. Copy the extracted framework into your project.
+To use `conichiSDK CoreKit`, head on over to the [releases](https://github.com/conichiGMBH/conichi-ios-sdk/releases) page, and download the latest build of `CNISDKCoreKit.framework.zip`. Copy the extracted framework into your project.
 
 #### Install via CocoaPods
 The preferred way to integrate `conichiSDK CoreKit` is via `CocoaPods`. Add the following lines to your `Podfile` depending on your kit configuration:
