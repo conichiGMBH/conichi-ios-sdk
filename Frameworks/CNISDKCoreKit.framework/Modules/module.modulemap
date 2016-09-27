@@ -1,0 +1,6 @@
+framework module CNISDKCoreKit {
+  umbrella header "CNISDKCoreKit.h"
+
+  export *
+  module * { export * }
+}

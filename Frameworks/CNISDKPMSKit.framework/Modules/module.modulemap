@@ -1,0 +1,6 @@
+framework module CNISDKPMSKit {
+  umbrella header "CNISDKPMSKit.h"
+
+  export *
+  module * { export * }
+}

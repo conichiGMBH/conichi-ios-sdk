@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "08E11A5DE77F74034CD05F809AFAA0234E5D3A29",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "81D8FC2C8159D34826CBA8593A448289798FFEA9" : 9223372036854775807,
+    "08E11A5DE77F74034CD05F809AFAA0234E5D3A29" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "3A280634-B474-4119-9269-5FEF7F58E52E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "81D8FC2C8159D34826CBA8593A448289798FFEA9" : "ios-sdk\/",
+    "08E11A5DE77F74034CD05F809AFAA0234E5D3A29" : "conichi-ios-sdk\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ConichiSDK",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ConichiSDK.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/conichiGMBH\/conichi-ios-sdk.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "08E11A5DE77F74034CD05F809AFAA0234E5D3A29"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:conichiGMBH\/ios-sdk.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "81D8FC2C8159D34826CBA8593A448289798FFEA9"
+    }
+  ]
+}
