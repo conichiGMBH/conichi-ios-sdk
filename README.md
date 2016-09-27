@@ -12,16 +12,16 @@
 
 `conichiSDK` is following the idea of splitting functionality into different modules (so called `kit`) and now there are 4 modules available.
 
-* [CNISDKCoreKit](https://github.com/conichiGMBH/ios-sdk/blob/master/CNISDKCoreKit/docs/CNISDKCoreKit.md) - provides beacon recognition, simple check-in/check-out, and guest personalization
-* [CNISDKPaymentKit](https://github.com/conichiGMBH/ios-sdk/blob/master/CNISDKPaymentKit/docs/CNISDKPaymentKit.md) - provides managing of payment instruments, checkout request with payment
-* [CNISDKGeoFencingKit](https://github.com/conichiGMBH/ios-sdk/blob/master/CNISDKGeoFencingKit/docs/CNISDKGeoFencingKit.md) - provides conichi's venues tracking by apple geofencing
-* [CNISDKPMSKit](https://github.com/conichiGMBH/ios-sdk/blob/master/CNISDKPMSKit/docs/CNISDKPMSKit.md) - provides mobile check-in/check-out with property management system integration  
+* [CNISDKCoreKit](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/CNISDKCoreKit.md) - provides beacon recognition, simple check-in/check-out, and guest personalization
+* [CNISDKPaymentKit](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/CNISDKPaymentKit.md) - provides managing of payment instruments, checkout request with payment
+* [CNISDKGeoFencingKit](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/CNISDKGeoFencingKit.md) - provides conichi's venues tracking by apple geofencing
+* [CNISDKPMSKit](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/CNISDKPMSKit.md) - provides mobile check-in/check-out with property management system integration  
 
 ### Getting Started
 
 #### Install as a framework
 
-To use `conichiSDK`, head on over to the [releases](https://github.com/conichiGMBH/ios-sdk/releases) page, and download the latest build. Copy the extracted framework into your project.
+To use `conichiSDK`, head on over to the [releases](https://github.com/conichiGMBH/conichi-ios-sdk/releases) page, and download the latest build. Copy the extracted framework into your project.
 
 #### Install via CocoaPods
 The preferred way to integrate `conichiSDK` is via `CocoaPods`. Add the following lines to your `Podfile` depending on your kit configuration:
@@ -53,22 +53,9 @@ Documentation for each kit is available at the following links:
 * [CNISDKGeoFencingKit](https://github.com/conichiGMBH/ios-sdk/blob/master/CNISDKGeoFencingKit/docs/apple_doc/html/index.html)
 * [CNISDKPMSKit](https://github.com/conichiGMBH/ios-sdk/blob/master/CNISDKPMSKit/docs/apple_doc/html/index.html)
 
-## Development
-
-#### Get started
-To start contributing into project run `make bootstrap`. This will setup all dependencies you need to start 🚀.
-
-#### Guidelines
-The project is following [obj-c guidelines](https://github.com/conichiGMBH/ios-team-guidelines/blob/master/docs/objective_c_style_guide.md).
-
-#### New release
-To make a new release follow the next steps:
-* Make sure you're in `develop` branch otherwise you'll get an error
-* Run `make release` and enjoy your ☕
-
 ## Changelog
 
-To see what has changed in recent versions of `conichiSDK`, see the [CHANGELOG](https://github.com/conichiGMBH/ios-sdk/blob/master/CHANGELOG.yml).
+To see what has changed in recent versions of `conichiSDK`, see the [CHANGELOG](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/CHANGELOG.yml).
 
 ## License
 
