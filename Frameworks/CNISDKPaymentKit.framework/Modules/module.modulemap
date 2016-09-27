@@ -1,0 +1,6 @@
+framework module CNISDKPaymentKit {
+  umbrella header "CNISDKPaymentKit.h"
+
+  export *
+  module * { export * }
+}

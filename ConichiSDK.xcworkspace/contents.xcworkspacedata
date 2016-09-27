@@ -4,8 +4,4 @@
    <FileRef
       location = "group:ConichiSDKStarterProject/ConichiSDKStarterProject.xcodeproj">
    </FileRef>
-   <Group
-      location = "group:Frameworks"
-      name = "Frameworks">
-   </Group>
 </Workspace>

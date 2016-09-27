@@ -1,0 +1,6 @@
+framework module CNISDKGeoFencingKit {
+  umbrella header "CNISDKGeoFencingKit.h"
+
+  export *
+  module * { export * }
+}

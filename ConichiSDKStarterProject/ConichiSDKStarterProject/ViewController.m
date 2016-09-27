@@ -11,6 +11,7 @@
 @import CNISDKCoreKit;
 @import Conichi_Authentication;
 
+
 @interface ViewController ()
 
 @property (nonatomic, strong) NSMutableString *logText;
@@ -31,6 +32,8 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
+    self.logText = [NSMutableString string];
+    self.logTextView.layoutManager.allowsNonContiguousLayout = NO;
     [super viewDidLoad];
 }
 
@@ -67,74 +70,104 @@
         ViewController __strong *sSelf = wSelf;
         sSelf.logTextView.text = sSelf.logText;
         if (sSelf.isAutoScrollEnabled) {
-            [self.logTextView setContentOffset:CGPointMake(0, MAX(0, self.logTextView.contentSize.height - self.logTextView.frame.size.height))];
+            [self.logTextView scrollRangeToVisible:NSMakeRange(self.logTextView.text.length - 1, 1)];
         }
     };
-    
-    
-    if ([NSThread isMainThread]) {
-        updateBlock();
-    } else {
-        dispatch_async(dispatch_get_main_queue(), updateBlock);
-    }
+    dispatch_async(dispatch_get_main_queue(), updateBlock);
 }
 
 - (void)updateGuestDetails {
-    CNISDKUpdateGuestRequestInfo *request = [CNISDKUpdateGuestRequestInfo new];
-    request.firstName = @"Bob";
-    request.gender = kCNISDKGuestGenderMale;
-    request.lastName = @"Parker";
-    request.locale = @"en_US";
-    request.nationalityISOCode = @"RU";
-    
-    ViewController __weak *wSelf = self;
-    [[CNISDKAPIManager manager] updateCurrentGuestWithRequest:request completion:^(CNISDKGuest *guest, NSError *error) {
-        ViewController __strong *sSelf = wSelf;
-        [sSelf updateLogTextViewWithMessage:[NSString stringWithFormat:@"Did update guest details"]];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Guest update" message:@"The guest will be updated with predefined values. You can check them in ViewController.m in Example project." preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        CNISDKUpdateGuestRequestInfo *request = [CNISDKUpdateGuestRequestInfo new];
+        request.firstName = @"Bob";
+        request.gender = kCNISDKGuestGenderMale;
+        request.lastName = @"Parker";
+        request.locale = @"en_US";
+        request.nationalityISOCode = @"RU";
+        
+        ViewController __weak *wSelf = self;
+        [[CNISDKAPIManager manager] updateCurrentGuestWithRequest:request completion:^(CNISDKGuest *guest, NSError *error) {
+            ViewController __strong *sSelf = wSelf;
+            [sSelf updateLogTextViewWithMessage:[NSString stringWithFormat:@"Did update guest details"]];
+        }];
     }];
+    [alertController addAction:okAction];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    [alertController addAction:cancelAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (void)updateOptionalValue {
-    CNISDKUpdateOptionalValueRequestInfo *request = [CNISDKUpdateOptionalValueRequestInfo new];
-    request.optionalValue = @{ @"seat" : @"24B" };
-    
-    ViewController __weak *wSelf = self;
-    [[CNISDKAPIManager manager] updateOptionalValuesWithRequest:request completion:^(CNISDKGuest *guest, NSError *error) {
-        ViewController __strong *sSelf = wSelf;
-        if (!error) {
-            [sSelf updateLogTextViewWithMessage:[NSString stringWithFormat:@"Did update optional value"]];
-        } else {
-            [sSelf updateLogTextViewWithMessage:error.localizedDescription];
-        }
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Optional value update" message:@"The guest's optional value will be updated with predefined values. You can check them in ViewController.m in Example project." preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        CNISDKUpdateOptionalValueRequestInfo *request = [CNISDKUpdateOptionalValueRequestInfo new];
+        request.optionalValue = @{ @"height" : @"170cm" };
+        
+        ViewController __weak *wSelf = self;
+        [[CNISDKAPIManager manager] updateOptionalValuesWithRequest:request completion:^(CNISDKGuest *guest, NSError *error) {
+            ViewController __strong *sSelf = wSelf;
+            if (!error) {
+                [sSelf updateLogTextViewWithMessage:[NSString stringWithFormat:@"Did update optional value"]];
+            } else {
+                [sSelf updateLogTextViewWithMessage:error.localizedDescription];
+            }
+        }];
     }];
+    [alertController addAction:okAction];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    [alertController addAction:cancelAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (void)updateTravelDocument {
-    CNISDKUpdateTravelDocumentRequestInfo *request = [CNISDKUpdateTravelDocumentRequestInfo new];
-    request.authority = @"RF";
-    request.dateOfExpiry = [NSDate date];
-    request.documentNumber = @"12321321";
-    request.documentType = @"passport";
-    
-    ViewController __weak *wSelf = self;
-    [[CNISDKAPIManager manager] updateCurrentGuestTravelDocumentWithRequest:request completion:^(CNISDKGuest *guest, NSError *error) {
-        ViewController __strong *sSelf = wSelf;
-        [sSelf updateLogTextViewWithMessage:[NSString stringWithFormat:@"Did update travel document"]];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Travel document update" message:@"The guest's travel document will be updated with predefined values. You can check them in ViewController.m in Example project." preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        CNISDKUpdateTravelDocumentRequestInfo *request = [CNISDKUpdateTravelDocumentRequestInfo new];
+        request.authority = @"RF";
+        request.dateOfExpiry = [NSDate date];
+        request.documentNumber = @"12321321";
+        request.documentType = @"passport";
+        
+        ViewController __weak *wSelf = self;
+        [[CNISDKAPIManager manager] updateCurrentGuestTravelDocumentWithRequest:request completion:^(CNISDKGuest *guest, NSError *error) {
+            ViewController __strong *sSelf = wSelf;
+            [sSelf updateLogTextViewWithMessage:[NSString stringWithFormat:@"Did update travel document"]];
+        }];
     }];
+    [alertController addAction:okAction];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    [alertController addAction:cancelAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (void)updateAddress {
-    CNISDKUpdatePersonalAddressRequestInfo *request = [CNISDKUpdatePersonalAddressRequestInfo new];
-    request.street = @"Lenin street";
-    request.zip = @"101010";
-    request.city = @"Moscow";
-    request.countryCode = @"ru";
-    
-    ViewController __weak *wSelf = self;
-    [[CNISDKAPIManager manager] updateCurrentGuestPersonalAddressWithRequest:request completion:^(CNISDKGuest *guest, NSError *error) {
-        ViewController __strong *sSelf = wSelf;
-        [sSelf updateLogTextViewWithMessage:[NSString stringWithFormat:@"Did update address"]];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Personal address update" message:@"The guest's personal address will be updated with predefined values. You can check them in ViewController.m in Example project." preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        CNISDKUpdatePersonalAddressRequestInfo *request = [CNISDKUpdatePersonalAddressRequestInfo new];
+        request.street = @"Lenin street";
+        request.zip = @"101010";
+        request.city = @"Moscow";
+        request.countryCode = @"ru";
+        
+        ViewController __weak *wSelf = self;
+        [[CNISDKAPIManager manager] updateCurrentGuestPersonalAddressWithRequest:request completion:^(CNISDKGuest *guest, NSError *error) {
+            ViewController __strong *sSelf = wSelf;
+            [sSelf updateLogTextViewWithMessage:[NSString stringWithFormat:@"Did update address"]];
+        }];
     }];
+    [alertController addAction:okAction];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    [alertController addAction:cancelAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 
@@ -210,7 +243,7 @@
     }];
     
     ViewController __weak *wSelf = self;
-    UIAlertAction *signInAction = [UIAlertAction actionWithTitle:@"Sign Up" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *signInAction = [UIAlertAction actionWithTitle:@"Sign In" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         ViewController __strong *sSelf = wSelf;
         NSString *email = signInController.textFields[0].text;
         NSString *password = signInController.textFields[1].text;
@@ -288,6 +321,7 @@
         ViewController __strong *sSelf = wSelf;
         if (success) {
             [sSelf updateLogTextViewWithMessage:@"Logged out"];
+            [sSelf updateButtonsVisibility];
         }
         else {
             [sSelf updateLogTextViewWithMessage:[NSString stringWithFormat:@"Failed to log out: %@", error.localizedDescription]];
