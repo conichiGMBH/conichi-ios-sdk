@@ -39,8 +39,8 @@ Run `pod install`, and you should now have the latest `conichiSDK` release.
 Then, you must add a NSLocationAlwaysUsageDescription or NSLocationWhenInUseUsageDescription key to your project’s Info.plist containing the message to be displayed to the user at the prompt.
 
 ```objective-c
-    <key>NSLocationAlwaysUsageDescription</key>
-    <string>This app needs your location so you can be recognized in the conichi Hotel</string>
+<key>NSLocationAlwaysUsageDescription</key>
+<string>This app needs your location so you can be recognized in the conichi Hotel</string>
 ```
 
 And you're off! Take a look at the public documentation and start building.
