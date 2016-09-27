@@ -3,8 +3,8 @@
 ### Dependency
 
 This `kit` is dependent on the following:
-* [CNISDKCoreKit](https://github.com/conichiGMBH/ios-sdk/blob/master/CNISDKCoreKit/docs/CNISDKCoreKit.md)
-* [CNISDKPaymentKit](https://github.com/conichiGMBH/ios-sdk/blob/master/CNISDKPaymentKit/docs/CNISDKPaymentKit.md)
+* [CNISDKCoreKit](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/CNISDKCoreKit.md)
+* [CNISDKPaymentKit](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/CNISDKPaymentKit.md)
 
 ### Overview
 
@@ -14,7 +14,7 @@ PMS is an abbreviation of Property Management System. The `conichiSDK PMSKit` ex
 
 #### Install as a framework
 
-To use `conichiSDK CoreKit`, head on over to the [releases](https://github.com/conichiGMBH/ios-sdk/releases) page, and download the latest build of `CNISDKCoreKit.framework.zip`, `CNISDKPaymentKit.framework.zip` and `CNISDKPMSKit.framework.zip`. Copy the extracted frameworks into your project.
+To use `conichiSDK CoreKit`, head on over to the [releases](https://github.com/conichiGMBH/conichi-ios-sdk/releases) page, and download the latest build of `CNISDKCoreKit.framework.zip`, `CNISDKPaymentKit.framework.zip` and `CNISDKPMSKit.framework.zip`. Copy the extracted frameworks into your project.
 
 #### Install via CocoaPods
 
@@ -28,7 +28,7 @@ Run `pod install`, and you should now have the latest `conichiSDK PMSKit` releas
 
 ### Getting Started
 
-Sections below explain major and the most important parts of the `conichiSDK PMSKit`. For the complete documentation please refer to this [page](https://github.com/conichiGMBH/ios-sdk/blob/master/CNISDKGeoFencingKit/docs/apple_doc/html/index.html). Also, it can be useful to read the overview about [CNISDKCoreKit](https://github.com/conichiGMBH/ios-sdk/blob/master/CNISDKCoreKit/docs/CNISDKCoreKit.md) and [CNISDKPaymentKit](https://github.com/conichiGMBH/ios-sdk/blob/master/CNISDKPaymentKit/docs/CNISDKPaymentKit.md).
+Sections below explain major and the most important parts of the `conichiSDK PMSKit`. For the complete documentation please refer to this [page](https://github.com/conichiGMBH/ios-sdk/blob/master/CNISDKGeoFencingKit/docs/apple_doc/html/index.html). Also, it can be useful to read the overview about [CNISDKCoreKit](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/CNISDKCoreKit.md) and [CNISDKPaymentKit](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/CNISDKPaymentKit.md).
 
 #### Initialization
 
