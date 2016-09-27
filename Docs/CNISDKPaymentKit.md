@@ -29,7 +29,7 @@ Run `pod install`, and you should now have the latest `conichiSDK PaymentKit` re
 
 ### Getting Started
 
-Sections below explain major and the most important parts of the `conichiSDK PaymentKit`. For the complete documentation please refer to this [page](https://github.com/conichiGMBH/ios-sdk/blob/master/CNISDKPaymentKit/docs/apple_doc/html/index.html). Also, it can be useful to read the overview about [CNISDKCoreKit](https://github.com/conichiGMBH/ios-sdk/blob/master/Docs/CNISDKCoreKit.md).
+Sections below explain major and the most important parts of the `conichiSDK PaymentKit`. For the complete documentation please refer to this [page](https://github.com/conichiGMBH/ios-sdk/blob/master/CNISDKPaymentKit/docs/apple_doc/html/index.html). Also, it can be useful to read the overview about [CNISDKCoreKit](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/CNISDKCoreKit.md).
 
 #### Initialization
 
