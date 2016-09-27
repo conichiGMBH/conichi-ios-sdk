@@ -48,10 +48,10 @@ And you're off! Take a look at the public documentation and start building.
 ## Documentation
 
 Documentation for each kit is available at the following links:
-* [CNISDKCoreKit](https://github.com/conichiGMBH/ios-sdk/blob/master/CNISDKCoreKit/docs/apple_doc/html/index.html)
-* [CNISDKPaymentKit](https://github.com/conichiGMBH/ios-sdk/blob/master/CNISDKPaymentKit/docs/apple_doc/html/index.html)
-* [CNISDKGeoFencingKit](https://github.com/conichiGMBH/ios-sdk/blob/master/CNISDKGeoFencingKit/docs/apple_doc/html/index.html)
-* [CNISDKPMSKit](https://github.com/conichiGMBH/ios-sdk/blob/master/CNISDKPMSKit/docs/apple_doc/html/index.html)
+* [CNISDKCoreKit](https://conichigmbh.github.io/ios/docs/CNISDKCoreKit/index.html)
+* [CNISDKPaymentKit](https://conichigmbh.github.io/ios/docs/CNISDKPaymentKit/index.html)
+* [CNISDKGeoFencingKit](https://conichigmbh.github.io/ios/docs/CNISDKGeoFencingKit/index.html)
+* [CNISDKPMSKit](https://conichigmbh.github.io/ios/docs/CNISDKPMSKit/index.html)
 
 ## Changelog
 
