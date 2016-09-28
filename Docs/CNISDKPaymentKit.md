@@ -63,4 +63,4 @@ Example below shows the simplest setup `conichiSDK PaymentKit`
 #### Managing of credit cards
 
 __Important__ to manage credit cards guest has to be authorized.  
-The logic of managing credit cards is inside `CNISDKPaymentManager` and it's ready to work right after the `sdk` initialization. Please refer to the [documentation](https://conichigmbh.github.io/ios/docs/CNISDKPaymentKit/Classes/CNISDKPaymentManager.html) to see how to add/edit/delete credit card.
+The logic of managing credit cards is inside `CNISDKPaymentManager` and it's ready to work right after the `sdk` initialization. Please refer to the [documentation](https://conichigmbh.github.io/ios/docs/CNISDKPaymentKit/apple_doc/Classes/CNISDKPaymentManager.html) to see how to add/edit/delete credit card.
