@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.public_header_files   = 'Frameworks/CNISDKGeoFencingKit.framework/Headers/*.h'
   s.vendored_frameworks   = 'Frameworks/CNISDKGeoFencingKit.framework'
   s.preserve_paths        = 'CNISDKGeoFencingKit.framework'
-  s.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(inherited)' }
+  s.xcconfig              = { 'FRAMEWORK_SEARCH_PATHS' => '$(inherited)' }
 
   s.dependency 'CNISDKCoreKit', "#{s.version}"
 end

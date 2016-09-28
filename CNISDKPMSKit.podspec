@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.public_header_files   = 'Frameworks/CNISDKPMSKit.framework/Headers/*.h'
   s.vendored_frameworks   = 'Frameworks/CNISDKPMSKit.framework'
   s.preserve_paths        = 'CNISDKPMSKit.framework'
-  s.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(inherited)' }
+  s.xcconfig              = { 'FRAMEWORK_SEARCH_PATHS' => '$(inherited)' }
 
   s.dependency 'CNISDKCoreKit', "#{s.version}"
   s.dependency 'CNISDKPaymentKit', "#{s.version}"
