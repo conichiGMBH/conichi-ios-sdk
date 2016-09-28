@@ -28,7 +28,7 @@ Run `pod install`, and you should now have the latest `conichiSDK PMSKit` releas
 
 ### Getting Started
 
-Sections below explain major and the most important parts of the `conichiSDK PMSKit`. For the complete documentation please refer to this [page](https://conichigmbh.github.io/ios/docs/CNISDKPMSKit/index.html). Also, it can be useful to read the overview about [CNISDKCoreKit](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/CNISDKCoreKit.md) and [CNISDKPaymentKit](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/CNISDKPaymentKit.md).
+Sections below explain major and the most important parts of the `conichiSDK PMSKit`. For the complete documentation please refer to this [page](https://conichigmbh.github.io/ios/docs/CNISDKPMSKit/apple_doc/index.html). Also, it can be useful to read the overview about [CNISDKCoreKit](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/CNISDKCoreKit.md) and [CNISDKPaymentKit](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/CNISDKPaymentKit.md).
 
 #### Initialization
 
