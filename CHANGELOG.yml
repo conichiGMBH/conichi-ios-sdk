@@ -1,0 +1,11 @@
+---
+upcoming:
+  version: 
+  notes: 
+releases:
+- version: 2.2.4
+  notes:
+  - First public release
+- version: 2.2.3
+  notes:
+  - Public release preparation
