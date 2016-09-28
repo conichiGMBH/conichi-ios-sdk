@@ -1,0 +1,107 @@
+fastlane_version "1.104.0"
+
+default_platform :ios
+
+platform :ios do
+
+  ############################## PRE ##############################
+
+  before_all do
+    update_fastlane
+    import_shared_fastfile
+    load_environment_variables
+  end
+
+  ######################### PUBLIC LANES ##########################
+
+  lane :release do
+    release_branch = ENV['GITHUB_RELEASE_BRANCH']
+    remote = ENV['GITHUB_REMOTE']
+
+    ensure_git_status_clean
+    ensure_git_branch(
+      branch: release_branch
+    )
+
+    upcoming_version = get_upcoming_version.clone
+    upcoming_notes = get_upcoming_notes.clone
+    put_upcoming_to_releases
+
+    podspecs_version_bump(
+      version: upcoming_version
+    )
+
+    tag_name = upcoming_version
+    git_add_or_update_tag(
+      tag_name: tag_name,
+      remote: remote,
+      branch: release_branch
+    )
+
+    push_to_git_remote(
+      remote: remote,
+      local_branch: release_branch,
+      remote_branch: release_branch
+    )
+
+    podspecs_push
+
+    set_or_update_github_release(
+      release_name: tag_name,
+      repository_name: ENV['GITHUB_REPOSITORY'],
+      description: upcoming_notes,
+      tag_name: tag_name,
+      api_token: ENV['CONICHI_CI_GITHUB_TOKEN'],
+      upload_assets: []
+    )
+
+    create_pull_request_from_release_branch_to_master
+  end
+
+  ######################### PRIVATE LANES ##########################
+
+  private_lane :podspecs_version_bump do |options|
+    version = options[:version]
+    version_bump_podspec(path: ENV['CORE_KIT_PODSPEC'], version_number: version)
+    version_bump_podspec(path: ENV['PAYMENT_KIT_PODSPEC'], version_number: version)
+    version_bump_podspec(path: ENV['GEOFENCING_KIT_PODSPEC'], version_number: version)
+    version_bump_podspec(path: ENV['PMS_KIT_PODSPEC'], version_number: version)
+  end
+
+  private_lane :podspecs_push do
+    pod_push(path: ENV['CORE_KIT_PODSPEC'], allow_warnings: true)
+    pod_push(path: ENV['PAYMENT_KIT_PODSPEC'], allow_warnings: true)
+    pod_push(path: ENV['GEOFENCING_KIT_PODSPEC'], allow_warnings: true)
+    pod_push(path: ENV['PMS_KIT_PODSPEC'], allow_warnings: true)
+  end
+
+  private_lane :create_pull_request_from_release_branch_to_master do
+    release_branch = ENV['GITHUB_RELEASE_BRANCH']
+    master_branch = ENV['GITHUB_MASTER_BRANCH']
+
+    ensure_git_branch(
+      branch: release_branch
+    )
+
+    create_pull_request(
+      api_token: ENV['CONICHI_CI_GITHUB_TOKEN'],
+      repo: ENV['GITHUB_REPOSITORY'],
+      title: 'New SDK release',
+      head: release_branch,
+      base: master_branch,
+      body: 'Please review that and merge'
+    )
+  end
+
+  private_lane :import_shared_fastfile do
+    import_from_git(
+      url: "git@github.com:#{ENV['GITHUB_IOS_TEAM_REPOSITORY']}",
+      branch: 'HEAD',
+      path: 'fastlane/Fastfile'
+    )
+  end
+
+  private_lane :load_environment_variables do
+    sh("source ~/.bash_profile")
+  end
+end
