@@ -9,6 +9,7 @@ platform :ios do
   before_all do
     update_fastlane
     import_shared_fastfile
+    load_environment_variables
   end
 
   ######################### PUBLIC LANES ##########################
@@ -98,5 +99,9 @@ platform :ios do
       branch: 'HEAD',
       path: 'fastlane/Fastfile'
     )
+  end
+
+  private_lane :load_environment_variables do
+    sh("source ~/.bash_profile ")
   end
 end
