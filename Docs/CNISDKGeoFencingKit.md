@@ -27,7 +27,7 @@ Run `pod install`, and you should now have the latest `conichiSDK GeoFencingKit`
 
 ### Getting Started
 
-Sections below explain major and the most important parts of the `conichiSDK GeoFencingKit`. For the complete documentation please refer to this [page](https://conichigmbh.github.io/ios/docs/CNISDKGeoFencingKit/index.html). Also, it can be useful to read the overview about [CNISDKCoreKit](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/CNISDKCoreKit.md).
+Sections below explain major and the most important parts of the `conichiSDK GeoFencingKit`. For the complete documentation please refer to this [page](https://conichigmbh.github.io/ios/docs/CNISDKGeoFencingKit/apple_doc/index.html). Also, it can be useful to read the overview about [CNISDKCoreKit](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/CNISDKCoreKit.md).
 
 #### Initialization
 

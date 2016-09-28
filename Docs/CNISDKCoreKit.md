@@ -21,7 +21,7 @@ Run `pod install`, and you should now have the latest `conichiSDK CoreKit` relea
 
 ### Getting Started
 
-Sections below explain major and the most important parts of the `sdk`, for the complete documentation of the kit please refer to this [page](https://conichigmbh.github.io/ios/docs/CNISDKCoreKit/index.html)
+Sections below explain major and the most important parts of the `sdk`, for the complete documentation of the kit please refer to this [page](https://conichigmbh.github.io/ios/docs/CNISDKCoreKit/apple_doc/index.html)
 
 #### Initialization
 
