@@ -44,7 +44,7 @@ platform :ios do
       remote_branch: release_branch
     )
 
-    # podspecs_push
+    podspecs_push
 
     set_or_update_github_release(
       release_name: tag_name,
