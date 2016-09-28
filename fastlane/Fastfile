@@ -102,6 +102,6 @@ platform :ios do
   end
 
   private_lane :load_environment_variables do
-    sh("source ~/.bash_profile ")
+    sh("source ~/.bash_profile")
   end
 end
