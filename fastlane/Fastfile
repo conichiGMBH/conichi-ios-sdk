@@ -91,4 +91,12 @@ platform :ios do
       body: 'Please review that and merge'
     )
   end
+
+  private_lane :import_shared_fastfile do
+    import_from_git(
+      url: "git@github.com:#{ENV['GITHUB_IOS_TEAM_REPOSITORY']}",
+      branch: 'HEAD',
+      path: 'fastlane/Fastfile'
+    )
+  end
 end
