@@ -57,4 +57,4 @@ Example below shows the simplest setup `conichiSDK PMSKit`
 #### Managing reservation
 
 __Important__ to manage a reservation the guest has to be authorized.  
-The logic of managing guest's reservation is inside `CNISDKAPIManager+Reservation` category. Please refer to the [documentation](https://conichigmbh.github.io/ios/docs/CNISDKPMSKit/Categories/CNISDKAPIManager+Reservation.html) to see the whole public interface.
+The logic of managing guest's reservation is inside `CNISDKAPIManager+Reservation` category. Please refer to the [documentation](https://conichigmbh.github.io/ios/docs/CNISDKPMSKit/apple_doc/Categories/CNISDKAPIManager+Reservation.html) to see the whole public interface.
