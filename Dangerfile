@@ -1,3 +1,5 @@
+modified_files = git.modified_files
+
 # Oi, CHANGELOGs please
 fail("No CHANGELOG changes made") if !git.modified_files.include?("CHANGELOG.yml")
 

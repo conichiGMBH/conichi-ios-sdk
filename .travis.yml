@@ -9,8 +9,7 @@ cache:
 before_install:
     - export LANG=en_US.UTF-8
     - bundle install --path=vendor/bundle --jobs=4 --retry=3 --without development
+    - xcrun instruments -s devices
 
 script:
-    - bundle exec pod lib lint --allow-warnings
-    - xcodebuild -workspace ConichiSDK.xcworkspace -scheme ConichiSDKStarterProject -destination 'platform=iOS Simulator,name=iPhone 6,OS=10.0'
     - bundle exec danger --verbose
