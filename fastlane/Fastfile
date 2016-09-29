@@ -28,17 +28,19 @@ platform :ios do
       version: release_version,
       api_token: ENV['CONICHI_CI_GITHUB_TOKEN']
     )
+    puts private_sdk_release
 
-    cnisdk_framework_zip_path = "CNISDK.framework.zip"
-    download_cnisdk_framework_zip_from_release(
-      release: private_sdk_release,
-      download_destination: cnisdk_framework_zip_path
-    )
+    # cnisdk_framework_zip_path = "CNISDK.framework.zip"
+    # download_cnisdk_framework_zip_from_release(
+    #   release: private_sdk_release,
+    #   download_destination: cnisdk_framework_zip_path
+    # )
+    #
+    # unzip(file: cnisdk_framework_zip_path)
+    # copy_frameworks_from_cnisdk_framework_folder(
+    #   cnisdk_framework_folder: "../Carthage/Build/iOS"
+    # )
 
-    unzip(file: cnisdk_framework_zip_path)
-    copy_frameworks_from_cnisdk_framework_folder(
-      cnisdk_framework_folder: "../Carthage/Build/iOS"
-    )
 
     # release_branch = ENV['GITHUB_RELEASE_BRANCH']
     # remote = ENV['GITHUB_REMOTE']
@@ -157,5 +159,11 @@ platform :ios do
       destination_path: download_destination,
       api_token: ENV['CONICHI_CI_GITHUB_TOKEN']
     )
+  end
+
+  private_lane :update_changelog_from_release do |options|
+    release = options[:release]
+    release_version = release["tag_name"]
+    release_changelog = release["body"]
   end
 end
