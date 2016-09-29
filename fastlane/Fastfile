@@ -28,7 +28,9 @@ platform :ios do
       version: release_version,
       api_token: ENV['CONICHI_CI_GITHUB_TOKEN']
     )
-    puts private_sdk_release
+    update_changelog_from_release(
+      release: private_sdk_release
+    )
 
     # cnisdk_framework_zip_path = "CNISDK.framework.zip"
     # download_cnisdk_framework_zip_from_release(
@@ -162,8 +164,26 @@ platform :ios do
   end
 
   private_lane :update_changelog_from_release do |options|
+    require 'redcarpet'
+    require 'redcarpet/render_strip'
+
     release = options[:release]
     release_version = release["tag_name"]
-    release_changelog = release["body"]
+
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::StripDown)
+    release_body_text = markdown.render(release["body"])
+    release_changes = release_body_text.split("\n")
+
+    changelog_data = get_changelog_data
+    changelog_data["upcoming"]["version"] = release_version
+    changelog_data["upcoming"]["notes"] = release_changes
+
+    save_changelog_data(
+      changelog_data: changelog_data
+    )
+
+    git_commit_shell(
+      message: "Update CHANGELOG with upcoming release information"
+    )
   end
 end
