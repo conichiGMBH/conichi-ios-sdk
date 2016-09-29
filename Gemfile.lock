@@ -71,6 +71,8 @@ GEM
       kramdown (~> 1.5)
       octokit (~> 4.2)
       terminal-table (~> 1)
+    danger-prose (2.0.3)
+      danger
     deliver (1.14.0)
       credentials_manager (>= 0.16.0, < 1.0.0)
       fastimage (~> 1.6)
@@ -312,6 +314,7 @@ PLATFORMS
 DEPENDENCIES
   cocoapods (>= 1.0.0.beta)
   danger
+  danger-prose
   fastlane
   fastlane-plugin-unzip
   redcarpet

@@ -1,10 +1,8 @@
 ---
 upcoming:
-  version: 2.2.3
+  version:
   notes:
-  - Update dependencies
-  - Test
 releases:
 - version: 2.2.3
   notes:
-  - Public release preparation
+  - 🚀 🚀 🚀 conichi goes public 🎉 🎉 🎉
