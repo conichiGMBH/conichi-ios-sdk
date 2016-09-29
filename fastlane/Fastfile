@@ -17,10 +17,10 @@ platform :ios do
   ######################### PUBLIC LANES ##########################
 
   lane :release do |options|
-    # ensure_git_status_clean
-    # ensure_git_branch(
-    #   branch: release_branch
-    # )
+    ensure_git_status_clean
+    ensure_git_branch(
+      branch: release_branch
+    )
 
     release_version = options[:release_version]
     private_sdk_release = get_github_release(
@@ -67,9 +67,9 @@ platform :ios do
       local_branch: release_branch,
       remote_branch: release_branch
     )
-    #
-    # podspecs_push
-    #
+
+    podspecs_push
+
     set_or_update_github_release(
       release_name: tag_name,
       repository_name: ENV['GITHUB_REPOSITORY'],
@@ -79,7 +79,7 @@ platform :ios do
       upload_assets: [cnisdk_framework_zip_path]
     )
 
-    # create_pull_request_from_release_branch_to_master
+    create_pull_request_from_release_branch_to_master
   end
 
   ######################### PRIVATE LANES ##########################
