@@ -1,10 +1,12 @@
 ---
 upcoming:
-  version: 2.2.3
+  version: 
+  notes: 
+releases:
+- version: 2.2.3
   notes:
   - Update dependencies
   - Test
-releases:
 - version: 2.2.3
   notes:
   - Public release preparation
