@@ -9,5 +9,6 @@ before_install:
     - bundle install --path=vendor/bundle --jobs=4 --retry=3 --without development
 
 script:
+    - bundle exec danger --verbose
     - bundle exec pod lib lint --allow-warnings
     - bundle exec gym
