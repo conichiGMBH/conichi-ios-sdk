@@ -1,4 +1,3 @@
-rvm: 2.1.2
 language: objective-c
 osx_image: xcode8
 sudo: false
@@ -9,7 +8,10 @@ cache:
 before_install:
     - export LANG=en_US.UTF-8
     - bundle install --path=vendor/bundle --jobs=4 --retry=3 --without development
-    - xcrun instruments -s devices
 
 script:
+    - bundle exec pod lib lint --allow-warnings
+    - xcrun instruments -w '237D7619-4A4E-4624-8925-67A42A8A690A' || true
+    - sleep 15
+    - set -o pipefail && xcodebuild -workspace ConichiSDK.xcworkspace -scheme ConichiSDKStarterProject -destination 'platform=iOS Simulator,id=237D7619-4A4E-4624-8925-67A42A8A690A'
     - bundle exec danger --verbose
