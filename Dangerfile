@@ -1,10 +1,3 @@
-# Look for prose issues in markdown files
-prose.lint_files
-
-# Look for spelling issues in markdown files
-prose.ignored_words = ["antondomashnev", "conichi", "CocoaPods", "Carthage"]
-prose.check_spelling
-
 # Oi, CHANGELOGs please
 fail("No CHANGELOG changes made") if !git.modified_files.include?("CHANGELOG.yml")
 

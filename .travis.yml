@@ -1,6 +1,7 @@
-rvm: 2.0.0
+rvm: 2.1.2
 language: objective-c
-
+osx_image: xcode8
+sudo: false
 cache:
 - bundler
 - cocoapods
@@ -8,9 +9,8 @@ cache:
 before_install:
     - export LANG=en_US.UTF-8
     - bundle install --path=vendor/bundle --jobs=4 --retry=3 --without development
-    - pip install --user proselint
 
 script:
     - bundle exec pod lib lint --allow-warnings
-    - xcodebuild -workspace ConichiSDK.xcworkspace -scheme ConichiSDKStarterProject -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.1'
+    - xcodebuild -workspace ConichiSDK.xcworkspace -scheme ConichiSDKStarterProject -destination 'platform=iOS Simulator,name=iPhone 6,OS=10.0'
     - bundle exec danger --verbose
