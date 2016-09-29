@@ -1,3 +1,5 @@
+require 'fileutils'
+
 fastlane_version "1.104.0"
 
 default_platform :ios
@@ -31,6 +33,11 @@ platform :ios do
     download_cnisdk_framework_zip_from_release(
       release: private_sdk_release,
       download_destination: cnisdk_framework_zip_path
+    )
+
+    unzip(file: cnisdk_framework_zip_path)
+    copy_frameworks_from_cnisdk_framework_folder(
+      cnisdk_framework_folder: "../Carthage/Build/iOS"
     )
 
     # release_branch = ENV['GITHUB_RELEASE_BRANCH']
@@ -118,6 +125,22 @@ platform :ios do
 
   private_lane :load_environment_variables do
     sh("source ~/.bash_profile")
+  end
+
+  private_lane :copy_frameworks_from_cnisdk_framework_folder do |options|
+    cnisdk_framework_folder = options[:cnisdk_framework_folder]
+    frameworks_to_copy = ["CNISDKCoreKit.framework", "CNISDKGeoFencingKit.framework",
+                          "CNISDKPaymentKit.framework", "CNISDKPMSKit.framework",
+                          "Conichi_Authentication.framework", "Conichi_Errors.framework",
+                          "Conichi_Meta.framework", "PaylevenFramework.framework"]
+    frameworks_to_copy.each do |framework|
+      FileUtils.cp_r("#{cnisdk_framework_folder}/#{framework}", "../Frameworks")
+    end
+    unless git_status_clean?
+      git_commit_shell(
+        message: "conichi frameworks have been updated;"
+      )
+    end
   end
 
   private_lane :download_cnisdk_framework_zip_from_release do |options|

@@ -1,2 +1,1 @@
-gem "fastlane-plugin-download_file"
 gem "fastlane-plugin-unzip"
