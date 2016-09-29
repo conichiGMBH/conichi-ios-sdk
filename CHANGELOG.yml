@@ -1,10 +1,8 @@
 ---
 upcoming:
-  version: 2.2.3
+  version:
   notes:
-  - Update dependencies
-  - Test
 releases:
-- version: 2.2.3
+- version: x.y.z
   notes:
-  - Public release preparation
+  - 🎉
