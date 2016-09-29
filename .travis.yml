@@ -1,0 +1,14 @@
+language: objective-c
+
+cache:
+- bundler
+- cocoapods
+
+before_install:
+    - export LANG=en_US.UTF-8
+    - bundle install --path=vendor/bundle --jobs=4 --retry=3 --without development
+    - bundle exec pod install --verbose
+
+script:
+    - bundle exec pod lib lint --allow-warnings
+    - bundle exec gym
