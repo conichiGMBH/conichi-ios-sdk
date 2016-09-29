@@ -71,6 +71,11 @@ fastlane ios git_checkout_branch
 fastlane ios git_branch_exists_on_remote
 ```
 
+### ios git_status_clean?
+```
+fastlane ios git_status_clean?
+```
+
 ### ios git_add_or_update_tag
 ```
 fastlane ios git_add_or_update_tag

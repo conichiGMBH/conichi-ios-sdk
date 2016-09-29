@@ -180,8 +180,10 @@ platform :ios do
       changelog_data: changelog_data
     )
 
-    git_commit_shell(
-      message: "Update CHANGELOG with upcoming release information"
-    )
+    unless git_status_clean?
+      git_commit_shell(
+        message: "Update CHANGELOG with upcoming release information"
+      )
+    end
   end
 end
