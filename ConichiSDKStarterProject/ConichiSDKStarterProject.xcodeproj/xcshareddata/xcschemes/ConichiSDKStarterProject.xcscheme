@@ -28,6 +28,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6D6331021D9D5623006C1062"
+               BuildableName = "ConichiSDKStarterProjectTests.xctest"
+               BlueprintName = "ConichiSDKStarterProjectTests"
+               ReferencedContainer = "container:ConichiSDKStarterProject.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
