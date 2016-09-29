@@ -103,6 +103,8 @@ GEM
       xcode-install (~> 2.0.0)
       xcodeproj (>= 0.20, < 2.0.0)
       xcpretty (>= 0.2.1)
+    fastlane-plugin-download_file (1.0.0)
+    fastlane-plugin-unzip (1.0.1)
     fastlane_core (0.52.0)
       babosa
       colored
@@ -276,6 +278,8 @@ PLATFORMS
 DEPENDENCIES
   cocoapods (>= 1.0.0.beta)
   fastlane
+  fastlane-plugin-download_file
+  fastlane-plugin-unzip
 
 BUNDLED WITH
    1.13.0

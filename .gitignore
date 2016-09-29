@@ -32,10 +32,7 @@ xcuserdata/
 # Carthage/Checkouts
 
 Carthage/Build
-CNISDKCoreKit.framework.zip
-CNISDKGeoFencingKit.framework.zip
-CNISDKPMSKit.framework.zip
-CNISDKPaymentKit.framework.zip
+CNISDK.framework.zip
 
 ## Obj-C/Swift specific
 *.hmap

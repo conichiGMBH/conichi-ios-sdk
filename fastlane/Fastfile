@@ -7,55 +7,70 @@ platform :ios do
   ############################## PRE ##############################
 
   before_all do
-    update_fastlane
+    # update_fastlane
     import_shared_fastfile
     load_environment_variables
   end
 
   ######################### PUBLIC LANES ##########################
 
-  lane :release do
-    release_branch = ENV['GITHUB_RELEASE_BRANCH']
-    remote = ENV['GITHUB_REMOTE']
+  lane :release do |options|
+    # ensure_git_status_clean
+    # ensure_git_branch(
+    #   branch: release_branch
+    # )
 
-    ensure_git_status_clean
-    ensure_git_branch(
-      branch: release_branch
+    release_version = options[:release_version]
+    private_sdk_release = get_github_release(
+      url: ENV['PRIVATE_CONICHI_IOS_SDK_GITHUB_REPO'],
+      version: release_version,
+      api_token: ENV['CONICHI_CI_GITHUB_TOKEN']
     )
 
-    upcoming_version = get_upcoming_version.clone
-    upcoming_notes = get_upcoming_notes.clone
-    put_upcoming_to_releases
-
-    podspecs_version_bump(
-      version: upcoming_version
+    cnisdk_framework_zip_path = "CNISDK.framework.zip"
+    download_cnisdk_framework_zip_from_release(
+      release: private_sdk_release,
+      download_destination: cnisdk_framework_zip_path
     )
 
-    tag_name = upcoming_version
-    git_add_or_update_tag(
-      tag_name: tag_name,
-      remote: remote,
-      branch: release_branch
-    )
-
-    push_to_git_remote(
-      remote: remote,
-      local_branch: release_branch,
-      remote_branch: release_branch
-    )
-
-    podspecs_push
-
-    set_or_update_github_release(
-      release_name: tag_name,
-      repository_name: ENV['GITHUB_REPOSITORY'],
-      description: upcoming_notes,
-      tag_name: tag_name,
-      api_token: ENV['CONICHI_CI_GITHUB_TOKEN'],
-      upload_assets: []
-    )
-
-    create_pull_request_from_release_branch_to_master
+    # release_branch = ENV['GITHUB_RELEASE_BRANCH']
+    # remote = ENV['GITHUB_REMOTE']
+    #
+    #
+    #
+    # upcoming_version = get_upcoming_version.clone
+    # upcoming_notes = get_upcoming_notes.clone
+    # put_upcoming_to_releases
+    #
+    # podspecs_version_bump(
+    #   version: upcoming_version
+    # )
+    #
+    # tag_name = upcoming_version
+    # git_add_or_update_tag(
+    #   tag_name: tag_name,
+    #   remote: remote,
+    #   branch: release_branch
+    # )
+    #
+    # push_to_git_remote(
+    #   remote: remote,
+    #   local_branch: release_branch,
+    #   remote_branch: release_branch
+    # )
+    #
+    # podspecs_push
+    #
+    # set_or_update_github_release(
+    #   release_name: tag_name,
+    #   repository_name: ENV['GITHUB_REPOSITORY'],
+    #   description: upcoming_notes,
+    #   tag_name: tag_name,
+    #   api_token: ENV['CONICHI_CI_GITHUB_TOKEN'],
+    #   upload_assets: []
+    # )
+    #
+    # create_pull_request_from_release_branch_to_master
   end
 
   ######################### PRIVATE LANES ##########################
@@ -103,5 +118,21 @@ platform :ios do
 
   private_lane :load_environment_variables do
     sh("source ~/.bash_profile")
+  end
+
+  private_lane :download_cnisdk_framework_zip_from_release do |options|
+    release = options[:release]
+    assets = release["assets"]
+    selected_assets = assets.select do |asset|
+      asset["name"] == "CNISDK.framework.zip"
+    end
+    cnisdk_framework_zip_asset = selected_assets[0]
+    url = cnisdk_framework_zip_asset["url"]
+    download_destination = options[:download_destination]
+    cni_download_github_release_asset(
+      asset_url: url,
+      destination_path: download_destination,
+      api_token: ENV['CONICHI_CI_GITHUB_TOKEN']
+    )
   end
 end
