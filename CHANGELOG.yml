@@ -1,7 +1,9 @@
 ---
 upcoming:
-  version:
+  version: 2.2.3
   notes:
+  - Update dependencies
+  - Test
 releases:
 - version: 2.2.3
   notes:

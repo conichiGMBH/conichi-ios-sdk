@@ -28,59 +28,57 @@ platform :ios do
       version: release_version,
       api_token: ENV['CONICHI_CI_GITHUB_TOKEN']
     )
+
     update_changelog_from_release(
       release: private_sdk_release
     )
 
-    # cnisdk_framework_zip_path = "CNISDK.framework.zip"
-    # download_cnisdk_framework_zip_from_release(
-    #   release: private_sdk_release,
-    #   download_destination: cnisdk_framework_zip_path
-    # )
-    #
-    # unzip(file: cnisdk_framework_zip_path)
-    # copy_frameworks_from_cnisdk_framework_folder(
-    #   cnisdk_framework_folder: "../Carthage/Build/iOS"
-    # )
+    cnisdk_framework_zip_path = "CNISDK.framework.zip"
+    download_cnisdk_framework_zip_from_release(
+      release: private_sdk_release,
+      download_destination: cnisdk_framework_zip_path
+    )
 
+    unzip(file: cnisdk_framework_zip_path)
+    copy_frameworks_from_cnisdk_framework_folder(
+      cnisdk_framework_folder: "../Carthage/Build/iOS"
+    )
 
-    # release_branch = ENV['GITHUB_RELEASE_BRANCH']
-    # remote = ENV['GITHUB_REMOTE']
-    #
-    #
-    #
-    # upcoming_version = get_upcoming_version.clone
-    # upcoming_notes = get_upcoming_notes.clone
-    # put_upcoming_to_releases
-    #
-    # podspecs_version_bump(
-    #   version: upcoming_version
-    # )
-    #
-    # tag_name = upcoming_version
-    # git_add_or_update_tag(
-    #   tag_name: tag_name,
-    #   remote: remote,
-    #   branch: release_branch
-    # )
-    #
-    # push_to_git_remote(
-    #   remote: remote,
-    #   local_branch: release_branch,
-    #   remote_branch: release_branch
-    # )
+    release_branch = ENV['GITHUB_RELEASE_BRANCH']
+    remote = ENV['GITHUB_REMOTE']
+
+    upcoming_version = get_upcoming_version.clone
+    upcoming_notes = get_upcoming_notes.clone
+    put_upcoming_to_releases
+
+    podspecs_version_bump(
+      version: upcoming_version
+    )
+
+    tag_name = upcoming_version
+    git_add_or_update_tag(
+      tag_name: tag_name,
+      remote: remote,
+      branch: release_branch
+    )
+
+    push_to_git_remote(
+      remote: remote,
+      local_branch: release_branch,
+      remote_branch: release_branch
+    )
     #
     # podspecs_push
     #
-    # set_or_update_github_release(
-    #   release_name: tag_name,
-    #   repository_name: ENV['GITHUB_REPOSITORY'],
-    #   description: upcoming_notes,
-    #   tag_name: tag_name,
-    #   api_token: ENV['CONICHI_CI_GITHUB_TOKEN'],
-    #   upload_assets: []
-    # )
-    #
+    set_or_update_github_release(
+      release_name: tag_name,
+      repository_name: ENV['GITHUB_REPOSITORY'],
+      description: upcoming_notes,
+      tag_name: tag_name,
+      api_token: ENV['CONICHI_CI_GITHUB_TOKEN'],
+      upload_assets: [cnisdk_framework_zip_path]
+    )
+
     # create_pull_request_from_release_branch_to_master
   end
 
