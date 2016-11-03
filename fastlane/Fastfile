@@ -17,6 +17,8 @@ platform :ios do
   ######################### PUBLIC LANES ##########################
 
   lane :release do |options|
+    release_branch = ENV['GITHUB_RELEASE_BRANCH']
+
     ensure_git_status_clean
     ensure_git_branch(
       branch: release_branch
@@ -44,7 +46,6 @@ platform :ios do
       cnisdk_framework_folder: "../Carthage/Build/iOS"
     )
 
-    release_branch = ENV['GITHUB_RELEASE_BRANCH']
     remote = ENV['GITHUB_REMOTE']
 
     upcoming_version = get_upcoming_version.clone
@@ -78,8 +79,6 @@ platform :ios do
       api_token: ENV['CONICHI_CI_GITHUB_TOKEN'],
       upload_assets: [cnisdk_framework_zip_path]
     )
-
-    create_pull_request_from_release_branch_to_master
   end
 
   ######################### PRIVATE LANES ##########################
@@ -97,24 +96,6 @@ platform :ios do
     pod_push(path: ENV['PAYMENT_KIT_PODSPEC'], allow_warnings: true)
     pod_push(path: ENV['GEOFENCING_KIT_PODSPEC'], allow_warnings: true)
     pod_push(path: ENV['PMS_KIT_PODSPEC'], allow_warnings: true)
-  end
-
-  private_lane :create_pull_request_from_release_branch_to_master do
-    release_branch = ENV['GITHUB_RELEASE_BRANCH']
-    master_branch = ENV['GITHUB_MASTER_BRANCH']
-
-    ensure_git_branch(
-      branch: release_branch
-    )
-
-    create_pull_request(
-      api_token: ENV['CONICHI_CI_GITHUB_TOKEN'],
-      repo: ENV['GITHUB_REPOSITORY'],
-      title: 'New SDK release',
-      head: release_branch,
-      base: master_branch,
-      body: 'Please review that and merge'
-    )
   end
 
   private_lane :import_shared_fastfile do
