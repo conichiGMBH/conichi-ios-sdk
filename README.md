@@ -65,6 +65,14 @@ Then, you must add a NSLocationAlwaysUsageDescription or NSLocationWhenInUseUsag
 <string>This app needs your location so you can be recognized in the conichi Hotel</string>
 ```
 
+#### Enable some capabilities
+
+Conichi cares about the security and therefore the SDK stores the authorization information in the iOS Keychain, but to be available to read and write values even if the sdk is not running, iOS system requires the `Keychain Sharing` capability.
+
+`Target -> Capabilities -> Keychain Sharing - Turn the switch On`.
+
+![Alt text](https://monosnap.com/file/Fgjm7ziUSjarcbDIRgJshGvXUiElh3.png)
+
 And you're off! Take a look at the public documentation and start building. 
 
 #### Initialization
