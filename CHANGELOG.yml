@@ -1,7 +1,9 @@
 ---
 upcoming:
-  version: 
-  notes: 
+  version: 2.3.0
+  notes:
+  - Add additional parameters to create a pre-check-in request
+  - 'Add new method to open the check-in for guest '
 releases:
 - version: 2.2.4
   notes:
