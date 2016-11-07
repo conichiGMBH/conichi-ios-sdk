@@ -1,8 +1,13 @@
 ---
 upcoming:
-  version:
+  version: 2.2.4
   notes:
+  - Update podspec dependencies
+  - Create a script to make a new release of public ios sdk
+  - Create a script to update docs on conichi github blog
+  - Attach to each release built zip with all prebuilt frameworks by Carthage
+  - 'Fix issue with incorrect algorithm to find payleven credit card matches the CNISDKPaymentInstrument '
 releases:
 - version: 2.2.3
   notes:
-  - 🚀 🚀 🚀 conichi goes public 🎉 🎉 🎉
+  - "\U0001F680 \U0001F680 \U0001F680 conichi goes public \U0001F389 \U0001F389 \U0001F389"
