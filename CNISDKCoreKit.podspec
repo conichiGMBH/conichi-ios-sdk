@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'CNISDKCoreKit'
-  s.version      = '2.2.3'
+  s.version      = '2.2.4'
   s.summary      = "Official conichi SDK for iOS to access core functionality of conichi Platform."
 
   s.description  = <<-DESC
