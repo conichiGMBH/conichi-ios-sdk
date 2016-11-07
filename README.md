@@ -67,7 +67,7 @@ Then, you must add a NSLocationAlwaysUsageDescription or NSLocationWhenInUseUsag
 
 #### Enable some capabilities
 
-Conichi cares about the security and therefore the SDK stores the authorization information in the iOS Keychain, but to be available to read and write values even if the sdk is not running, iOS system requires the `Keychain Sharing` capability.
+Conichi cares about the security and therefore the SDK stores the authorization information in the iOS Keychain, but to be available to read and write values even if the SDK is not running, iOS system requires the `Keychain Sharing` capability.
 
 `Target -> Capabilities -> Keychain Sharing - Turn the switch On`.
 
