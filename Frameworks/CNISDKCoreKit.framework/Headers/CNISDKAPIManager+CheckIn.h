@@ -68,7 +68,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Fetch all given guest's checkins
  * 
  * @param guest for which guest should fetch checkins
- * @param completion - callback block with three parameters
+ * @param completion - callback block with two parameters
  *                     1. Array of CNISDKCheckin objects
  *                     2. NSError object if request failed
  */
@@ -78,7 +78,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Fetch detail checkin information for the given checkin object
  *
  * @param checkin    checkin object to be filled with detail information out
- * @param completion callback block with three parameters
+ * @param completion callback block with two parameters
  *                     1. CNISDKCheckin object if succeeded
  *                     2. NSError object if request failed
  */
@@ -89,7 +89,7 @@ NS_ASSUME_NONNULL_BEGIN
  * 
  *  @param rating new checkin rating
  *  @param checkin checkin object to rate
- *  @param completion - callback block with three parameters
+ *  @param completion - callback block with two parameters
  *                      1. up to date CNISDKCheckin object
  *                      2. NSError object if request failed                 
  */
@@ -100,11 +100,23 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param rating     new checkin rating
  *  @param checkinID  checkin conichi id to rate
- *  @param completion - callback block with three parameters
+ *  @param completion - callback block with two parameters
  *                      1. new CNISDKCheckin object
  *                      2. NSError object if request failed
  */
 - (void)addRating:(NSNumber *)rating toCheckinWithID:(NSString *)checkinID completion:(nullable CNISDKIDErrorBlock)completion;
+
+
+/**
+ *  Creates the check-in object on the conichi backend for the given guest in the given venue
+ *
+ *  @param guestID    conichi ID of the guest to be checked in
+ *  @param venueID    conichi ID of the venue where the guest should be checked in
+ *  @param completion callback with two parameters
+ *                    1. New CNISDKCheckin object if open
+ *                    2. NSError object if request failed
+ */
+- (void)checkinGuestWithID:(NSString *)guestID inVenueWithID:(NSString *)venueID completion:(nullable CNISDKIDErrorBlock)completion;
 
 @end
 

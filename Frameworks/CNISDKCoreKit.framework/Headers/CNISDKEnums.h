@@ -138,6 +138,27 @@ typedef NS_ENUM(NSInteger, CNISDKPreCheckinRequestArriveTime) {
 };
 
 /**
+ *  Guest's arrival time. Can be used to specify period of the guest's arrival date
+ */
+typedef NS_ENUM(NSInteger, CNISDKPreCheckinRequestTravelPurpose) {
+
+    /**
+     *  Guest's travel purpose is unknown
+     */
+    CNISDKPreCheckinRequestTravelPurposeUnknown,
+
+    /**
+     *  Guest's travel purpose is Leisure
+     */
+    CNISDKPreCheckinRequestTravelPurposeLeisure,
+
+    /**
+     *  Guest's travel purpose is Business
+     */
+    CNISDKPreCheckinRequestTravelPurposeBusiness
+};
+
+/**
  *  Converted by NSJSONSerialization object's type
  */
 typedef NS_ENUM(NSInteger, CNISDKJSONType) {

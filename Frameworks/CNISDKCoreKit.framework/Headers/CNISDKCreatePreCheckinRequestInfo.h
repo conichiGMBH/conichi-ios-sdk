@@ -47,6 +47,21 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, nullable) NSArray<CNISDKDeliverableCountableItem *> *requestedItems;
 
 /**
+ *  Guest's reservation number (optional)
+ */
+@property (nonatomic, copy, nullable) NSString *reservationNumber;
+
+/**
+ *  Guest's booked room type (optional)
+ */
+@property (nonatomic, copy, nullable) NSString *bookedRoomType;
+
+/**
+ *  Guest's travel purpose
+ */
+@property (nonatomic, assign) CNISDKPreCheckinRequestTravelPurpose travelPurpose;
+
+/**
  *  Converts CNISDKPreCheckinRequestArriveTime enum value into NSString value
  *
  *  @param arriveTime enum arrive time value
@@ -54,6 +69,15 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return string arrive time value
  */
 + (nullable NSString *)convertArriveTimeEnumToString:(CNISDKPreCheckinRequestArriveTime)arriveTime;
+
+/**
+ *  Converts CNISDKPreCheckinRequestTravelPurpose enum value into NSString value
+ *
+ *  @param travelPurpose enum travel purpose value
+ *
+ *  @return string travel purpose value
+ */
++ (nullable NSString *)convertTravelPurposeEnumToString:(CNISDKPreCheckinRequestTravelPurpose)travelPurpose;
 
 @end
 
