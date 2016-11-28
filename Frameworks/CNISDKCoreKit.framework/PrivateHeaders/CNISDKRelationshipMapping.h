@@ -26,8 +26,12 @@ typedef void (^CNISDKRelationshipMappingCompletonBlock)(id __nullable mappedValu
 @interface CNISDKRelationshipMapping : NSObject
 
 @property (nonatomic, strong) Class<CNISDKMapping> relationshipClass;
-@property (nonatomic, strong) NSString *jsonKey;
 @property (nonatomic, strong) NSString *propertyName;
+
+/**
+ * @note If nil that means a non nested relationship. E.x. { @"car_name": @"BMW" } -> to relationship Car with the name == @"BMW"
+ */
+@property (nonatomic, strong, nullable) NSString *jsonKey;
 
 /**
  * @note If it's nil mapping will be taken from [relationshipClass objectMapping]

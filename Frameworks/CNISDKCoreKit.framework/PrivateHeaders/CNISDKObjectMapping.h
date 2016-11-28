@@ -31,11 +31,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) NSDictionary *hasManyRelationshipsMapping;
 @property (nonatomic, strong, readonly) NSDictionary *hasOneDynamicRelationshipsMapping;
 @property (nonatomic, strong, readonly) NSDictionary *hasManyDynamicRelationshipsMapping;
+@property (nonatomic, strong, readonly) NSArray *hasOneNonNestedRelationshipsMappings;
 @property (nonatomic, strong, readonly) NSArray *validationsArray;
 
 + (instancetype)mappingForClass:(Class)mappingClass;
 
 /************************* Attributes *************************/
+
 - (void)mapJSONKeysToThePropertyKeys:(NSDictionary *)jsonKeyPropertyNamesDictionary;
 
 - (void)mapJSONKey:(NSString *)jsonKey
@@ -62,26 +64,28 @@ NS_ASSUME_NONNULL_BEGIN
        reverseMappingBlock:(nullable CNISDKAttributeMappingBlock)reverseMappingBlock;
 
 /************************* Has One *************************/
+
 - (void)mapHasOneRelationshipOfClass:(Class<CNISDKMapping>)relationshipClass
-                         fromJSONKey:(NSString *)jsonKey
+                         fromJSONKey:(nullable NSString *)jsonKey
                    toThePropertyName:(NSString *)propertyName;
 
 - (void)mapHasOneRelationshipOfClass:(Class<CNISDKMapping>)relationshipClass
-                         fromJSONKey:(NSString *)jsonKey
+                         fromJSONKey:(nullable NSString *)jsonKey
                    toThePropertyName:(NSString *)propertyName
                      completionBlock:(nullable CNISDKRelationshipMappingCompletonBlock)completionBlock;
 
 - (void)mapHasOneRelationshipOfClass:(Class<CNISDKMapping>)relationshipClass
-                         fromJSONKey:(NSString *)jsonKey
+                         fromJSONKey:(nullable NSString *)jsonKey
                    toThePropertyName:(NSString *)propertyName
                        objectMapping:(nullable CNISDKObjectMapping *)mapping
                      completionBlock:(nullable CNISDKRelationshipMappingCompletonBlock)completionBlock;
 
-- (void)mapHasOneDynamicRelationshipFromJSONKey:(NSString *)jsonKey
+- (void)mapHasOneDynamicRelationshipFromJSONKey:(nullable NSString *)jsonKey
                               toThePropertyName:(NSString *)propertyName
                              objectMappingBlock:(CNISDKDynamicMappingObjectMappingBlock)objectMappingBlock;
 
 /************************* Has Many *************************/
+
 - (void)mapHasManyRelationshipOfClass:(Class<CNISDKMapping>)relationshipClass
                           fromJSONKey:(NSString *)jsonKey
                     toThePropertyName:(NSString *)propertyName;

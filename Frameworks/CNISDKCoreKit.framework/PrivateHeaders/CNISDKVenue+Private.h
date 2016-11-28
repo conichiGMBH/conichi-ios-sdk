@@ -14,6 +14,7 @@
 @class CNISDKAddress;
 @class CNISDKRegion;
 @class CNISDKVenueCard;
+@class CNISDKDigitalKeyProviderInformation;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -37,6 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readwrite) CNISDKAddress *address;
 @property (nonatomic, strong, readwrite) NSArray<CNISDKRegion *> *regions;
 @property (nonatomic, strong, readwrite, nullable) NSArray<CNISDKVenueCard *> *cards;
+@property (nonatomic, strong, readwrite, nullable) CNISDKDigitalKeyProviderInformation *digitalKeyInformation;
 
 @property (nonatomic, assign, getter=isPaymentEnabled) BOOL paymentEnabled;
 @property (nonatomic, assign, getter=isPMSIntegrated) BOOL PMSIntegrated;

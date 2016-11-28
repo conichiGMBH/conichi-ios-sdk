@@ -36,6 +36,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign, readwrite) CNISDKEnvironment environment;
 
 /**
+ *  backend's baseURL if custom and not conichi domain
+ *  @note this works only if the environment is set to CNISDKEnvironmentProduction otherwise an exception will be raised
+ */
+@property (nonatomic, strong, readwrite, nullable) NSURL *baseURL;
+
+/**
  *  Sets the level of logging to display.
  *  @discussion By default: - set to <CNISDKLogLevelWarning>
  *
@@ -76,6 +82,12 @@ NS_ASSUME_NONNULL_BEGIN
  *  @see CNISDKEnvironment
  */
 @property (nonatomic, assign, readonly) CNISDKEnvironment environment;
+
+/**
+ *  backend's baseURL if custom and not conichi domain
+ *  @note this works only if the environment is set to CNISDKEnvironmentProduction otherwise an exception will be raised
+ */
+@property (nonatomic, strong, readonly, nullable) NSURL *baseURL;
 
 /**
  *  enabled kits for the sdk
