@@ -1,7 +1,12 @@
 ---
 upcoming:
-  version: 
-  notes: 
+  version: 2.4.0
+  notes:
+  - Create a CNISDKDigitalKeyKit with CNISDKVenue key information support
+  - Fix the NSProcessInfo addition to check whether running tests or not for Xcode
+    8 support
+  - Remove caching server requests
+  - 'Add new baseURL configuration parameter '
 releases:
 - version: 2.3.0
   notes:
