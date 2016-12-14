@@ -1,7 +1,13 @@
 ---
 upcoming:
-  version: 
-  notes: 
+  version: 2.4.1
+  notes:
+  - Always use API credentials from CNISDKConfiguration
+  - Set timeout interval for requests as in other platforms
+  - Remove user and conichi config
+  - Add public key certificate pinning
+  - Do not assert for the unknown key provider name for key provider information
+  - 'Deprecate nationality in CNISDKGuest in favor of nationalityISOCode '
 releases:
 - version: 2.4.0
   notes:
