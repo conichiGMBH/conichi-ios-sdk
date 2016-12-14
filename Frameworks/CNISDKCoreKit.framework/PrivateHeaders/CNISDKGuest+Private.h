@@ -31,7 +31,7 @@ extern NSInteger const kCNISDKGuestModelVersion;
 @property (nonatomic, strong, readwrite, nullable) NSDate *dateOfBirthday;
 @property (nonatomic, strong, readwrite, nullable) NSString *locale;
 @property (nonatomic, strong, readwrite, nullable) NSString *gender;
-@property (nonatomic, strong, readwrite, nullable) NSString *nationality;
+@property (nonatomic, strong, readwrite, nullable) NSString *nationalityISOCode;
 @property (nonatomic, strong, readwrite, nullable) NSString *paylevenToken;
 @property (nonatomic, strong, readwrite, nullable) NSString *optionalValue;
 @property (nonatomic, strong, readwrite, nullable) NSString *status;

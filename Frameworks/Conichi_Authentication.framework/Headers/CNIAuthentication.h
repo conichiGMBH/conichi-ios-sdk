@@ -39,11 +39,11 @@ typedef void (^CNIAuthenticationCompletionBlock)(CNISession *_Nullable session, 
  *  Initializes the authentication instance
  *
  *  @param session              session to be used to perform authentication
- *  @param sessionConfiguration session to be used to create request's tasks
+ *  @param URLSession           URLSession to be used to create request's tasks ([NSURLSession sharedSession] in case of nil parameter)
  *
  *  @return newly creates `CNIAuthentication` instance
  */
-- (instancetype)initWithSession:(CNISession *)session sessionConfiguration:(NSURLSessionConfiguration *)sessionConfiguration NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithSession:(CNISession *)session URLSession:(nullable NSURLSession *)URLSession NS_DESIGNATED_INITIALIZER;
 
 /**
  *  Sends the authentication request and opens session if succeeded or return error if failed
@@ -52,6 +52,21 @@ typedef void (^CNIAuthenticationCompletionBlock)(CNISession *_Nullable session, 
  *  @param completion completion block
  */
 - (void)performAuthenticationRequest:(NSURLRequest *)request completion:(nullable CNIAuthenticationCompletionBlock)completion;
+
+@end
+
+
+@interface CNIAuthentication (Deprecated)
+
+/**
+ *  Initializes the authentication instance
+ *
+ *  @param session              session to be used to perform authentication
+ *  @param sessionConfiguration sessionConfiguration to be used to create request's tasks
+ *
+ *  @return newly creates `CNIAuthentication` instance
+ */
+- (instancetype)initWithSession:(CNISession *)session sessionConfiguration:(NSURLSessionConfiguration *)sessionConfiguration __deprecated_msg("use initWithSession:URLSession: instead");
 
 @end
 

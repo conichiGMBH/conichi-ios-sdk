@@ -88,3 +88,5 @@ typedef void (^CNISDKErrorBlock)(NSError *error);
  *  Default currency code is used by SDK
  */
 extern NSString *const kCNISDKDefaultCurrencyCode;
+
+extern NSTimeInterval const kCNISDKDefaultRequestTimeoutInterval;

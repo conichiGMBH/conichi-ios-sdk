@@ -178,6 +178,26 @@ typedef NS_ENUM(NSInteger, CNIErrorCode) {
     CNIErrorCodePaymentUserTokenNotCreated = -20032,
 
     /**
+     *  Trying to open a checkin that is already open in the same venue
+     */
+    CNIErrorCodeCheckinIsAlreadyOpenInThatVenue = -20033,
+
+    /**
+     *  Trying to open a checkin for the guest which has open check-in in another venue
+     */
+    CNIErrorCodeCheckinIsAlreadyOpenInAnotherVenue = -20034,
+
+    /**
+     *  Trying to open a checkin for the guest but it fails for unknown reason
+     */
+    CNIErrorCodeCheckinCanNotBePerformed = -20035,
+
+    /**
+     *  Check in can not be open earlier that arrival date from either pre-checkin or reservation
+     */
+    CNIErrorCodeCheckinDateIsInvalid = -20036,
+
+    /**
      * The error code for error that sdk cannot interpret.
      */
     CNIErrorCodeUnknown = -20999

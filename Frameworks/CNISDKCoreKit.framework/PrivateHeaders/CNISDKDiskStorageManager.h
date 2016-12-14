@@ -42,19 +42,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithNamespace:(NSString *)localNamespace fileManager:(NSFileManager *)fileManager;
 
 /**
- * Save config JSON into local file
- * Previous archive always replaced
- * @param json - Conichi's config JSON dictionary
- * @param completion - boolean block to track the result of operation
- */
-- (void)saveConfigJSON:(NSDictionary *)json completion:(nullable CNISDKBooleanErrorBlock)completion;
-
-/**
- * @return Archived Conichi's config JSON dictionary
- */
-- (nullable NSDictionary *)archivedConfigJSON;
-
-/**
  * Archive preference categories in local file
  * Previous archive always replaced
  *

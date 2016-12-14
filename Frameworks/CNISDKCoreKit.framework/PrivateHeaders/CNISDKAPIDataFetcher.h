@@ -12,7 +12,7 @@
 @class CNISDKGuest;
 @class CNISDKLocationManager;
 
-typedef void (^CNISDKAPIDataFetcherResultBlock)(BOOL isVenuesFetched, BOOL isPreferencesFetched, BOOL isConfigFetched, BOOL isCheckedAPIVersion);
+typedef void (^CNISDKAPIDataFetcherResultBlock)(BOOL isVenuesFetched, BOOL isPreferencesFetched, BOOL isCheckedAPIVersion);
 
 #import "CNISDKConstants.h"
 

@@ -21,8 +21,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) CNISDKAPIRequestManager *requestManager;
 @property (nonatomic, strong) CNISDKAPIRequestBuilder *requestBuilder;
 
-- (void)fetchConichiConfig:(nullable CNISDKBooleanErrorBlock)completion;
-
 - (void)fetchAPIInfo:(nullable CNISDKIDErrorBlock)completion;
 
 /**

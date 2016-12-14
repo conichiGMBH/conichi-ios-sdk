@@ -168,9 +168,10 @@ extern NSString *const kCNISDKGuestGenderFemale;
 @property (nonatomic, strong, readonly, nullable) NSString *gender;
 
 /**
- * Guest's nationality. E.x German
+ *  Guest's nationality represented as ISO2 code
+ *  Be aware RU and not 'ru' or 'RUS' or 'rus'
  */
-@property (nonatomic, strong, readonly, nullable) NSString *nationality;
+@property (nonatomic, strong, readonly, nullable) NSString *nationalityISOCode;
 
 /**
  *  The status of the guest
@@ -267,6 +268,18 @@ extern NSString *const kCNISDKGuestGenderFemale;
  * @return current guest
  */
 + (instancetype)currentGuest;
+
+@end
+
+/**
+ *  The `CNISDKGuest+Deprecated` category contains all deprecated values
+ */
+@interface CNISDKGuest (Deprecated)
+
+/**
+ *  Guest's nationality. E.x German
+ */
+@property (nonatomic, copy, nullable, readonly) NSString *nationality __deprecated_msg("use nationalityISOCode instead, for now this value uses the nationalityISOCode underline");
 
 @end
 

@@ -8,7 +8,6 @@
 
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wauto-import"
-#pragma GCC diagnostic ignored "-Werror"
 #pragma GCC diagnostic ignored "-Wdocumentation"
 #pragma GCC diagnostic ignored "-Wnon-modular-include-in-framework-module"
 #import <PaylevenFramework/PaylevenFramework.h>

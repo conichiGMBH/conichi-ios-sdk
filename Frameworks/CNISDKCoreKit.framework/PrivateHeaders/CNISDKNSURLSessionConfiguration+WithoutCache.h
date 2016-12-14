@@ -9,8 +9,13 @@
 @import Foundation;
 
 
+NS_ASSUME_NONNULL_BEGIN
+
+
 @interface NSURLSessionConfiguration (WithoutCache)
 
 + (NSURLSessionConfiguration *)cnisdk_DefaultSessionConfigurationWithoutCache;
 
 @end
+
+NS_ASSUME_NONNULL_END
