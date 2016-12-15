@@ -1,7 +1,8 @@
 ---
 upcoming:
-  version: 
-  notes: 
+  version: 2.4.2
+  notes:
+  - 'Use old import for submodules instead of new dynamic @import syntax '
 releases:
 - version: 2.4.1
   notes:
