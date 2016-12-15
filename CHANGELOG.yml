@@ -1,9 +1,11 @@
 ---
 upcoming:
-  version: 2.4.2
+  version: 
+  notes: 
+releases:
+- version: 2.4.2
   notes:
   - 'Use old import for submodules instead of new dynamic @import syntax '
-releases:
 - version: 2.4.1
   notes:
   - Always use API credentials from CNISDKConfiguration
