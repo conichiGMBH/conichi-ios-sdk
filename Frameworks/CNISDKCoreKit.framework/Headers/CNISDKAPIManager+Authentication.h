@@ -9,7 +9,7 @@
 #import "CNISDKAPIManager.h"
 
 @class CNISDKSignUpRequestInfo;
-
+@class CNISDKExternalSignUpRequestInfo;
 @protocol CNISDKSocialSignInRequestInfo;
 
 
@@ -31,11 +31,19 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)signUpWithRequest:(CNISDKSignUpRequestInfo *)request completion:(nullable CNISDKGuestErrorBlock)completion;
 
 /**
+ *  Signs up to the conichi cloud with external id which enables to have no e-mail for registration
+ *  @param requestInfo request info with external id, name, last name and optional e-mail for registrar
+ *  @param completion block with two parameters
+ *                    1. Created guest object
+ *                    2. NSError object if request failed
+ */
+- (void)signUpWithExternalIDRequestInfo:(CNISDKExternalSignUpRequestInfo *)requestInfo completion:(nullable CNISDKGuestErrorBlock)completion;
+/**
  *  Sign ins to the conichi's cloud with the given social network information
  *
  *  @param request    social sign in request with all necessary information
  *  @param completion block with two parameters
- *                    1. Created guest object
+ *                    1. Guest object
  *                    2. NSError object if request failed
  */
 - (void)socialSignInWithRequest:(id<CNISDKSocialSignInRequestInfo>)request completion:(nullable CNISDKGuestErrorBlock)completion;
@@ -51,6 +59,15 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)signInWithEmail:(NSString *)email password:(NSString *)password completion:(nullable CNISDKGuestErrorBlock)completion;
 
+/**
+ *  Signs in to the conichi cloud with external id
+ *
+ *  @param externalID externalID used for authentication, this can be any kind of string.
+ *  @param completion callback block with two parameters
+ *                    1. Guest object
+ *                    2. NSError object if request failed
+ */
+- (void)signInWithExternalID:(NSString *)externalID completion:(nullable CNISDKGuestErrorBlock)completion;
 /**
  *  Logs out Guest from the Conichi's server
  *

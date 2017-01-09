@@ -200,5 +200,10 @@ typedef NS_ENUM(NSInteger, CNISDKAPIManagerProvider) {
     /**
      *  conichi authorization provider. Used when guest authorizes by conichi
      */
-    CNISDKAPIManagerProviderConichi
+    CNISDKAPIManagerProviderConichi,
+
+    /**
+     * external authorization provider. Used when external provider authorizes guest by unique external id during sign up
+     */
+    CNISDKAPIManagerProviderExternal
 };

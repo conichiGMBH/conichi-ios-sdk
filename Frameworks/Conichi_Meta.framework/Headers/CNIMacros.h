@@ -83,13 +83,14 @@
 
 /********* Color *********/
 
-#define CNIUIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16)) / 255.0 green:((float)((rgbValue & 0xFF00) >> 8)) / 255.0 blue:((float)(rgbValue & 0xFF)) / 255.0 alpha:1.0]
+#define CNIUIColorFromRGB(rgbValue) [UIColor colorWithRed:((CGFloat)((rgbValue & 0xFF0000) >> 16)) / (CGFloat)255.0 green:((CGFloat)((rgbValue & 0xFF00) >> 8)) / (CGFloat)255.0 blue:((CGFloat)(rgbValue & 0xFF)) / (CGFloat)255.0 alpha:1.0]
 
-#define CNIUIColorFromHEX(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16)) / 255.0 green:((float)((rgbValue & 0xFF00) >> 8)) / 255.0 blue:((float)(rgbValue & 0xFF)) / 255.0 alpha:1.0]
+#define CNIUIColorFromHEX(rgbValue) [UIColor colorWithRed:((CGFloat)((rgbValue & 0xFF0000) >> 16)) / (CGFloat)255.0 green:((CGFloat)((rgbValue & 0xFF00) >> 8)) / (CGFloat)255.0 blue:((CGFloat)(rgbValue & 0xFF)) / (CGFloat)255.0 alpha:1.0]
 
 /********* String *********/
 
 #define CNILocalizedString(key) NSLocalizedString(key, nil)
+#define CNILocalizedStringFromTable(key, table) NSLocalizedStringFromTable(key, table, nil)
 
 /********* Device *********/
 
@@ -102,10 +103,10 @@
 #define CNI_SCREEN_MAX_LENGTH (MAX(CNI_SCREEN_WIDTH, CNI_SCREEN_HEIGHT))
 #define CNI_SCREEN_MIN_LENGTH (MIN(CNI_SCREEN_WIDTH, CNI_SCREEN_HEIGHT))
 
-#define CNI_IS_IPHONE_4_OR_LESS (CNI_IS_IPHONE && CNI_SCREEN_MAX_LENGTH < 568.0)
-#define CNI_IS_IPHONE_5 (CNI_IS_IPHONE && CNI_SCREEN_MAX_LENGTH == 568.0)
-#define CNI_IS_IPHONE_6 (CNI_IS_IPHONE && CNI_SCREEN_MAX_LENGTH == 667.0)
-#define CNI_IS_IPHONE_6P (CNI_IS_IPHONE && CNI_SCREEN_MAX_LENGTH == 736.0)
+#define CNI_IS_IPHONE_4_OR_LESS (CNI_IS_IPHONE && CNI_SCREEN_MAX_LENGTH < (CGFloat)568.0)
+#define CNI_IS_IPHONE_5 (CNI_IS_IPHONE && CNIFEQUAL(CNI_SCREEN_MAX_LENGTH, (CGFloat)568.0))
+#define CNI_IS_IPHONE_6 (CNI_IS_IPHONE && CNIFEQUAL(CNI_SCREEN_MAX_LENGTH, (CGFloat)667.0))
+#define CNI_IS_IPHONE_6P (CNI_IS_IPHONE && CNIFEQUAL(CNI_SCREEN_MAX_LENGTH, (CGFloat)736.0))
 
 /********* Language *********/
 

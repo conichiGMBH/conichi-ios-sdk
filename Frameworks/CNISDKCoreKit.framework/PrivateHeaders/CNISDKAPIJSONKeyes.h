@@ -41,6 +41,8 @@ extern const struct CNISDKGuestJSONKeyes {
     __unsafe_unretained NSString *firstName;
     __unsafe_unretained NSString *lastName;
     __unsafe_unretained NSString *email;
+    __unsafe_unretained NSString *externalEmail;
+    __unsafe_unretained NSString *externalID;
     __unsafe_unretained NSString *picturePath;
     __unsafe_unretained NSString *dateOfBirthday;
     __unsafe_unretained NSString *locale;

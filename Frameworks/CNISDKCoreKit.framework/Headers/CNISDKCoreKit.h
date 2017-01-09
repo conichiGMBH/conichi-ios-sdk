@@ -32,6 +32,7 @@ FOUNDATION_EXPORT const unsigned char CNISDKCoreKitVersionString[];
 #import "CNISDKUpdateGuestRequestInfo.h"
 #import "CNISDKSocialSignInRequestInfo.h"
 #import "CNISDKSignUpRequestInfo.h"
+#import "CNISDKExternalSignUpRequestInfo.h"
 #import "CNISDKCreatePreCheckinRequestInfo.h"
 #import "CNISDKUpdateTaxInfoRequestInfo.h"
 #import "CNISDKAPIManagerConstants.h"

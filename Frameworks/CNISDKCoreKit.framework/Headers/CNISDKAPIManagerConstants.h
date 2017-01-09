@@ -62,6 +62,7 @@ extern NSString *const kCNISDKAPIManagerFacebookProvider;
 extern NSString *const kCNISDKAPIManagerLinkedinProvider;
 extern NSString *const kCNISDKAPIManagerXingProvider;
 extern NSString *const kCNISDKAPIManagerConichiProvider;
+extern NSString *const kCNISDKAPIManagerExternalIDProvider;
 
 
 @interface CNISDKAPIManagerConstants : NSObject
