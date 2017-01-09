@@ -1,7 +1,12 @@
 ---
 upcoming:
-  version: 
-  notes: 
+  version: 2.4.3
+  notes:
+  - Add new authorization for external ID sign-up and external ID sign-in (no e-mail
+    required)
+  - Use new password validation - 1 special character, 1 letter, 1 number, >= 8 characters
+  - Always notify about closed check-in with the closed status in check-in object
+  - 'Fix for the keychain issues in public key certificate pinning '
 releases:
 - version: 2.4.2
   notes:
