@@ -50,6 +50,10 @@
         configuration.apiSecret = @"your api secret";
         configuration.environment = CNISDKEnvironmentSandbox;
         
+        // Uncomment the following lines to set up sdk with your specific URL (optionally)
+        // configuration.environment = CNISDKEnvironmentProduction;
+        // configuration.baseURL = [NSURL URLWithString:@"https://mydomain.conichi.com"];
+        
         // Uncomment the following line and change to expected log level;
         // configuration.logLevel = CNISDKLogLevelWarning;
     
