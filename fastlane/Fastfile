@@ -55,6 +55,9 @@ platform :ios do
     podspecs_version_bump(
       version: upcoming_version
     )
+    git_commit_shell(
+      message: "Bump podspecs to #{upcoming_version}"
+    )
 
     tag_name = upcoming_version
     git_add_or_update_tag(
