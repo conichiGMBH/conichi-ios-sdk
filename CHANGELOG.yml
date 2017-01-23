@@ -1,8 +1,11 @@
 ---
 upcoming:
-  version: 
-  notes: 
+  version:
+  notes:
 releases:
+- version: 2.4.3.1
+  notes:
+  - Include missing dependencies when use CocoaPods integration
 - version: 2.4.3
   notes:
   - Add new authorization for external ID sign-up and external ID sign-in (no e-mail
