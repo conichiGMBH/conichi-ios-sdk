@@ -15,7 +15,7 @@ The idea of the `conichiSDK GeoFencingKit` is to track the user and notify about
 
 #### Install as a framework
 
-To use `CNISDKGeoFencingKit`, head on over to the [releases](https://github.com/conichiGMBH/conichi-ios-sdk/releases) page, and download the `CNISDK.framework.zip`. Extract the zip file and drag and drop `CNISDKCoreKit.framework`, `Conichi_Meta.framework`, `Conichi_Authentication.framework`, `CNISDKGeoFencingKit.framework` and `Conichi_Errors.framework` to the `Project target -> general -> Embedded Binaries`. 
+To use `CNISDKGeoFencingKit`, head on over to the [releases](https://github.com/conichiGMBH/conichi-ios-sdk/releases) page, and download the `CNISDK.framework.zip`. Extract the zip file and drag and drop `CNISDKCoreKit.framework`, `Conichi_Meta.framework`, `Conichi_Authentication.framework`, `CNISDKGeoFencingKit.framework` and `Conichi_Errors.framework` to the `Project target -> general -> Embedded Binaries`.
 
 #### Install via CocoaPods
 The preferred way to integrate `CNISDKGeoFencingKit` is via `CocoaPods`. Add the following line to your `Podfile`:
@@ -63,6 +63,10 @@ Example below shows the simplest setup `conichiSDK GeoFencingKit`
 
   //Start the sdk with the given configuration
   [CNISDK startWithConfiguration:configuration delegate:delegate];
+
+  //Setups the geo fencing kit delegate - it can be any object that conforms to CNISDKGeoFencingDelegate protocol
+  id<CNISDKGeoFencingDelegate> delegate = [self yourMethodToSetupGeoFencingDelegate];
+  [CNISDKGeoFencing sharedInstance].delegate = delegate;
 ```
 
 After succeeded setup `sdk` could send to it's `delegate` following messages:
