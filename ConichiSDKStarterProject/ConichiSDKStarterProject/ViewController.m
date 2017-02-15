@@ -9,10 +9,11 @@
 #import "ViewController.h"
 
 @import CNISDKCoreKit;
+@import CNISDKGeoFencingKit;
 @import Conichi_Authentication;
 
 
-@interface ViewController ()
+@interface ViewController () <CNISDKDelegate, CNISDKGeoFencingDelegate>
 
 @property (nonatomic, strong) NSMutableString *logText;
 
@@ -35,6 +36,8 @@
     self.logText = [NSMutableString string];
     self.logTextView.layoutManager.allowsNonContiguousLayout = NO;
     [super viewDidLoad];
+    [CNISDK sharedInstance].delegate = self;
+    [CNISDKGeoFencing sharedInstance].delegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -329,6 +332,20 @@
     }];
 }
 
+#pragma mark - CCNISDKGeoFencingDelegate
+
+- (void)conichiSDKGeofencing:(CNISDKGeoFencing *)geoFencing didExitRegion:(CNISDKGeoFenceRegion *)region {
+    [self updateLogTextViewWithMessage:[NSString stringWithFormat:@"conichiSDKGeofencing didExitRegion: %@", region]];
+}
+
+- (void)conichiSDKGeofencing:(CNISDKGeoFencing *)geoFencing didEnterRegion:(CNISDKGeoFenceRegion *)region {
+    [self updateLogTextViewWithMessage:[NSString stringWithFormat:@"conichiSDKGeofencing didEnterRegion: %@", region]];
+}
+
+- (void)conichiSDKGeofencing:(CNISDKGeoFencing *)geoFencing didFailWithError:(NSError *)error {
+    [self updateLogTextViewWithMessage:[NSString stringWithFormat:@"conichiSDKGeofencing didFailWithError: %@", error]];
+}
+
 #pragma mark - CNISDKDelegate
 
 - (void)conichiSDKDidFetchConfig {
@@ -343,7 +360,7 @@
     [self updateLogTextViewWithMessage:[NSString stringWithFormat:@"conichiSDKDidChangeLocationAuthorizationStatus %d", status]];
 }
 
-- (void)conichiSDKDidChangeBluetoothState:(CBCentralManagerState)state {
+- (void)conichiSDKDidChangeBluetoothState:(CBManagerState)state {
     [self updateLogTextViewWithMessage:[NSString stringWithFormat:@"conichiSDKDidChangeBluetoothState %ld", (long)state]];
 }
 
