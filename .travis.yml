@@ -2,11 +2,11 @@ language: objective-c
 osx_image: xcode8
 sudo: false
 cache:
-- bundler
 - cocoapods
 
 before_install:
     - export LANG=en_US.UTF-8
+    - gem install bundler
     - bundle install --path=vendor/bundle --jobs=4 --retry=3 --without development
 
 install:
