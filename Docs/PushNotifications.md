@@ -46,7 +46,9 @@ Go to Target -> Capabilities -> Push Notifications -> Switch On
 1. Issue the push notifications production certificate in [developer portal](developer.apple.com).
 2. Load it and save in the keychain. Select saved certificate in the keychain and expand it with the arrow. Extract it in .p12 format __without password__.
 3. Using the command below convert the .p12 file in .pem, please __set empty password__:
-`openssl pkcs12 -in cert.p12 -out apple_push_notification.pem -nodes -clcerts`
+```
+openssl pkcs12 -in cert.p12 -out apple_push_notification.pem -nodes -clcerts
+```
 4. Send the .pem file to the conichi team along with the `API KEY` and `API SECRET` that your app is using.
 
 #### Save device token in guest
@@ -91,8 +93,10 @@ __Objective-C__
 
 ### Frequent Questions
 
-*Q: Will the user receive the push notification on all devices where she is logged in into the system?*
+*Q: Will the user receive the push notification on all devices where she is logged in into the system?*  
+
 A: No, currently the system is designed that the push notification is sent only to the latest active device in conichi.  
 
-*Q: Will conichi notifications conflict with the already integrated push notifications from other services?*
+*Q: Will conichi notifications conflict with the already integrated push notifications from other services?*  
+
 A: No there won't be any conflict as long as the certificate is valid and the device is registered in our system by SDK.
