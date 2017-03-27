@@ -3,6 +3,7 @@ upcoming:
   version: 2.4.3.2
   notes:
   - Update starter project with missing GeoFencing example
+  - Add conichi push notifications integration guide
 releases:
 - version: 2.4.3.1
   notes:
