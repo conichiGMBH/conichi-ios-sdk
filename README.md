@@ -29,7 +29,7 @@
 
 #### Install as a framework
 
-To use `CNISDKCoreKit`, head on over to the [releases](https://github.com/conichiGMBH/conichi-ios-sdk/releases) page, and download the `CNISDK.framework.zip`. Extract the zip file and drag and drop all frameworks to the `Project target -> general -> Embedded Binaries`. 
+To use `CNISDKCoreKit`, head on over to the [releases](https://github.com/conichiGMBH/conichi-ios-sdk/releases) page, and download the `CNISDK.framework.zip`. Extract the zip file and drag and drop all frameworks to the `Project target -> general -> Embedded Binaries`.
 
 ![Alt text](https://monosnap.com/file/hTEOYYDWNsL2KHqeVP9psO7aGU4ZRc.png)
 
@@ -73,7 +73,7 @@ Conichi cares about the security and therefore the SDK stores the authorization 
 
 ![Alt text](https://monosnap.com/file/Fgjm7ziUSjarcbDIRgJshGvXUiElh3.png)
 
-And you're off! Take a look at the public documentation and start building. 
+And you're off! Take a look at the public documentation and start building.
 
 #### Initialization
 
@@ -143,7 +143,10 @@ Documentation for each kit is available at the following links:
 * [CNISDKCoreKit](https://conichigmbh.github.io/ios/docs/CNISDKCoreKit/apple_doc/index.html)
 * [CNISDKPaymentKit](https://conichigmbh.github.io/ios/docs/CNISDKPaymentKit/apple_doc/index.html)
 * [CNISDKGeoFencingKit](https://conichigmbh.github.io/ios/docs/CNISDKGeoFencingKit/apple_doc/index.html)
-* [CNISDKPMSKit](https://conichigmbh.github.io/ios/docs/CNISDKPMSKit/apple_doc/index.html)
+* [CNISDKPMSKit](https://conichigmbh.github.io/ios/docs/CNISDKPMSKit/apple_doc/index.html)  
+
+Documentation about Push Notifications integration can be found here:
+* [Push Notifications](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/PushNotifications.md)
 
 ## Changelog
 
