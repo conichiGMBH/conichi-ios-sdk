@@ -9,6 +9,11 @@ This `kit` is dependent on the following:
 
 The idea of the `conichiSDK GeoFencingKit` is to track the user and notify about something when it enters the one of the conichi's hotel. The official documentation from Apple can be found [there](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/LocationAwarenessPG/RegionMonitoring/RegionMonitoring.html#//apple_ref/doc/uid/TP40009497-CH9-SW1).
 
+It has the following features implemented:
+* Automatic nearby conichi venues loading and start geo-fencing them
+* Getting notification when the user enters the geo-fencing region
+* Getting notification when the user exits the geo-fencing region
+
 ### Getting Started
 
 ### Installation

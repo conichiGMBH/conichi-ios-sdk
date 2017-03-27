@@ -247,7 +247,10 @@ Documentation for each kit is available at the following links:
 * [CNISDKCoreKit](https://conichigmbh.github.io/ios/docs/CNISDKCoreKit/apple_doc/index.html)
 * [CNISDKPaymentKit](https://conichigmbh.github.io/ios/docs/CNISDKPaymentKit/apple_doc/index.html)
 * [CNISDKGeoFencingKit](https://conichigmbh.github.io/ios/docs/CNISDKGeoFencingKit/apple_doc/index.html)
-* [CNISDKPMSKit](https://conichigmbh.github.io/ios/docs/CNISDKPMSKit/apple_doc/index.html)
+* [CNISDKPMSKit](https://conichigmbh.github.io/ios/docs/CNISDKPMSKit/apple_doc/index.html)  
+
+Documentation about Push Notifications integration can be found here:
+* [Push Notifications](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/PushNotifications.md)
 
 ## Changelog
 
