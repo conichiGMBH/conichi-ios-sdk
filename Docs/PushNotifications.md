@@ -94,9 +94,7 @@ __Objective-C__
 ### Frequent Questions
 
 *Q: Will the user receive the push notification on all devices where she is logged in into the system?*  
-
 A: No, currently the system is designed that the push notification is sent only to the latest active device in conichi.  
 
 *Q: Will conichi notifications conflict with the already integrated push notifications from other services?*  
-
 A: No there won't be any conflict as long as the certificate is valid and the device is registered in our system by SDK.
