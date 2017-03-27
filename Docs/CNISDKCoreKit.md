@@ -8,7 +8,7 @@ This is a heart of the `conichiSDK`. It contains the base models, base helpers a
 
 #### Install as a framework
 
-To use `CNISDKCoreKit`, head on over to the [releases](https://github.com/conichiGMBH/conichi-ios-sdk/releases) page, and download the `CNISDK.framework.zip`. Extract the zip file and drag and drop `CNISDKCoreKit.framework`, `Conichi_Meta.framework`, `Conichi_Authentication.framework` and `Conichi_Errors.framework` to the `Project target -> general -> Embedded Binaries`. 
+To use `CNISDKCoreKit`, head on over to the [releases](https://github.com/conichiGMBH/conichi-ios-sdk/releases) page, and download the `CNISDK.framework.zip`. Extract the zip file and drag and drop `CNISDKCoreKit.framework`, `Conichi_Meta.framework`, `Conichi_Authentication.framework` and `Conichi_Errors.framework` to the `Project target -> general -> Embedded Binaries`.
 
 #### Install via CocoaPods
 The preferred way to integrate `CNISDKCoreKit` is via `CocoaPods`. Add the following line to your `Podfile`:
