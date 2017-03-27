@@ -5,6 +5,7 @@
 This document explains how to integrate conichiSDK into your app to be able to receive push notifications from conichi.
 
 Each push notification contains following information:
+
 | Value | Regular | Silence |
 | ----- | ------- | ------- |
 alert| message| -|
@@ -25,8 +26,8 @@ Closed Check-in| conichi| No| Venue Farewell message| -|
 Completed Check-out request| payment| Yes| -| -|
 Canceled Check-out request| payment| No| We can't process your check-out request right now, so please try again later| -|
 Completed Transaction| payment| No| A payment of :currency :amount has been successfully made to :hotel.| `:payment_currency`, `:payment_amount`, `:payment_status`|
-Aborted Transaction| payment| No| Your payment of :currency :amount at :hotel is denied.| `:payment_currency`, `:payment_amount`, `:payment_status`|
-Refunded Transaction| payment| No| A refund of :currency :amount has been successfully made to you by :hotel| `:payment_currency`, `:payment_amount`, `:payment_status`|
+Aborted Transaction| payment| No| Your payment of `:currency` `:amount` at `:hotel` is denied.| `:payment_currency`, `:payment_amount`, `:payment_status`|
+Refunded Transaction| payment| No| A refund of `:currency` `:amount` has been successfully made to you by `:hotel`| `:payment_currency`, `:payment_amount`, `:payment_status`|
 PMS Check-in is available| mobile_checkin_ready| No| Your mobile Check-in is now available.| -|
 Custom| conichi| No| Custom message.| -|
 
@@ -36,8 +37,9 @@ The following steps are required to be able to receive APN in your app.
 
 #### Enable push notifications capability.
 
-Go to Target -> Capabilities -> Push Notifications -> Switch On
-<img src="https://monosnap.com/file/ySc30xRCXn7ubX57920TZLTcQJFWL6.png" width="320">
+Go to Target -> Capabilities -> Push Notifications -> Switch On  
+
+<img src="https://monosnap.com/file/ySc30xRCXn7ubX57920TZLTcQJFWL6.png">
 
 #### Provide conichi with production APN certificate
 
@@ -89,8 +91,8 @@ __Objective-C__
 
 ### Frequent Questions
 
-Q: Will the user receive the push notification on all devices where she is logged in into the system?
-A: No, currently the system is designed that the push notification is sent only to the latest active device in conichi.
+*Q: Will the user receive the push notification on all devices where she is logged in into the system?*
+A: No, currently the system is designed that the push notification is sent only to the latest active device in conichi.  
 
-Q: Will conichi notifications conflict with the already integrated push notifications from other services?
+*Q: Will conichi notifications conflict with the already integrated push notifications from other services?*
 A: No there won't be any conflict as long as the certificate is valid and the device is registered in our system by SDK.
