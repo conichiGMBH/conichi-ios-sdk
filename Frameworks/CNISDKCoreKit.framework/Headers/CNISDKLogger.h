@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-static const char *const CNISDKLogLevelName[] = {
+static const char *_Nonnull const CNISDKLogLevelName[] = {
     "",
     "ERROR",
     "WARNING",

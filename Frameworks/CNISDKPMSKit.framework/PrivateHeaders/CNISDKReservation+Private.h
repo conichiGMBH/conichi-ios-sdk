@@ -45,6 +45,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, readwrite) NSString *externalReservationID;
 
 /**
+ *  Client side ID holds the valid of the guest typed reservation ID
+ *  The use case behind is that the guest can find a reservation by various IDs and
+ *  the UI has to show exact the same string as the guest has used
+ */
+@property (nonatomic, copy, readwrite) NSString *clientSideID;
+
+/**
  *  Internal reservation id that guest does not know about and only Propert Management System knows about it
  */
 @property (nonatomic, copy, readwrite) NSString *internalReservationID;

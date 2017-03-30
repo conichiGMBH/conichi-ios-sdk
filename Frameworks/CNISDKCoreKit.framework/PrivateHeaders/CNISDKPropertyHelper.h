@@ -31,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CNISDKPropertyHelper : NSObject
 
-+ (id)wrapArray:(nullable NSArray *)array intoRightTypeOfPropertyName:(NSString *)propertyName ofObject:(id)object;
++ (nullable id)wrapArray:(nullable NSArray *)array intoRightTypeOfPropertyName:(NSString *)propertyName ofObject:(id)object;
 
 + (CNISDKPropertyType)propertyNameType:(NSString *)property fromClass:(Class)className;
 

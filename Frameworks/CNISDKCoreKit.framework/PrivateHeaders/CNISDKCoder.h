@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CNISDKCoder : NSObject
 
-+ (id)objectOfClass:(Class<CNISDKCoding>)objectClass fromCoder:(NSCoder *)coder;
++ (nullable id)objectOfClass:(Class<CNISDKCoding>)objectClass fromCoder:(NSCoder *)coder;
 + (void)encodeObject:(NSObject<CNISDKCoding> *)object withCoder:(NSCoder *)coder;
 
 @end

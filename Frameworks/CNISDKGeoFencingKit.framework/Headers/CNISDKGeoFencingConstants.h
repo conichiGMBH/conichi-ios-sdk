@@ -11,6 +11,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-extern CLLocationDistance const CNISDKGeoFencingKitDefaultGeoFenceRadiusInMeters;
+extern CLLocationDistance const kCNISDKGeoFencingKitDefaultGeoFenceRadiusInMeters;
+extern NSUInteger const kCNISDKGeoFencingKitDefaultMaximumNumberOfGeoFenceRegions;
+extern NSUInteger const kCNISDKGeoFencingKitDefaultMinimumNumberOfGeoFenceRegions;
 
 NS_ASSUME_NONNULL_END

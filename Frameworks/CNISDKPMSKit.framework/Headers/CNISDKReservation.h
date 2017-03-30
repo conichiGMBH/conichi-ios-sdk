@@ -72,9 +72,11 @@ typedef NS_ENUM(NSInteger, CNISDKReservationStatus) {
 @property (nonatomic, copy, readonly) NSString *externalReservationID;
 
 /**
- *  Internal reservation id that guest does not know about and only Propert Management System knows about it
+ *  Client side ID holds the valid of the guest typed reservation ID
+ *  The use case behind is that the guest can find a reservation by various IDs and
+ *  the UI has to show exact the same string as the guest has used
  */
-@property (nonatomic, copy, readonly) NSString *internalReservationID;
+@property (nonatomic, copy, readonly) NSString *clientSideID;
 
 /**
  *  The date in UTC time zone of the checkin
@@ -125,6 +127,15 @@ typedef NS_ENUM(NSInteger, CNISDKReservationStatus) {
  *  The remained price amount to be paid by the guest
  */
 @property (nonatomic, strong, readonly) NSNumber *remainPriceAmountToPay;
+
+@end
+
+@interface CNISDKReservation (Deprecated)
+
+/**
+ *  Internal reservation id that guest does not know about and only Propert Management System knows about it
+ */
+@property (nonatomic, copy, readonly) NSString *internalReservationID __deprecated_msg("the field as deprecated and will be removed in next major release");
 
 @end
 

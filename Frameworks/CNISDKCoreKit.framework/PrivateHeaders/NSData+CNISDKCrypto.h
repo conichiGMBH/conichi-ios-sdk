@@ -13,8 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSData (CNISDKCrypto)
 
-- (NSData *)CNISDKAESEncryptedDataWithPassword:(NSString *)password IV:(NSData *)IV salt:(NSData *)salt error:(__autoreleasing NSError **)error;
-- (NSData *)CNISDKAESDecryptedDataWithPassword:(NSString *)password IV:(NSData *)IV salt:(NSData *)salt error:(__autoreleasing NSError **)error;
+- (nullable NSData *)CNISDKAESEncryptedDataWithPassword:(NSString *)password IV:(NSData *)IV salt:(NSData *)salt error:(__autoreleasing NSError **)error;
+- (nullable NSData *)CNISDKAESDecryptedDataWithPassword:(NSString *)password IV:(NSData *)IV salt:(NSData *)salt error:(__autoreleasing NSError **)error;
 
 @end
 

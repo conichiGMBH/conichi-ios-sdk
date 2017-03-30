@@ -11,6 +11,7 @@
 
 #import <CNISDKCoreKit/CNISDKCoreKit.h>
 
+
 NS_ASSUME_NONNULL_BEGIN
 
 /**
@@ -22,6 +23,13 @@ NS_ASSUME_NONNULL_BEGIN
  *  Radius for geo fence region
  */
 @property (nonatomic, assign, readwrite) CLLocationDistance geoFenceRadiusInMeters;
+
+/**
+ *  Maximum number of geo fence regions, that `CNISDKGeoFencingKit` can track
+ *
+ *  @note There is a minimum number of geo fence regions and it's equal 2
+ */
+@property (nonatomic, assign, readwrite) NSUInteger maximumNumberOfGeoFenceRegions;
 
 @end
 
@@ -37,6 +45,11 @@ NS_ASSUME_NONNULL_BEGIN
  *  Default is 100m
  */
 @property (nonatomic, assign, readonly) CLLocationDistance geoFenceRadiusInMeters;
+
+/**
+ *  Maximum number of geo fence regions, that `CNISDKGeoFencingKit` can track
+ */
+@property (nonatomic, assign, readwrite) NSUInteger maximumNumberOfGeoFenceRegions;
 
 ///--------------------------------------
 /// @name Configuration-specific Methods

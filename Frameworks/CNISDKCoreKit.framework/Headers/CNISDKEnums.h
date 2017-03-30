@@ -17,6 +17,11 @@ typedef NS_ENUM(NSInteger, CNISDKEnvironment) {
     /**
      *  conichi internal development environment
      */
+    CNISDKEnvironmentDevelopment,
+
+    /**
+     *  conichi internal staging environment
+     */
     CNISDKEnvironmentStaging,
 
     /**

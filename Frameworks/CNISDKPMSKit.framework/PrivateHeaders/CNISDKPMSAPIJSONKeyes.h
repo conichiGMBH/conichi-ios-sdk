@@ -26,6 +26,7 @@ extern const struct CNISDKReservationJSONKeyes {
     __unsafe_unretained NSString *reservationInfo;
     __unsafe_unretained NSString *remainPriceAmountToPay;
     __unsafe_unretained NSString *statusStringRepresentation;
+    __unsafe_unretained NSString *clientSideID;
 } CNISDKReservationJSONKeyes;
 
 extern const struct CNISDKReservationGuestJSONKeyes {

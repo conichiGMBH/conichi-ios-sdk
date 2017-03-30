@@ -8,12 +8,16 @@
 
 @import Foundation;
 
+@class CLLocation;
 @class CNISDKLocationManager;
 @class CNISDKAPIManager;
+@class CNISDKVenue;
 
 #import <CNISDKCoreKit/CNISDKConstants.h>
 
 NS_ASSUME_NONNULL_BEGIN
+
+typedef void (^CNISDKGeoFenceVenuesFetcherCallback)(CLLocation *_Nullable location, NSArray<CNISDKVenue *> *_Nullable venues, NSError *_Nullable error);
 
 /**
  *  The 'CNISDKGeoFenceVenuesFetcher' fetches the CNISDKVenue from the API depending on the current location
@@ -34,10 +38,11 @@ NS_ASSUME_NONNULL_BEGIN
  *  Fetches venues from the backend based on the current location
  *
  *  @param completion block with two parameters:
- *                    1. Array of CNISDKVenue if exists
+ *                    1. Location object around that venues were fetched
+ *                    1. Array of CNISDKVenue around the given location
  *                    2. NSError opbject if fails
  */
-- (void)fetchGeoFenceVenues:(nullable CNISDKIDErrorBlock)completion;
+- (void)fetchGeoFenceVenues:(nullable CNISDKGeoFenceVenuesFetcherCallback)completion;
 
 @end
 

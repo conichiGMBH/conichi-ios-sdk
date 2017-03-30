@@ -47,8 +47,10 @@ NS_ASSUME_NONNULL_BEGIN
  * If an NSError pointer variable isn’t passed in then you can get a crash. This method sets it if it is not nil
  * @param error - the error to set the value for
  * @param errorToSet - the value to set.
+ *
+ * @return YES if error was set, no if otherwise.
  */
-+ (void)error:(NSError *__nullable *)error setError:(nullable NSError *)errorToSet;
++ (BOOL)error:(NSError *__nullable *)error setError:(nullable NSError *)errorToSet;
 
 /**
  *  Compares NSString objects and it returns YES if string1 and string2 are nil

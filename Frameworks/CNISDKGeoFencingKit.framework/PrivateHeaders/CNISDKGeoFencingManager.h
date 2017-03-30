@@ -71,6 +71,8 @@ NS_ASSUME_NONNULL_BEGIN
  *  Requests to underlying location manager to start monitoring for the given regions
  *
  *  @param regions regions to be monitored
+ *
+ *  @warning there is a limitation for up to 20 geo fencing regions at the same moment
  */
 - (void)startGeoFencingRegions:(NSArray<CNISDKGeoFenceRegion *> *)regions;
 
