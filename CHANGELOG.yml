@@ -1,6 +1,9 @@
 ---
 upcoming:
-  version: 2.5.0
+  version: 
+  notes: 
+releases:
+- version: 2.5.0
   notes:
   - Fix for wrong error logs on deleting session
   - Improve public key pinning security
@@ -9,7 +12,6 @@ upcoming:
   - Add clientSideID for reservation object to be used in client's UI
   - Add new sdk configuration environment - development
   - 'Add feature to automatically refresh geo fence regions '
-releases:
 - version: 2.4.3.1
   notes:
   - Include missing dependencies when use CocoaPods integration
