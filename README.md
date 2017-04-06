@@ -98,6 +98,26 @@ Example below shows the simplest setup `conichiSDK CoreKit` that points our `san
 
 After this setup you have an access to the instance of the `[CNISDK sharedInstance]`.
 
+#### Signup with an external id
+
+You can use an external_id to authenticate with conichi.
+
+```objective-c
+CNISDKExternalSignUpRequestInfo *requestInfo = [CNISDKExternalSignUpRequestInfo
+ New];
+requestInfo.externalID = @”unique identifier”;
+requestInfo.firstName = @”Mike”;
+requestInfo.lastName = @”Brown”;
+[[CNISDKAPIManager sharedManager] signUpWithExternalIDRequestInfo:requestInfo completion:^(CNISDKGuest *guest, NSError *error) {
+  If (error) {
+    // request failed
+  }
+  else if (guest) {
+    // request succeeded
+  }
+}];
+```
+
 #### Error handling
 
 Conichi provides the unify error codes for each error comes from `sdk`. All error codes can be found in `CNIError.h` class.
