@@ -1,3 +1,4 @@
+
 <img src="https://monosnap.com/file/wJq9ICcBftDMRBGEs6ksf7sNwojalz.png" height="150" width="479" />
 
 ## conichiSDK for iOS
@@ -27,57 +28,67 @@
 
 #### Installation
 
-#### Install as a framework
+<details>
+<summary>Install as a framework</summary>
 
-To use `CNISDKCoreKit`, head on over to the [releases](https://github.com/conichiGMBH/conichi-ios-sdk/releases) page, and download the `CNISDK.framework.zip`. Extract the zip file and drag and drop all frameworks to the `Project target -> general -> Embedded Binaries`. 
+To use `CNISDKCoreKit`, head on over to the [releases](https://github.com/conichiGMBH/conichi-ios-sdk/releases) page, and download the `CNISDK.framework.zip`. Extract the zip file and drag and drop all frameworks to the `Project target -> general -> Embedded Binaries`.
 
 ![Alt text](https://monosnap.com/file/hTEOYYDWNsL2KHqeVP9psO7aGU4ZRc.png)
-
-#### Install via CocoaPods
+</details>
+<details>
+<summary>Install via CocoaPods</summary>
 
 The preferred way to integrate `CNISDKCoreKit` is via `CocoaPods`. Add the following line to your `Podfile`:
 ```ruby
 pod 'CNISDKCoreKit'
 ```
 Run `pod install`, and you should now have the latest `CNISDKCoreKit` release.
-
-#### Install via Carthage
+</details>
+<details>
+<summary>Install via Carthage</summary>
 
 To integrate `CNISDKCoreKit` via Carthage add the following line to your `Cartfile`:
 ```
 github "conichiGMBH/conichi-ios-sdk"
 ```
 Run `carthage update`, and you should now have the latest version of `CNISDKCoreKit` in your Carthage folder.
+</details>
+<details>
+<summary>Partial Installation</summary>
 
-#### Partial Installation
-
-Following the links below you can find the instructions in the __Getting Started__ section how to install specific `kit`:
+Following the links below you can find the instructions in the __Getting Started__ section on how to install a specific `kit`:
 * [CNISDKCoreKit](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/CNISDKCoreKit.md)
 * [CNISDKGeoFencingKit](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/CNISDKGeoFencingKit.md)
 * [CNISDKPaymentKit](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/CNISDKPaymentKit.md)
 * [CNISDKPMSKit](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/CNISDKPMSKit.md)
+</details>
 
 #### Update info plist
-Then, you must add a NSLocationAlwaysUsageDescription or NSLocationWhenInUseUsageDescription key to your project’s Info.plist containing the message to be displayed to the user at the prompt.
+Then, you must add a `NSLocationAlwaysUsageDescription` key to your project’s Info.plist containing the message to be prompted to the user.
 
 ```objective-c
 <key>NSLocationAlwaysUsageDescription</key>
 <string>This app needs your location so you can be recognized in the conichi Hotel</string>
 ```
 
+Be careful, if you use `NSLocationWhenInUseUsageDescription` instead, The app may not work properly.
+
 #### Enable some capabilities
 
-Conichi cares about the security and therefore the SDK stores the authorization information in the iOS Keychain, but to be available to read and write values even if the SDK is not running, iOS system requires the `Keychain Sharing` capability.
+Conichi cares about the security and therefore the SDK stores the authorization information in the iOS Keychain, but to be able to read and write values even if the SDK is not running, iOS system requires the `Keychain Sharing` capability.
 
 `Target -> Capabilities -> Keychain Sharing - Turn the switch On`.
 
 ![Alt text](https://monosnap.com/file/Fgjm7ziUSjarcbDIRgJshGvXUiElh3.png)
 
-And you're off! Take a look at the public documentation and start building. 
+And you're off! Take a look at the public documentation and start building.
 
 #### Initialization
 
-Example below shows the simplest setup `conichiSDK CoreKit` that points our `sandbox` server.
+Example below shows the simplest setup for `conichiSDK CoreKit` that points to our `sandbox` server.
+
+<details>
+<summary>Objective-C</summary>
 
 ```objective-c
   //Create a configuration for the sdk instance
@@ -95,8 +106,32 @@ Example below shows the simplest setup `conichiSDK CoreKit` that points our `san
   //Start the sdk with the given configuration
   [CNISDK startWithConfiguration:configuration delegate:delegate];
 ```
+</details>
 
-After this setup you have an access to the instance of the `[CNISDK sharedInstance]`.
+<details>
+<summary>Swift</summary>
+
+```swift
+  //Create configuration for the sdk instance
+  let config: CNISDKConfiguration = CNISDKConfiguration() {
+    (mutableConfig: CNISDKMutableConfiguration) in
+    mutableConfig.logLevel = CNISDKLogLevel.info
+    mutableConfig.apiKey = "your-api-key"
+    mutableConfig.apiSecret = "your-api-secret"
+    mutableConfig.kits = []
+    mutableConfig.environment = CNISDKEnvironment.sandbox
+  }
+
+  //Setups the sdk delegate - make sure that you conform to the CNISDKDelegate protocol
+  let delegate: CNISDKDelegate = self
+
+  //Start the sdk with given configuration
+  CNISDK.start(with: config, delegate: delegate)
+```
+
+</details>
+
+After this setup you have an access to the instance of the `[CNISDK sharedInstance]` in **Obj-C** or  `CNISDK.sharedInstance()` in **Swift**.
 
 #### Signup with an external id
 
@@ -120,7 +155,7 @@ requestInfo.lastName = @”Brown”;
 
 #### Error handling
 
-Conichi provides the unify error codes for each error comes from `sdk`. All error codes can be found in `CNIError.h` class.
+Conichi provides unified error codes for each error coming from the `sdk`. All error codes can be found in the `CNIError.h` class.
 To make `sdk` able to convert different error codes into `CNIErrorCode` there is a protocol `CNIErrorCodeConverter`. Out of the box there are 4 predefined converters:
 * CNINSURLErrorConverter
 * CNIHTTPResponseErrorConverter
@@ -136,7 +171,10 @@ And `CNIPaymentProviderErrorConverter` will be used automatically when working w
 
 #### Authorization
 
-To start any real actions with guest `sdk` requires the guest to be authorized. All methods related to `authorization` are in `CNISDKAPIManager+Authentication` category. The example below shows how to do a sign up for a new guest.
+To start any real actions with the guest, the `sdk` requires the guest to be authorized. All methods related to `authorization` are in `CNISDKAPIManager+Authentication` category. The example below shows how to do a sign up for a new guest.
+
+<details>
+<summary>Objective-C</summary>
 
 ```objective-c
   //Create a sign up request
@@ -156,6 +194,52 @@ To start any real actions with guest `sdk` requires the guest to be authorized. 
     }
   }];
 ```
+</details>
+
+<details>
+<summary>Swift</summary>
+
+```swift
+// Create a signup request
+let info = CNISDKSignUpRequestInfo()
+info.firstName = "Jenessa"
+info.lastName = "Gretta"
+info.email = "jenessa.gretta@gmail.com"
+info.password = "strongestpasswordever=)"
+
+// Instantiate APImanager
+let apiManager = CNISDKAPIManager()
+
+// Perform signup
+apiManager.signUp(withRequest: info) {
+  (guest, error) in
+  if let error = error {
+    //handle error during the sign up
+    return
+  }
+  //handle authorized guest
+}
+```
+</details>
+
+#### Tracking
+
+If the guest is authorized, the following code will enable tracking
+
+<details>
+<summary>Objective-C</summary>
+
+`[[CNISDK sharedInstance] startMonitoring];`
+</details>
+
+<details>
+<summary>Swift</summary>
+
+`CNISDK.sharedInstance().startMonitoring()`
+</details>
+
+Now, if a guest is near a beacon he should be tracked.
+Customization of the tracking behavior is possible with callbacks. All callbacks can be found in `CNISDKDelegate.h`
 
 ## Documentation
 
