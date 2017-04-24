@@ -2,7 +2,8 @@
 upcoming:
   version: 2.5.1
   notes:
-  - Update README with Swift code snippets
+  - Setup project to support Jenkins
+  - 'Fix for wrong external id sign-in parameters structure in sign in request '
 releases:
 - version: 2.5.0
   notes:
