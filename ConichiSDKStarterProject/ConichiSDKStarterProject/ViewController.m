@@ -173,15 +173,7 @@
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
-
-#pragma mark - Actions
-
-- (IBAction)autoScrollButtonClicked:(id)sender {
-    self.autoScrollEnabled = !self.isAutoScrollEnabled;
-    [self.autoScrollButton setTitle:self.isAutoScrollEnabled ? @"Disable Autoscroll" : @"Enable Autoscroll" forState:UIControlStateNormal];
-}
-
-- (IBAction)signUpButtonClicked:(id)sender {
+- (void)signUpWithEmailAndPassword {
     UIAlertController *signUpController = [UIAlertController alertControllerWithTitle:@"Sign Up" message:@"In order to sign up please fill out information below" preferredStyle:UIAlertControllerStyleAlert];
     
     [signUpController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
@@ -231,7 +223,49 @@
     [self presentViewController:signUpController animated:YES completion:nil];
 }
 
-- (IBAction)signInButtonClicked:(id)sender {
+- (void)signUpWithExternalID {
+    UIAlertController *signUpController = [UIAlertController alertControllerWithTitle:@"Sign Up" message:@"In order to sign up please fill out information below" preferredStyle:UIAlertControllerStyleAlert];
+    
+    [signUpController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"External ID";
+    }];
+    
+    [signUpController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"First name";
+        textField.keyboardType = UIKeyboardTypeAlphabet;
+    }];
+    
+    [signUpController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"Last name";
+        textField.keyboardType = UIKeyboardTypeAlphabet;
+    }];
+    
+    ViewController __weak *wSelf = self;
+    UIAlertAction *signUpAction = [UIAlertAction actionWithTitle:@"Sign Up" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        ViewController __strong *sSelf = wSelf;
+        CNISDKExternalSignUpRequestInfo *requestInfo = [[CNISDKExternalSignUpRequestInfo alloc] init];
+        requestInfo.externalID = signUpController.textFields[0].text;
+        requestInfo.firstName = signUpController.textFields[1].text;
+        requestInfo.lastName = signUpController.textFields[2].text;
+        [[CNISDKAPIManager manager] signUpWithExternalIDRequestInfo:requestInfo completion:^(CNISDKGuest *guest, NSError *error) {
+            if (error) {
+                [sSelf updateLogTextViewWithMessage:[NSString stringWithFormat:@"Failed to sign up: %@", error.localizedDescription]];
+            }
+            else {
+                [sSelf updateLogTextViewWithMessage:[NSString stringWithFormat:@"Successfully signed up with guest: %@", guest]];
+            }
+            [sSelf updateButtonsVisibility];
+        }];
+    }];
+    [signUpController addAction:signUpAction];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    [signUpController addAction:cancelAction];
+    
+    [self presentViewController:signUpController animated:YES completion:nil];
+}
+
+- (void)signInWithEmailAndPassword {
     UIAlertController *signInController = [UIAlertController alertControllerWithTitle:@"Sign In" message:@"In order to sign up please fill out information below" preferredStyle:UIAlertControllerStyleAlert];
     
     [signInController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
@@ -266,6 +300,70 @@
     [signInController addAction:cancelAction];
     
     [self presentViewController:signInController animated:YES completion:nil];
+}
+
+- (void)signInWithExternalID {
+    UIAlertController *signInController = [UIAlertController alertControllerWithTitle:@"Sign In" message:@"In order to sign up please fill out information below" preferredStyle:UIAlertControllerStyleAlert];
+    
+    [signInController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"External ID";
+    }];
+    
+    ViewController __weak *wSelf = self;
+    UIAlertAction *signInAction = [UIAlertAction actionWithTitle:@"Sign In" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        ViewController __strong *sSelf = wSelf;
+        NSString *externalID = signInController.textFields[0].text;
+        [[CNISDKAPIManager manager] signInWithExternalID:externalID completion:^(CNISDKGuest *guest, NSError *error) {
+            if (error) {
+                [sSelf updateLogTextViewWithMessage:[NSString stringWithFormat:@"Failed to sign in: %@", error.localizedDescription]];
+            }
+            else {
+                [sSelf updateLogTextViewWithMessage:[NSString stringWithFormat:@"Successfully signed in with guest: %@", guest]];
+            }
+            [sSelf updateButtonsVisibility];
+        }];
+    }];
+    [signInController addAction:signInAction];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    [signInController addAction:cancelAction];
+    
+    [self presentViewController:signInController animated:YES completion:nil];
+}
+
+#pragma mark - Actions
+
+- (IBAction)autoScrollButtonClicked:(id)sender {
+    self.autoScrollEnabled = !self.isAutoScrollEnabled;
+    [self.autoScrollButton setTitle:self.isAutoScrollEnabled ? @"Disable Autoscroll" : @"Enable Autoscroll" forState:UIControlStateNormal];
+}
+
+- (IBAction)signUpButtonClicked:(id)sender {
+    UIAlertController *signUpMethodSelectionController = [UIAlertController alertControllerWithTitle:@"Sign Up" message:@"In order to sign up please select the method" preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *emailMethod = [UIAlertAction actionWithTitle:@"Email & Password" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self signUpWithEmailAndPassword];
+    }];
+    [signUpMethodSelectionController addAction:emailMethod];
+    UIAlertAction *externalIDMethod = [UIAlertAction actionWithTitle:@"External ID" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self signUpWithExternalID];
+    }];
+    [signUpMethodSelectionController addAction:externalIDMethod];
+    [signUpMethodSelectionController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil]];
+    [self presentViewController:signUpMethodSelectionController animated:YES completion:nil];
+}
+
+- (IBAction)signInButtonClicked:(id)sender {
+    UIAlertController *signInMethodSelectionController = [UIAlertController alertControllerWithTitle:@"Sign In" message:@"In order to sign up please select the method" preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *emailMethod = [UIAlertAction actionWithTitle:@"Email & Password" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self signInWithEmailAndPassword];
+    }];
+    [signInMethodSelectionController addAction:emailMethod];
+    UIAlertAction *externalIDMethod = [UIAlertAction actionWithTitle:@"External ID" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self signInWithExternalID];
+    }];
+    [signInMethodSelectionController addAction:externalIDMethod];
+    [signInMethodSelectionController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil]];
+    [self presentViewController:signInMethodSelectionController animated:YES completion:nil];
 }
 
 - (IBAction)monitoringButtonClicked:(id)sender {
