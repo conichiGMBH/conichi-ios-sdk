@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6D6330B41D9AA83C006C1062 /* PaylevenFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D856B141D9AA5AC00C22D60 /* PaylevenFramework.framework */; };
-		6D6330B51D9AA83C006C1062 /* PaylevenFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6D856B141D9AA5AC00C22D60 /* PaylevenFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6D6330B61D9AA83C006C1062 /* CNISDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D856AFF1D9AA48200C22D60 /* CNISDKCoreKit.framework */; };
-		6D6330B71D9AA83C006C1062 /* CNISDKCoreKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6D856AFF1D9AA48200C22D60 /* CNISDKCoreKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6D6330B81D9AA83C006C1062 /* CNISDKGeoFencingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D856B001D9AA48200C22D60 /* CNISDKGeoFencingKit.framework */; };
-		6D6330B91D9AA83C006C1062 /* CNISDKGeoFencingKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6D856B001D9AA48200C22D60 /* CNISDKGeoFencingKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6D6330BA1D9AA83C006C1062 /* CNISDKPaymentKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D856B011D9AA48200C22D60 /* CNISDKPaymentKit.framework */; };
-		6D6330BB1D9AA83C006C1062 /* CNISDKPaymentKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6D856B011D9AA48200C22D60 /* CNISDKPaymentKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6D6330BC1D9AA83C006C1062 /* CNISDKPMSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D856B021D9AA48200C22D60 /* CNISDKPMSKit.framework */; };
-		6D6330BD1D9AA83C006C1062 /* CNISDKPMSKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6D856B021D9AA48200C22D60 /* CNISDKPMSKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6D6330BE1D9AA83C006C1062 /* Conichi_Authentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D856B031D9AA48200C22D60 /* Conichi_Authentication.framework */; };
-		6D6330BF1D9AA83C006C1062 /* Conichi_Authentication.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6D856B031D9AA48200C22D60 /* Conichi_Authentication.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6D6330C01D9AA83C006C1062 /* Conichi_Errors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D856B041D9AA48200C22D60 /* Conichi_Errors.framework */; };
-		6D6330C11D9AA83C006C1062 /* Conichi_Errors.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6D856B041D9AA48200C22D60 /* Conichi_Errors.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6D63310E1D9D7B79006C1062 /* Conichi_Meta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D63310D1D9D7B79006C1062 /* Conichi_Meta.framework */; };
-		6D63310F1D9D7B79006C1062 /* Conichi_Meta.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6D63310D1D9D7B79006C1062 /* Conichi_Meta.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6D7D78CD1EAF3F0A0001C1A0 /* CNISDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D856AFF1D9AA48200C22D60 /* CNISDKCoreKit.framework */; };
+		6D7D78CE1EAF3F0A0001C1A0 /* CNISDKCoreKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6D856AFF1D9AA48200C22D60 /* CNISDKCoreKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6D7D78D01EAF3F700001C1A0 /* CNISDKGeoFencingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D856B001D9AA48200C22D60 /* CNISDKGeoFencingKit.framework */; };
+		6D7D78D11EAF3F700001C1A0 /* CNISDKGeoFencingKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6D856B001D9AA48200C22D60 /* CNISDKGeoFencingKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6D7D78D21EAF3F9E0001C1A0 /* CNISDKPMSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D856B021D9AA48200C22D60 /* CNISDKPMSKit.framework */; };
+		6D7D78D31EAF3F9E0001C1A0 /* CNISDKPMSKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6D856B021D9AA48200C22D60 /* CNISDKPMSKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6D7D78D41EAF3FA00001C1A0 /* CNISDKPaymentKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D856B011D9AA48200C22D60 /* CNISDKPaymentKit.framework */; };
+		6D7D78D51EAF3FA00001C1A0 /* CNISDKPaymentKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6D856B011D9AA48200C22D60 /* CNISDKPaymentKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6D7D78D61EAF3FB00001C1A0 /* Conichi_Authentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D856B031D9AA48200C22D60 /* Conichi_Authentication.framework */; };
+		6D7D78D71EAF3FB00001C1A0 /* Conichi_Authentication.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6D856B031D9AA48200C22D60 /* Conichi_Authentication.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6D7D78D81EAF3FC20001C1A0 /* Conichi_Errors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D856B041D9AA48200C22D60 /* Conichi_Errors.framework */; };
+		6D7D78D91EAF3FC20001C1A0 /* Conichi_Errors.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6D856B041D9AA48200C22D60 /* Conichi_Errors.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6D7D78DA1EAF3FDB0001C1A0 /* Conichi_Meta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D63310D1D9D7B79006C1062 /* Conichi_Meta.framework */; };
+		6D7D78DB1EAF3FDB0001C1A0 /* Conichi_Meta.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6D63310D1D9D7B79006C1062 /* Conichi_Meta.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6D7D78DC1EAF3FDF0001C1A0 /* PaylevenFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D856B141D9AA5AC00C22D60 /* PaylevenFramework.framework */; };
+		6D7D78DD1EAF3FDF0001C1A0 /* PaylevenFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6D856B141D9AA5AC00C22D60 /* PaylevenFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6DF0FE481D86BFA200104B35 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF0FE471D86BFA200104B35 /* main.m */; };
 		6DF0FE4B1D86BFA200104B35 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF0FE4A1D86BFA200104B35 /* AppDelegate.m */; };
 		6DF0FE4E1D86BFA200104B35 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF0FE4D1D86BFA200104B35 /* ViewController.m */; };
@@ -32,20 +32,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		6D6330C21D9AA83C006C1062 /* Embed Frameworks */ = {
+		6D7D78CF1EAF3F0A0001C1A0 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				6D6330B51D9AA83C006C1062 /* PaylevenFramework.framework in Embed Frameworks */,
-				6D6330BD1D9AA83C006C1062 /* CNISDKPMSKit.framework in Embed Frameworks */,
-				6D6330B91D9AA83C006C1062 /* CNISDKGeoFencingKit.framework in Embed Frameworks */,
-				6D6330BB1D9AA83C006C1062 /* CNISDKPaymentKit.framework in Embed Frameworks */,
-				6D6330C11D9AA83C006C1062 /* Conichi_Errors.framework in Embed Frameworks */,
-				6D63310F1D9D7B79006C1062 /* Conichi_Meta.framework in Embed Frameworks */,
-				6D6330BF1D9AA83C006C1062 /* Conichi_Authentication.framework in Embed Frameworks */,
-				6D6330B71D9AA83C006C1062 /* CNISDKCoreKit.framework in Embed Frameworks */,
+				6D7D78D51EAF3FA00001C1A0 /* CNISDKPaymentKit.framework in Embed Frameworks */,
+				6D7D78DD1EAF3FDF0001C1A0 /* PaylevenFramework.framework in Embed Frameworks */,
+				6D7D78D11EAF3F700001C1A0 /* CNISDKGeoFencingKit.framework in Embed Frameworks */,
+				6D7D78DB1EAF3FDB0001C1A0 /* Conichi_Meta.framework in Embed Frameworks */,
+				6D7D78CE1EAF3F0A0001C1A0 /* CNISDKCoreKit.framework in Embed Frameworks */,
+				6D7D78D71EAF3FB00001C1A0 /* Conichi_Authentication.framework in Embed Frameworks */,
+				6D7D78D31EAF3F9E0001C1A0 /* CNISDKPMSKit.framework in Embed Frameworks */,
+				6D7D78D91EAF3FC20001C1A0 /* Conichi_Errors.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,14 +80,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D6330B41D9AA83C006C1062 /* PaylevenFramework.framework in Frameworks */,
-				6D6330BC1D9AA83C006C1062 /* CNISDKPMSKit.framework in Frameworks */,
-				6D6330B81D9AA83C006C1062 /* CNISDKGeoFencingKit.framework in Frameworks */,
-				6D6330BA1D9AA83C006C1062 /* CNISDKPaymentKit.framework in Frameworks */,
-				6D6330C01D9AA83C006C1062 /* Conichi_Errors.framework in Frameworks */,
-				6D63310E1D9D7B79006C1062 /* Conichi_Meta.framework in Frameworks */,
-				6D6330BE1D9AA83C006C1062 /* Conichi_Authentication.framework in Frameworks */,
-				6D6330B61D9AA83C006C1062 /* CNISDKCoreKit.framework in Frameworks */,
+				6D7D78D41EAF3FA00001C1A0 /* CNISDKPaymentKit.framework in Frameworks */,
+				6D7D78DC1EAF3FDF0001C1A0 /* PaylevenFramework.framework in Frameworks */,
+				6D7D78D01EAF3F700001C1A0 /* CNISDKGeoFencingKit.framework in Frameworks */,
+				6D7D78DA1EAF3FDB0001C1A0 /* Conichi_Meta.framework in Frameworks */,
+				6D7D78CD1EAF3F0A0001C1A0 /* CNISDKCoreKit.framework in Frameworks */,
+				6D7D78D61EAF3FB00001C1A0 /* Conichi_Authentication.framework in Frameworks */,
+				6D7D78D21EAF3F9E0001C1A0 /* CNISDKPMSKit.framework in Frameworks */,
+				6D7D78D81EAF3FC20001C1A0 /* Conichi_Errors.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,7 +160,7 @@
 				6DF0FE3F1D86BFA200104B35 /* Sources */,
 				6DF0FE401D86BFA200104B35 /* Frameworks */,
 				6DF0FE411D86BFA200104B35 /* Resources */,
-				6D6330C21D9AA83C006C1062 /* Embed Frameworks */,
+				6D7D78CF1EAF3F0A0001C1A0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -355,6 +355,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = DRL7ER946T;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = ../Frameworks;
 				INFOPLIST_FILE = ConichiSDKStarterProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -375,6 +376,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = DRL7ER946T;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = ../Frameworks;
 				INFOPLIST_FILE = ConichiSDKStarterProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
