@@ -74,16 +74,62 @@ platform :ios do
 
     podspecs_push
 
+    compress_sample_project
+    sample_path = "SAMPLE.zip"
+
     set_or_update_github_release(
       release_name: tag_name,
       repository_name: ENV['GITHUB_REPOSITORY'],
       description: upcoming_notes,
       tag_name: tag_name,
       api_token: ENV['CONICHI_CI_GITHUB_TOKEN'],
-      upload_assets: [cnisdk_framework_zip_path]
+      upload_assets: [cnisdk_framework_zip_path, sample_path]
     )
+    sh('rm ../SAMPLE.zip')
   end
 
+  lane :update_github_release do
+
+    last_release = get_releases[0]
+    tag_name = last_release["version"]
+    notes = "* #{last_release["notes"].join "\n* "} \n\n"
+    cnisdk_framework_zip_path = "CNISDK.framework.zip"
+
+    private_sdk_release = get_github_release(
+      url: ENV['PRIVATE_CONICHI_IOS_SDK_GITHUB_REPO'],
+      version: tag_name,
+      api_token: ENV['CONICHI_CI_GITHUB_TOKEN']
+    )
+
+    download_cnisdk_framework_zip_from_release(
+      release: private_sdk_release,
+      download_destination: cnisdk_framework_zip_path
+    )
+    unzip(file: cnisdk_framework_zip_path)
+    copy_frameworks_from_cnisdk_framework_folder(
+      cnisdk_framework_folder: "../Carthage/Build/iOS"
+    )
+    compress_sample_project
+    sample_path = "SAMPLE.zip"
+
+    set_or_update_github_release(
+      release_name: tag_name,
+      repository_name: ENV['GITHUB_REPOSITORY'],
+      description: notes,
+      tag_name: tag_name,
+      api_token: ENV['CONICHI_CI_GITHUB_TOKEN'],
+      upload_assets: [cnisdk_framework_zip_path, sample_path]
+    )
+    sh('rm ../SAMPLE.zip')
+  end
+
+  lane :compress_sample_project do
+    FileUtils.mkdir('../SAMPLE')
+    FileUtils.cp_r("../Frameworks", "../SAMPLE")
+    FileUtils.cp_r("../ConichiSDKStarterProject", "../SAMPLE")
+    sh('zip -r ../SAMPLE.zip ../SAMPLE')
+    sh('rm -R ../SAMPLE')
+  end
   ######################### PRIVATE LANES ##########################
 
   private_lane :podspecs_version_bump do |options|
