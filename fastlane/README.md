@@ -23,15 +23,21 @@ xcode-select --install
 </tr>
 <tr>
 <td width="33%"><code>brew cask install fastlane</code></td>
-<td width="33%"><a href="https://download.fastlane.tools/fastlane.zip">Download the zip file</a>. Then double click on the <code>install</code> script (or run it in a terminal window).</td>
+<td width="33%"><a href="https://download.fastlane.tools">Download the zip file</a>. Then double click on the <code>install</code> script (or run it in a terminal window).</td>
 <td width="33%"><code>sudo gem install fastlane -NV</code></td>
 </tr>
 </table>
+
 # Available Actions
 ## iOS
 ### ios release
 ```
 fastlane ios release
+```
+
+### ios compress_sample_project
+```
+fastlane ios compress_sample_project
 ```
 
 ### ios setup_new_release
