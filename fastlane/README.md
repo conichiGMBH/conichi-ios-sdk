@@ -40,6 +40,11 @@ fastlane ios release
 fastlane ios update_github_release
 ```
 
+### ios download_frameworks
+```
+fastlane ios download_frameworks
+```
+
 ### ios compress_sample_project
 ```
 fastlane ios compress_sample_project
