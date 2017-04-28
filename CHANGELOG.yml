@@ -1,11 +1,13 @@
 ---
 upcoming:
-  version: 2.5.2
+  version: 
+  notes: 
+releases:
+- version: 2.5.2
   notes:
   - Setup project to support Jenkins
   - 'Enhance beacon recognition logic to fix that the trackin is opened and closed
     frequently '
-releases:
 - version: 2.5.1
   notes:
   - Setup project to support Jenkins
