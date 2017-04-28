@@ -1,7 +1,8 @@
 ---
 upcoming:
-  version: 
+  version: 2.5.3
   notes: 
+  - Sample project zip for release bundle
 releases:
 - version: 2.5.2
   notes:
