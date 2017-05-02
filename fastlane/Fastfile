@@ -15,6 +15,8 @@ platform :ios do
   end
 
   cnisdk_framework_zip_path = "CNISDK.framework.zip"
+  cnisdk_sample_zip_path = "SampleProject.zip"
+
   ######################### PUBLIC LANES ##########################
 
   lane :release do |options|
@@ -26,7 +28,9 @@ platform :ios do
     )
 
     release_version = options[:release_version]
-    download_frameworks(version:release_version)
+    download_frameworks(
+      version:release_version
+    )
 
     update_changelog_from_release(
       release: private_sdk_release
@@ -60,10 +64,7 @@ platform :ios do
 
     podspecs_push
 
-    sample_filename = "SampleProject"
-    sample_path = "#{sample_filename}.zip"
-
-    compress_sample_project(filename: sample_filename)
+    create_sample_project
 
     set_or_update_github_release(
       release_name: tag_name,
@@ -71,38 +72,11 @@ platform :ios do
       description: upcoming_notes,
       tag_name: tag_name,
       api_token: ENV['CONICHI_CI_GITHUB_TOKEN'],
-      upload_assets: [cnisdk_framework_zip_path, sample_path]
+      upload_assets: [cnisdk_framework_zip_path, cnisdk_sample_zip_path]
     )
-
-    sh("rm ../#{sample_path}")
-  end
-
-  lane :update_github_release do
-
-    last_release = get_releases[0]
-    tag_name = last_release["version"]
-    notes = "* #{last_release["notes"].join "\n* "} \n\n"
-
-    download_frameworks(version: tag_name)
-    
-    sample_filename = "SampleProject"
-    sample_path = "#{sample_filename}.zip"
-
-    compress_sample_project(filename: sample_filename)
-
-    set_or_update_github_release(
-      release_name: tag_name,
-      repository_name: ENV['GITHUB_REPOSITORY'],
-      description: notes,
-      tag_name: tag_name,
-      api_token: ENV['CONICHI_CI_GITHUB_TOKEN'],
-      upload_assets: [cnisdk_framework_zip_path, sample_path]
-    )
-    sh("rm ../#{sample_path}")
   end
 
   lane :download_frameworks do |options|
-
     version = options[:version]
 
     private_sdk_release = get_github_release(
@@ -119,20 +93,18 @@ platform :ios do
     copy_frameworks_from_cnisdk_framework_folder(
       cnisdk_framework_folder: "../Carthage/Build/iOS"
     )
-
   end
 
-  lane :compress_sample_project do |options|
-
-    filename = options[:filename]
-    path_dir = "../#{filename}"
+  lane :create_sample_project do
+    project_name = "SampleProject"
+    path_dir = "../#{project_name}"
     FileUtils.mkdir(path_dir)
     FileUtils.cp_r("../Frameworks", path_dir)
     FileUtils.cp_r("../ConichiSDKStarterProject", path_dir)
-    sh("zip -r ../#{filename}.zip #{path_dir}")
+    sh("zip -r ../#{project_name}.zip #{path_dir}")
     sh("rm -R #{path_dir}")
-
   end
+
   ######################### PRIVATE LANES ##########################
 
   private_lane :podspecs_version_bump do |options|

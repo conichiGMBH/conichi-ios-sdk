@@ -35,6 +35,7 @@ xcuserdata/
 
 Carthage/Build
 CNISDK.framework.zip
+SampleProject.zip
 
 ## Obj-C/Swift specific
 *.hmap
