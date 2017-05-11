@@ -89,4 +89,12 @@ typedef void (^CNISDKErrorBlock)(NSError *error);
  */
 extern NSString *const kCNISDKDefaultCurrencyCode;
 
+/**
+ *  Default requests time out used by SDK
+ */
 extern NSTimeInterval const kCNISDKDefaultRequestTimeoutInterval;
+
+/**
+ *  Local notification identifier fired by the SDK when the remote notification permission is enabled/disabled
+ */
+extern NSString *const kCNISDKNotificationsPermissionsManagerRemoteNotificationsPermissionDidChangeNotification;

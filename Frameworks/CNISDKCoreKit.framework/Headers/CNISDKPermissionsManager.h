@@ -17,7 +17,9 @@
 @class CBCentralManager;
 @class CNISDKApplication;
 @class CNISDK;
-
+@class CNISDKLocationPermissionManager;
+@class CNISDKBluetoothPermissionManager;
+@class CNISDKNotificationsPermissionManager;
 #import "CNISDKConstants.h"
 
 
@@ -25,7 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  *  The `CNISDKPermissionsManager` class contains methods that handle asking for iOS permissions
- *  for bluetooth, background location and notifications
+ *  for bluetooth, background location and notifications.
+ *  CNISDKPermissionsManager is deprecated, use CNISDKLocationPermissionManager, CNISDKBluetoothPermissionManager and CNISDKNotificationsPermissionManager instead.
  */
 @interface CNISDKPermissionsManager : NSObject
 
@@ -34,6 +37,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign, readonly) BOOL isBackgroundLocationAllowed;
 @property (nonatomic, assign, readonly) BOOL isBluetoothAllowed;
 @property (nonatomic, assign, readonly) BOOL isNotificationsAllowed;
+
+@property (nonatomic, strong, readonly) CNISDKLocationPermissionManager *locationPermissionManager;
+@property (nonatomic, strong, readonly) CNISDKBluetoothPermissionManager *bluetoothPermissionManager;
+@property (nonatomic, strong, readonly) CNISDKNotificationsPermissionManager *notificationPermissionManager;
 
 /**
  *  Convenience initializer that creates permissions manager with default system managers
@@ -61,7 +68,7 @@ NS_ASSUME_NONNULL_BEGIN
  *                  2. Success flag - whether request succeeded or not
  *
  */
-- (void)askBluetoothWithResponse:(nullable void (^)(CBManagerState state, BOOL success))response;
+- (void)askBluetoothWithResponse:(nullable void (^)(CBManagerState state, BOOL success))response __attribute((deprecated("use CNISDKBluetoothPermissionManager askAndListenForPermissionChangesWithCallback: instead")));
 
 /**
  *  Ask notifications permissions and return response in block
@@ -69,7 +76,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param response callback block with one parameter
  *                  1. Success flag - whether request succeeded or not
  */
-- (void)askLocalNotificationsWithResponse:(nullable void (^)(BOOL success))response;
+- (void)askLocalNotificationsWithResponse:(nullable void (^)(BOOL success))response __attribute((deprecated("use CNISDKNotificationsPermissionManager askAndListenForPermissionChangesWithCallback: instead")));
 
 /**
  *  Ask background location permission and return response in block
@@ -78,7 +85,7 @@ NS_ASSUME_NONNULL_BEGIN
  *                  1. CLAuthorizationStatus
  *                  2. Success flag - whether request succeeded or not
  */
-- (void)askBackgroundLocationWithResponse:(nullable void (^)(CLAuthorizationStatus status, BOOL success))response;
+- (void)askBackgroundLocationWithResponse:(nullable void (^)(CLAuthorizationStatus status, BOOL success))response __attribute((deprecated("use CNISDKLocationPermissionManager askAndListenForPermissionChangesWithCallback: instead")));
 
 @end
 
