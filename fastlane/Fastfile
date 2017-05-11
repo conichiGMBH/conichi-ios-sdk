@@ -28,8 +28,14 @@ platform :ios do
     )
 
     release_version = options[:release_version]
+    private_sdk_release = get_github_release(
+      url: ENV['PRIVATE_CONICHI_IOS_SDK_GITHUB_REPO'],
+      version: release_version,
+      api_token: ENV['CONICHI_CI_GITHUB_TOKEN']
+    )
+
     download_frameworks(
-      version:release_version
+      release:private_sdk_release
     )
 
     update_changelog_from_release(
@@ -77,16 +83,9 @@ platform :ios do
   end
 
   lane :download_frameworks do |options|
-    version = options[:version]
-
-    private_sdk_release = get_github_release(
-      url: ENV['PRIVATE_CONICHI_IOS_SDK_GITHUB_REPO'],
-      version: version,
-      api_token: ENV['CONICHI_CI_GITHUB_TOKEN']
-    )
-
+    release = options[:release]
     download_cnisdk_framework_zip_from_release(
-      release: private_sdk_release,
+      release: release,
       download_destination: cnisdk_framework_zip_path
     )
     unzip(file: cnisdk_framework_zip_path)
