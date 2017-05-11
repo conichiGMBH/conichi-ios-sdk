@@ -1,9 +1,11 @@
 ---
 upcoming:
-  version: 2.5.3
+  version: 
+  notes: 
+releases:
+- version: 2.5.3
   notes:
   - 'Deprecate CNISDKPermissionsManager and introduce new permission managers '
-releases:
 - version: 2.5.2
   notes:
   - Setup project to support Jenkins
