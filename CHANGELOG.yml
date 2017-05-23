@@ -1,9 +1,11 @@
 ---
 upcoming:
-  version: 2.5.4
+  version: 
+  notes: 
+releases:
+- version: 2.5.4
   notes:
   - Register for remote notifications upon being authorized
-releases:
 - version: 3.0.0
   notes:
   - Define responsibility for the remote notifications swizzling required
