@@ -1,7 +1,9 @@
 ---
 upcoming:
-  version: 
-  notes: 
+  version: 3.0.0
+  notes:
+  - Define responsibility for the remote notifications swizzling required
+  - 'Introduce error domains for returned errors '
 releases:
 - version: 2.5.3
   notes:
