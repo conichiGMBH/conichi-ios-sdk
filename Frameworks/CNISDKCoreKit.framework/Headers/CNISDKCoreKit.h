@@ -82,4 +82,4 @@ FOUNDATION_EXPORT const unsigned char CNISDKCoreKitVersionString[];
 #import "CNISDKPermissionManager.h"
 #import "CNISDKBluetoothPermissionManager.h"
 #import "CNISDKLocationPermissionManager.h"
-#import "CNISDKRemoteNotificationsPermissionManager.h"
+#import "CNISDKNotificationsPermissionManager.h"

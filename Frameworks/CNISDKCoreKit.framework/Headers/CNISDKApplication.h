@@ -30,6 +30,14 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (instancetype)sharedApplication;
 
+
+/**
+ *  It calls undeline the system application's `registerForRemoteNotifications`.
+ *
+ *  @see [UIApplication registerForRemoteNotifications];
+ */
+- (void)registerForRemoteNotifications;
+
 @end
 
 NS_ASSUME_NONNULL_END
