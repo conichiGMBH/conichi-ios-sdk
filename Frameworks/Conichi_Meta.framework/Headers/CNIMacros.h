@@ -72,7 +72,9 @@
 #define CNIFABS(a) fabs(a)
 #define CNIFEQUAL(a, b) (fabs((a) - (b)) < DBL_EPSILON)
 #define CNIFEQUALZERO(a) (fabs(a) < DBL_EPSILON)
+#define CNIEXP(a) exp(a)
 #else
+#define CNIEXP(a) expf(a)
 #define CNIMAX(a, b) fmaxf(a, b)
 #define CNIMIN(a, b) fminf(a, b)
 #define CNICEIL(a) ceilf(a)
@@ -122,3 +124,7 @@
         NSAssert(NO, @"%@ is not the designated initializer for instances of %@.", NSStringFromSelector(_cmd), NSStringFromClass([self class])); \
         return nil;                                                                                                                              \
     }
+
+/********* Accessibility *********/
+
+#define CNIAccessibilityIdentifier(module, viewController, outlet) [NSString stringWithFormat:@"com.conichi.%@.%@.%@", module, viewController, outlet]

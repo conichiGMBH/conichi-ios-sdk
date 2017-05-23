@@ -1,4 +1,4 @@
-//
+// MARK: Formatter Exempt
 //  CNIError.h
 //  conichiSDK
 //
@@ -7,6 +7,7 @@
 //
 
 @import Foundation;
+@import Conichi_Meta;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -18,11 +19,12 @@ extern NSString *const CNIErrorFunctionNameKey;
 extern NSString *const CNIErrorFileNameKey;
 extern NSString *const CNIErrorResponseJSONKey;
 extern NSString *const CNIErrorResponseKey;
-extern NSString *const CNIErrorDomain;
+extern NSString *const CNIErrorDomain __attribute__((deprecated("use specific error domain instead")));
 
 /**
  * CNIErrorCode is the possible error codes
  */
+__attribute__((deprecated("use error code enum for specific domain instead")))
 typedef NS_ENUM(NSInteger, CNIErrorCode) {
 
     /**
@@ -198,14 +200,94 @@ typedef NS_ENUM(NSInteger, CNIErrorCode) {
     CNIErrorCodeCheckinDateIsInvalid = -20036,
 
     /**
+     *  ASSA Abloy: An internal error occured. Recommended user action is to restart app or reboot device.
+     */
+    CNIErrorCodeASSAAbloyInternal = -20037,
+
+    /**
+     *  ASSA Abloy: Attempt to invoke a method which requires an endpoint that is setup. Recommended user action is to contact the key administrator and request an invitation code.
+     */
+    CNIErrorCodeASSAAbloyEndpointNotSetup = -20038,
+
+    /**
+     *  ASSA Abloy: One asynchrounous method of the API is already running. Recommended user action is to retry the action.
+     */
+    CNIErrorCodeASSAAbloySDKBusy = -20039,
+
+    /**
+     *  ASSA Abloy: The TSM replied NOT ELIGIBLE (FATAL during Setup, Invitation code is consumed and can no longer be used). Recommended user action is to contact the key administrator.
+     */
+    CNIErrorCodeASSAAbloyDeviceNotEligible = -20040,
+
+    /**
+     *  ASSA Abloy: Server replied API INCOMPATIBLE. Recommended user action is to upgrade the application. Recommended developer is to upgrade the SDK.
+     */
+    CNIErrorCodeASSAAbloySDKIncompatible = -20041,
+
+    /**
+     *  ASSA Abloy: The server communication failed. This is normally because of a network problem. Recommended user action is to check internet connectivity or try again later.
+     */
+    CNIErrorCodeASSAAbloyServerUnreachable = -20042,
+
+    /**
+     *  ASSA Abloy: The TSM failed to install the endpoint with a fatal error (FATAL, Invitation code no longer useful). Recommended user action is to contact the key administrator.
+     */
+    CNIErrorCodeASSAAbloySetupFailed = -20043,
+
+    /**
+     *  ASSA Abloy: The TSM Reported that the invitation code was not valid. Recommended user action is to retype or contact the key administrator.
+     */
+    CNIErrorCodeASSAAbloyInvalidInvitationCode = -20044,
+
+    /**
+     *  ASSA Abloy: Unable to serve the request to open the specified reader since the request contained an OpeningType that was not in the list of permitted OpeningTypes. Recommended user/developer action is to reconfigure reader.
+     */
+    CNIErrorCodeASSAAbloyOpeningTypeNotPermitted = -20045,
+
+    /**
+     *  ASSA Abloy: Unable to serve the request since Bluetooth Low Energy is unavailable. Recommended user action is to change permissions.
+     */
+    CNIErrorCodeASSAAbloyBluetoothLENotAvailable = -20046,
+
+    /**
+     *  Messerschmitt: There were no Messerschmitt devices found during the scanning process.
+     */
+    CNIErrorCodeMesserschmittScanTimeout = -20047,
+
+    /**
+     *  Messerschmitt: Keydata were invalid.
+     */
+    CNIErrorCodeMesserschmittOpenDoorFailed = -20048,
+
+    /**
+     *  Messerschmitt: The door is locked after opening.
+     */
+    CNIErrorCodeMesserschmittDoorIsLocked = -20049,
+
+    /**
+     *  Messerschmitt: Authentication failed, happens if keydata and/or device id are incorrect.
+     */
+    CNIErrorCodeMesserschmittAuthenticationFailed = -20050,
+
+    /**
+     *  Messerschmitt: The door is not ready.
+     */
+    CNIErrorCodeMesserschmittDoorIsNotReady = -20051,
+
+    /**
+     *
+     */
+
+    /**
      * The error code for error that sdk cannot interpret.
      */
     CNIErrorCodeUnknown = -20999
-};
+}__attribute__((deprecated("use error code enum for specific domain instead")));
 
 /**
  * `CNIError` is a class that represents conichi's SDK errors
  */
+__attribute__((deprecated("use specific conichi defined error domain")))
 @interface CNIError : NSObject
 
 /**

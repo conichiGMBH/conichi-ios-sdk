@@ -20,16 +20,23 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CNIError (General)
 
 /**
- *  Ceates NSError object with CNIErrorDomain
+ *  Creates NSError object with CNIErrorDomain
+ *
+ *  @param code - code for error
+ *
+ *  @return new error object
+ */
++ (NSError *)errorWithCode:(NSInteger)code;
+
+/**
+ *  Creates NSError object with CNIErrorDomain
  *
  *  @param code - code for error
  *  @param message - will be stored in user info under CNIErrorDeveloperMessageKey
- *  @param underlyingError - will be stored in user info under NSUnderlyingErrorKey
- *  @param userInfo - information about error
- * 
+ *
  *  @return new error object
  */
-+ (NSError *)errorWithCode:(NSInteger)code message:(nullable NSString *)message underlyingError:(nullable NSError *)underlyingError userInfo:(nullable NSDictionary *)userInfo;
++ (NSError *)errorWithCode:(NSInteger)code message:(nullable NSString *)message;
 
 /**
  *  Creates NSError object with CNIErrorDomain
@@ -37,6 +44,8 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param code - code for error
  *  @param message - will be stored in user info under CNIErrorDeveloperMessageKey
  *  @param error - will be stored in user info under NSUnderlyingErrorKey
+ *
+ *  @return new error object
  */
 + (NSError *)errorWithCode:(NSInteger)code message:(nullable NSString *)message underlyingError:(nullable NSError *)error;
 
@@ -45,8 +54,12 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param code - code for error
  *  @param message - will be stored in user info under CNIErrorDeveloperMessageKey
+ *  @param underlyingError - will be stored in user info under NSUnderlyingErrorKey
+ *  @param userInfo - information about error
+ *
+ *  @return new error object
  */
-+ (NSError *)errorWithCode:(NSInteger)code message:(nullable NSString *)message;
++ (NSError *)errorWithCode:(NSInteger)code message:(nullable NSString *)message underlyingError:(nullable NSError *)underlyingError userInfo:(nullable NSDictionary *)userInfo;
 
 /**
  *  Creates an error with CNIErrorCodeInvalidArgumentError code.
@@ -55,6 +68,8 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param value - given value
  *  @param message - message for developer
  *  @param userInfo - information about error
+ *
+ *  @return new error object
  */
 + (NSError *)invalidArgumentErrorWithName:(NSString *__nonnull)name value:(nullable id)value message:(nullable NSString *)message userInfo:(nullable NSDictionary *)userInfo;
 
@@ -64,6 +79,8 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param name - argument name
  *  @param value - given value
  *  @param message - message for developer
+ *
+ *  @return new error object
  */
 + (NSError *)invalidArgumentErrorWithName:(NSString *)name value:(nullable id)value message:(nullable NSString *)message;
 
@@ -77,6 +94,8 @@ NS_ASSUME_NONNULL_BEGIN
  *                       It will be stored under CNIErrorFunctionNameKey
  *  @param fileName - file name for developer to easily recognize the exact place of the error.
  *                       It will be stored under CNIErrorFileNameKey
+ *
+ *  @return new error object
  */
 + (NSError *)requiredArgumentErrorWithName:(NSString *)name message:(nullable NSString *)message functionName:(const char *)functionName fileName:(const char *)fileName;
 
@@ -88,6 +107,8 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param message - message for developer. It will be stored in user info under CNIErrorDeveloperMessageKey
  *  @param json - repsonse's json object
  *  @param response - response object
+ *
+ *  @return new error object
  */
 + (NSError *)requiredJSONObjectErrorWithName:(NSString *)name message:(nullable NSString *)message json:(nullable NSDictionary *)json response:(nullable NSURLResponse *)response;
 
