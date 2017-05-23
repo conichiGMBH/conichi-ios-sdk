@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'CNISDKGeoFencingKit'
-  s.version      = '3.0.0'
+  s.version      = '2.5.4'
   s.summary      = "Geo Fencing kit extends the CNISDKCoreKit with geo fencing functionality."
 
   s.description  = <<-DESC
