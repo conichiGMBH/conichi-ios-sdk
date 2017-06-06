@@ -19,7 +19,7 @@
 @class CNISDK;
 @class CNISDKLocationPermissionManager;
 @class CNISDKBluetoothPermissionManager;
-@class CNISDKNotificationsPermissionManager;
+@class CNISDKRemoteNotificationsPermissionManager;
 #import "CNISDKConstants.h"
 
 
@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  The `CNISDKPermissionsManager` class contains methods that handle asking for iOS permissions
  *  for bluetooth, background location and notifications.
- *  CNISDKPermissionsManager is deprecated, use CNISDKLocationPermissionManager, CNISDKBluetoothPermissionManager and CNISDKNotificationsPermissionManager instead.
+ *  CNISDKPermissionsManager is deprecated, use CNISDKLocationPermissionManager, CNISDKBluetoothPermissionManager and CNISDKRemoteNotificationsPermissionManager instead.
  */
 @interface CNISDKPermissionsManager : NSObject
 
@@ -40,7 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, readonly) CNISDKLocationPermissionManager *locationPermissionManager;
 @property (nonatomic, strong, readonly) CNISDKBluetoothPermissionManager *bluetoothPermissionManager;
-@property (nonatomic, strong, readonly) CNISDKNotificationsPermissionManager *notificationPermissionManager;
+@property (nonatomic, strong, readonly) CNISDKRemoteNotificationsPermissionManager *notificationPermissionManager;
 
 /**
  *  Convenience initializer that creates permissions manager with default system managers
@@ -76,7 +76,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param response callback block with one parameter
  *                  1. Success flag - whether request succeeded or not
  */
-- (void)askLocalNotificationsWithResponse:(nullable void (^)(BOOL success))response __attribute((deprecated("use CNISDKNotificationsPermissionManager askAndListenForPermissionChangesWithCallback: instead")));
+- (void)askLocalNotificationsWithResponse:(nullable void (^)(BOOL success))response __attribute((deprecated("use CNISDKRemoteNotificationsPermissionManager askAndListenForPermissionChangesWithCallback: instead")));
 
 /**
  *  Ask background location permission and return response in block

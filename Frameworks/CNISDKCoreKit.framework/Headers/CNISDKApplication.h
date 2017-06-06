@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  *  Underlined system application instance
- * 
+ *
  *  Can be nil if initialized in extension environment
  */
 @property (nonatomic, strong, readonly, nullable) UIApplication *systemApplication;
@@ -30,11 +30,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (instancetype)sharedApplication;
 
-
 /**
- *  It calls undeline the system application's `registerForRemoteNotifications`.
- *
- *  @see [UIApplication registerForRemoteNotifications];
+ *  Registers the device for remote notifications using the system application instance
  */
 - (void)registerForRemoteNotifications;
 
