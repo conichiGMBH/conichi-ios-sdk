@@ -1,7 +1,8 @@
 ---
 upcoming:
-  version: 
-  notes: 
+  version: 3.0.1
+  notes:
+  - Internal release with bumped dependencies
 releases:
 - version: 2.5.4
   notes:
