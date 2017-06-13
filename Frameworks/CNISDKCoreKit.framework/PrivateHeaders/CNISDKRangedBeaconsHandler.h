@@ -14,9 +14,10 @@
 @class CNISDKBeaconsFilter;
 @class CNISDK;
 
-static NSUInteger const kCNISDKRangedBeaconsHandlerMaximumNumberOfConsequentNoBeaconsNearby = 8;
+extern NSUInteger const kCNISDKRangedBeaconsHandlerMaximumNumberOfConsequentNoBeaconsNearby;
 
 NS_ASSUME_NONNULL_BEGIN
+
 
 @interface CNISDKRangedBeaconsHandler : NSObject
 
@@ -43,6 +44,15 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param beacons CLBeacon objects array
  */
 - (void)handleBeacons:(nullable NSArray<CLBeacon *> *)beacons;
+
+/**
+ *  Use this method to enable or disable the delay before notifying that there are no beacons around
+ *  The delay is the number of consequent no beacons nearby calls and by default is 
+ *  kCNISDKRangedBeaconsHandlerMaximumNumberOfConsequentNoBeaconsNearby
+ *
+ *  @param enabled if enabled or not
+ */
+- (void)setBeaconsHandlerConsequencyDelayEnabled:(BOOL)enabled;
 
 @end
 

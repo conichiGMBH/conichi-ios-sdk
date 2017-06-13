@@ -55,6 +55,7 @@ extern NSInteger const kCNISDKGuestModelVersion;
 
 @interface CNISDKGuest (Private)
 
++ (BOOL)isSaveEnabled;
 + (void)setSaveEnabled:(BOOL)isEnabled;
 
 - (void)save;
