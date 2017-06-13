@@ -1,7 +1,8 @@
 ---
 upcoming:
-  version: 
-  notes: 
+  version: 3.0.2
+  notes:
+  - 'Listenning for permission changes during the SDK monitoring '
 releases:
 - version: 3.0.1
   notes:
