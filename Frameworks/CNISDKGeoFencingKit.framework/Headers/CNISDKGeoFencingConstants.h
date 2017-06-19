@@ -11,6 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+extern NSString *const kCNISDKGeoFencingRegionIdentifierPrefix;
 extern CLLocationDistance const kCNISDKGeoFencingKitDefaultGeoFenceRadiusInMeters;
 extern NSUInteger const kCNISDKGeoFencingKitDefaultMaximumNumberOfGeoFenceRegions;
 extern NSUInteger const kCNISDKGeoFencingKitDefaultMinimumNumberOfGeoFenceRegions;

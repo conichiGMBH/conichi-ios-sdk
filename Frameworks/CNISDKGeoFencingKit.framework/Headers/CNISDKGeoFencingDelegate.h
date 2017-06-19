@@ -11,6 +11,8 @@
 @class CNISDKGeoFencing;
 @class CNISDKGeoFenceRegion;
 
+#import "CNISDKGeoFenciesCreator.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 /**
@@ -19,6 +21,16 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol CNISDKGeoFencingDelegate <NSObject>
 
 @optional
+
+/**
+ *  Calls when geo fencing kit is ready to ask for regions to geofence
+ *  Default is location based collector (sorts venues by location closest 
+ *  to current and picks according to `geoFenceRegionsLimit` from configuration) if not implemented
+ *
+ *  @param geoFencing kit instance itself
+ *  @return object conformed to `CNISDKGeoFenciesCreator` to provide geo-fence regions
+ */
+- (id<CNISDKGeoFenciesCreator>)geoFenciesCollectorForConichiSDKGeofencing:(CNISDKGeoFencing *)geoFencing;
 
 /**
  *  Calls when geo fencing kit experiences some error related to geo fencing

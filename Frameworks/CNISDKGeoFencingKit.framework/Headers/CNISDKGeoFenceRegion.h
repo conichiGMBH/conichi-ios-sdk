@@ -9,7 +9,6 @@
 @import Foundation;
 
 @class CNISDKVenue;
-
 @class CLCircularRegion;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -28,6 +27,15 @@ NS_ASSUME_NONNULL_BEGIN
  *  Venue that has been discovered or left
  */
 @property (nonatomic, strong, readonly) CNISDKVenue *geoFencedVenue;
+
+/**
+ *  Default constructor to create new instance of `CNISDKGeoFenceRegion`
+ *
+ *  @param venue `CNISDKVenue` objects
+ *  @param region core location geo fence region
+ *  @return newly created instance of `CNISDKGeoFenceRegion`
+ */
+- (instancetype)initWithVenue:(CNISDKVenue *)venue clRegion:(CLCircularRegion *)region;
 
 @end
 

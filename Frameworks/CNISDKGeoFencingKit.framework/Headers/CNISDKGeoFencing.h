@@ -28,6 +28,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) id<CNISDKGeoFencingDelegate> delegate;
 
+/**
+ *  Resets current geo fencing regions and creates a new one
+ */
+- (void)updateGeoFencingStatus;
+
 @end
 
 NS_ASSUME_NONNULL_END
