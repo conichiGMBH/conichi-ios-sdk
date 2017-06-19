@@ -1,7 +1,8 @@
 ---
 upcoming:
-  version: 
-  notes: 
+  version: 3.1.0
+  notes:
+  - 'Support for custom geo fence regions collectors for GeoFencingKit '
 releases:
 - version: 3.0.2
   notes:
