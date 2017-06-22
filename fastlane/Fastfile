@@ -24,7 +24,7 @@ platform :ios do
 
     ensure_git_status_clean
     ensure_git_branch(
-      branch: release_branch
+      branchg: release_branch
     )
 
     release_version = options[:release_version]
@@ -38,48 +38,48 @@ platform :ios do
       release:private_sdk_release
     )
 
-    update_changelog_from_release(
-      release: private_sdk_release
-    )
-
-    remote = ENV['GITHUB_REMOTE']
-
-    upcoming_version = get_upcoming_version.clone
-    upcoming_notes = get_upcoming_notes.clone
-    put_upcoming_to_releases
-
-    podspecs_version_bump(
-      version: upcoming_version
-    )
-    git_commit_shell(
-      message: "Bump podspecs to #{upcoming_version}"
-    )
-
-    tag_name = upcoming_version
-    git_add_or_update_tag(
-      tag_name: tag_name,
-      remote: remote,
-      branch: release_branch
-    )
-
-    push_to_git_remote(
-      remote: remote,
-      local_branch: release_branch,
-      remote_branch: release_branch
-    )
-
-    podspecs_push
-
-    create_sample_project
-
-    set_or_update_github_release(
-      release_name: tag_name,
-      repository_name: ENV['GITHUB_REPOSITORY'],
-      description: upcoming_notes,
-      tag_name: tag_name,
-      api_token: ENV['CONICHI_CI_GITHUB_TOKEN'],
-      upload_assets: [cnisdk_framework_zip_path, cnisdk_sample_zip_path]
-    )
+    # update_changelog_from_release(
+    #   release: private_sdk_release
+    # )
+    #
+    # remote = ENV['GITHUB_REMOTE']
+    #
+    # upcoming_version = get_upcoming_version.clone
+    # upcoming_notes = get_upcoming_notes.clone
+    # put_upcoming_to_releases
+    #
+    # podspecs_version_bump(
+    #   version: upcoming_version
+    # )
+    # git_commit_shell(
+    #   message: "Bump podspecs to #{upcoming_version}"
+    # )
+    #
+    # tag_name = upcoming_version
+    # git_add_or_update_tag(
+    #   tag_name: tag_name,
+    #   remote: remote,
+    #   branch: release_branch
+    # )
+    #
+    # push_to_git_remote(
+    #   remote: remote,
+    #   local_branch: release_branch,
+    #   remote_branch: release_branch
+    # )
+    #
+    # podspecs_push
+    #
+    # create_sample_project
+    #
+    # set_or_update_github_release(
+    #   release_name: tag_name,
+    #   repository_name: ENV['GITHUB_REPOSITORY'],
+    #   description: upcoming_notes,
+    #   tag_name: tag_name,
+    #   api_token: ENV['CONICHI_CI_GITHUB_TOKEN'],
+    #   upload_assets: [cnisdk_framework_zip_path, cnisdk_sample_zip_path]
+    # )
   end
 
   lane :download_frameworks do |options|
@@ -143,6 +143,7 @@ platform :ios do
       FileUtils.cp_r("#{cnisdk_framework_folder}/#{framework}", "../Frameworks")
     end
     unless git_status_clean?
+      git_add_all_shell
       git_commit_shell(
         message: "conichi frameworks have been updated;"
       )
