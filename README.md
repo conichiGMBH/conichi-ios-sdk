@@ -11,6 +11,7 @@
 
 ### Meta
 * __Point People:__ [@antondomashnev](https://github.com/Antondomashnev)
+* __Point People:__ [@Mourad-Aly](https://github.com/Mourad-Aly)
 
 ### Overview
 `conichiSDK` for iOS is a tool that allows users to be recognized around the Beacon through Bluetooth Low Energy (BLE). Operated as a Software-as-a-Service (SaaS) solution, conichi’s features focus on personal guest recognition, fast-forwarding check-in, enabling mobile payment (thus check-out), identifying personal preferences, rewarding loyalty.
@@ -129,7 +130,7 @@ Example below shows the simplest setup for `conichiSDK CoreKit` that points to o
   CNISDK.start(with: config, delegate: delegate)
 ```
 
-</details>
+</details>  
 
 After this setup you have an access to the instance of the `[CNISDK sharedInstance]` in **Obj-C** or  `CNISDK.sharedInstance()` in **Swift**.
 
@@ -152,22 +153,6 @@ requestInfo.lastName = @”Brown”;
   }
 }];
 ```
-
-#### Error handling
-
-Conichi provides unified error codes for each error coming from the `sdk`. All error codes can be found in the `CNIError.h` class.
-To make `sdk` able to convert different error codes into `CNIErrorCode` there is a protocol `CNIErrorCodeConverter`. Out of the box there are 4 predefined converters:
-* CNINSURLErrorConverter
-* CNIHTTPResponseErrorConverter
-* CNIConichiResponseErrorConverter
-* CNIPaymentProviderErrorConverter
-During the initialization state, client __has to__ add required converters and order of adding means the priority - first is highest. The suggested flow is:
-```objective-c
-[CNIError addCodeConvertor:[CNIConichiResponseErrorConverter class]];
-[CNIError addCodeConvertor:[CNINSURLErrorConverter class]];
-[CNIError addCodeConvertor:[CNIHTTPResponseErrorConverter class]];
-```
-And `CNIPaymentProviderErrorConverter` will be used automatically when working with Payment.
 
 #### Authorization
 
@@ -236,7 +221,7 @@ If the guest is authorized, the following code will enable tracking
 <summary>Swift</summary>
 
 `CNISDK.sharedInstance().startMonitoring()`
-</details>
+</details>  
 
 Now, if a guest is near a beacon he should be tracked.
 Customization of the tracking behavior is possible with callbacks. All callbacks can be found in `CNISDKDelegate.h`
