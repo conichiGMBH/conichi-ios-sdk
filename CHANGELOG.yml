@@ -1,7 +1,8 @@
 ---
 upcoming:
-  version: 
-  notes: 
+  version: 3.1.0.1
+  notes:
+  - Include missing headers
 releases:
 - version: 3.1.0
   notes:

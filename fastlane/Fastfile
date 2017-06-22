@@ -22,10 +22,10 @@ platform :ios do
   lane :release do |options|
     release_branch = ENV['GITHUB_RELEASE_BRANCH']
 
-    ensure_git_status_clean
-    ensure_git_branch(
-      branchg: release_branch
-    )
+    # ensure_git_status_clean
+    # ensure_git_branch(
+    #   branchg: release_branch
+    # )
 
     release_version = options[:release_version]
     private_sdk_release = get_github_release(
@@ -143,7 +143,9 @@ platform :ios do
       FileUtils.cp_r("#{cnisdk_framework_folder}/#{framework}", "../Frameworks")
     end
     unless git_status_clean?
-      git_add_all_shell
+      cni_git_add(
+        pathspec: "Frameworks/*"
+      )
       git_commit_shell(
         message: "conichi frameworks have been updated;"
       )
