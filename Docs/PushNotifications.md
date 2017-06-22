@@ -72,6 +72,7 @@ To do so, please save `deviceToken` in a `[CNISDKGuest currentGuest]` object.
 ```
 
 Below are helper functions to convert `deviceToken` into string.
+
 __Swift__
 ```swift
 func stringWithDeviceToken(_ deviceToken: Data) -> String {
