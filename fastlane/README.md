@@ -35,19 +35,14 @@ xcode-select --install
 fastlane ios release
 ```
 
-### ios update_github_release
-```
-fastlane ios update_github_release
-```
-
 ### ios download_frameworks
 ```
 fastlane ios download_frameworks
 ```
 
-### ios compress_sample_project
+### ios create_sample_project
 ```
-fastlane ios compress_sample_project
+fastlane ios create_sample_project
 ```
 
 ### ios setup_new_release
@@ -141,6 +136,13 @@ fastlane ios git_commit_shell
 git commit -am 'message' where the 'message' is a required parameter
 
 **`message`** - commit message
+
+
+### ios git_add_all_shell
+```
+fastlane ios git_add_all_shell
+```
+git add .
 
 
 ### ios git_merge_branch

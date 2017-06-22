@@ -22,10 +22,10 @@ platform :ios do
   lane :release do |options|
     release_branch = ENV['GITHUB_RELEASE_BRANCH']
 
-    # ensure_git_status_clean
-    # ensure_git_branch(
-    #   branchg: release_branch
-    # )
+    ensure_git_status_clean
+    ensure_git_branch(
+      branchg: release_branch
+    )
 
     release_version = options[:release_version]
     private_sdk_release = get_github_release(
@@ -38,48 +38,48 @@ platform :ios do
       release:private_sdk_release
     )
 
-    # update_changelog_from_release(
-    #   release: private_sdk_release
-    # )
-    #
-    # remote = ENV['GITHUB_REMOTE']
-    #
-    # upcoming_version = get_upcoming_version.clone
-    # upcoming_notes = get_upcoming_notes.clone
-    # put_upcoming_to_releases
-    #
-    # podspecs_version_bump(
-    #   version: upcoming_version
-    # )
-    # git_commit_shell(
-    #   message: "Bump podspecs to #{upcoming_version}"
-    # )
-    #
-    # tag_name = upcoming_version
-    # git_add_or_update_tag(
-    #   tag_name: tag_name,
-    #   remote: remote,
-    #   branch: release_branch
-    # )
-    #
-    # push_to_git_remote(
-    #   remote: remote,
-    #   local_branch: release_branch,
-    #   remote_branch: release_branch
-    # )
-    #
-    # podspecs_push
-    #
-    # create_sample_project
-    #
-    # set_or_update_github_release(
-    #   release_name: tag_name,
-    #   repository_name: ENV['GITHUB_REPOSITORY'],
-    #   description: upcoming_notes,
-    #   tag_name: tag_name,
-    #   api_token: ENV['CONICHI_CI_GITHUB_TOKEN'],
-    #   upload_assets: [cnisdk_framework_zip_path, cnisdk_sample_zip_path]
-    # )
+    update_changelog_from_release(
+      release: private_sdk_release
+    )
+
+    remote = ENV['GITHUB_REMOTE']
+
+    upcoming_version = get_upcoming_version.clone
+    upcoming_notes = get_upcoming_notes.clone
+    put_upcoming_to_releases
+
+    podspecs_version_bump(
+      version: upcoming_version
+    )
+    git_commit_shell(
+      message: "Bump podspecs to #{upcoming_version}"
+    )
+
+    tag_name = upcoming_version
+    git_add_or_update_tag(
+      tag_name: tag_name,
+      remote: remote,
+      branch: release_branch
+    )
+
+    push_to_git_remote(
+      remote: remote,
+      local_branch: release_branch,
+      remote_branch: release_branch
+    )
+
+    podspecs_push
+
+    create_sample_project
+
+    set_or_update_github_release(
+      release_name: tag_name,
+      repository_name: ENV['GITHUB_REPOSITORY'],
+      description: upcoming_notes,
+      tag_name: tag_name,
+      api_token: ENV['CONICHI_CI_GITHUB_TOKEN'],
+      upload_assets: [cnisdk_framework_zip_path, cnisdk_sample_zip_path]
+    )
   end
 
   lane :download_frameworks do |options|
@@ -104,9 +104,33 @@ platform :ios do
     sh("rm -R #{path_dir}")
   end
 
-  ######################### PRIVATE LANES ##########################
+  lane :update_changelog_from_release do |options|
+    require 'redcarpet'
+    require 'redcarpet/render_strip'
 
-  private_lane :podspecs_version_bump do |options|
+    release = options[:release]
+    release_version = release["tag_name"]
+
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::StripDown)
+    release_body_text = markdown.render(release["body"])
+    release_changes = release_body_text.split("\n")
+
+    changelog_data = get_changelog_data
+    changelog_data["upcoming"]["version"] = release_version
+    changelog_data["upcoming"]["notes"] = release_changes
+
+    save_changelog_data(
+      changelog_data: changelog_data
+    )
+
+    unless git_status_clean?
+      git_commit_shell(
+        message: "Update CHANGELOG with upcoming release information"
+      )
+    end
+  end
+
+  lane :podspecs_version_bump do |options|
     version = options[:version]
     version_bump_podspec(path: ENV['CORE_KIT_PODSPEC'], version_number: version)
     version_bump_podspec(path: ENV['PAYMENT_KIT_PODSPEC'], version_number: version)
@@ -114,12 +138,14 @@ platform :ios do
     version_bump_podspec(path: ENV['PMS_KIT_PODSPEC'], version_number: version)
   end
 
-  private_lane :podspecs_push do
+  lane :podspecs_push do
     pod_push(path: ENV['CORE_KIT_PODSPEC'], allow_warnings: true)
     pod_push(path: ENV['PAYMENT_KIT_PODSPEC'], allow_warnings: true)
     pod_push(path: ENV['GEOFENCING_KIT_PODSPEC'], allow_warnings: true)
     pod_push(path: ENV['PMS_KIT_PODSPEC'], allow_warnings: true)
   end
+
+  ######################### PRIVATE LANES ##########################
 
   private_lane :import_shared_fastfile do
     import_from_git(
@@ -166,31 +192,5 @@ platform :ios do
       destination_path: download_destination,
       api_token: ENV['CONICHI_CI_GITHUB_TOKEN']
     )
-  end
-
-  private_lane :update_changelog_from_release do |options|
-    require 'redcarpet'
-    require 'redcarpet/render_strip'
-
-    release = options[:release]
-    release_version = release["tag_name"]
-
-    markdown = Redcarpet::Markdown.new(Redcarpet::Render::StripDown)
-    release_body_text = markdown.render(release["body"])
-    release_changes = release_body_text.split("\n")
-
-    changelog_data = get_changelog_data
-    changelog_data["upcoming"]["version"] = release_version
-    changelog_data["upcoming"]["notes"] = release_changes
-
-    save_changelog_data(
-      changelog_data: changelog_data
-    )
-
-    unless git_status_clean?
-      git_commit_shell(
-        message: "Update CHANGELOG with upcoming release information"
-      )
-    end
   end
 end
