@@ -45,6 +45,21 @@ fastlane ios download_frameworks
 fastlane ios create_sample_project
 ```
 
+### ios update_changelog_from_release
+```
+fastlane ios update_changelog_from_release
+```
+
+### ios podspecs_version_bump
+```
+fastlane ios podspecs_version_bump
+```
+
+### ios podspecs_push
+```
+fastlane ios podspecs_push
+```
+
 ### ios setup_new_release
 ```
 fastlane ios setup_new_release
