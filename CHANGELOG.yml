@@ -1,7 +1,8 @@
 ---
 upcoming:
-  version:
+  version: 3.1.0.2
   notes:
+  - Conichi_Meta updated
 releases:
 - version: 3.1.0.1
   notes:

@@ -43,6 +43,9 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self updateButtonsVisibility];
+    [[CNISDKAPIManager manager] fetchVenuesWithCompletion:^(id object, NSError *error) {
+        NSLog(@"%@, %@", object, error);
+    }];
 }
 
 #pragma mark - Helpers

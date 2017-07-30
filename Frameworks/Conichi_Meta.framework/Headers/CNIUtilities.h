@@ -72,6 +72,17 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (BOOL)array:(nullable NSArray *)array1 isEqualToArray:(nullable NSArray *)array2;
 
+/**
+ *  generate AccessibilityIdentifier in order to kepp the convention of naming in UITests and UIClasses
+ *
+ *  @param module the module name
+ *  @param viewController viewController string class/name
+ *  @param outlet outlet string
+ *
+ *  @return AccessibilityIdentifier as a string.
+ */
++ (NSString *)CNIAccessibilityIdentifier:(NSString *)module viewController:(NSString *)viewController outlet:(NSString *)outlet;
+
 @end
 
 NS_ASSUME_NONNULL_END

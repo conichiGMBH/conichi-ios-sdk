@@ -1,6 +1,0 @@
-framework module Conichi_Meta {
-  umbrella header "Conichi_Meta.h"
-
-  export *
-  module * { export * }
-}
