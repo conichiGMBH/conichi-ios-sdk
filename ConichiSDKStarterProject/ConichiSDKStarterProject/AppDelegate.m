@@ -46,13 +46,13 @@
     // ****************************************************************************
     
     CNISDKConfiguration *coreConfiguration = [CNISDKConfiguration configurationWithBlock:^(id<CNISDKMutableConfiguration>  _Nonnull configuration) {
-        configuration.apiKey = @"***REMOVED***";
-        configuration.apiSecret = @"***REMOVED***";
-//        configuration.environment = CNISDKEnvironmentSandbox;
+        configuration.apiKey = @"YOUR API KEY";
+        configuration.apiSecret = @"YOUR API SECRET";
+        configuration.environment = CNISDKEnvironmentSandbox;
         
         // Uncomment the following lines to set up sdk with your specific URL (optionally)
-         configuration.environment = CNISDKEnvironmentProduction;
-         configuration.baseURL = [NSURL URLWithString:@"***REMOVED***"];
+        // configuration.environment = CNISDKEnvironmentProduction;
+        // configuration.baseURL = [NSURL URLWithString:@"https://kpmg.conichi.com"];
         
         // Uncomment the following line and change to expected log level;
         // configuration.logLevel = CNISDKLogLevelWarning;
