@@ -24,6 +24,37 @@ extern NSString *const kCNISDKCreditCardUseCasePrivate;
 extern NSString *const kCNISDKCreditCardUseCaseBusiness;
 extern NSString *const kCNISDKCreditCardUseCaseDefault;
 
+extern NSString *const kCNISDKCreditCardProviderPayleven;
+extern NSString *const kCNISDKCreditCardProviderSumUp;
+
+/**
+ *  Credit card provider
+ */
+typedef NS_ENUM(NSInteger, CNISDKCreditCardProvider) {
+    /**
+     *  Credit card is hosted in Payleven service
+     */
+    CNISDKCreditCardProviderPayleven,
+
+    /**
+     *  Credit card is hosted in SumUp service
+     */
+    CNISDKCreditCardProviderSumUp
+};
+
+/**
+ *  Credit card brand
+ */
+typedef NS_ENUM(NSInteger, CNISDKCreditCardBrand) {
+    CNISDKCreditCardBrandUnknown,
+    CNISDKCreditCardBrandVISA,
+    CNISDKCreditCardBrandAmex,
+    CNISDKCreditCardBrandMasterCard,
+    CNISDKCreditCardBrandDiscover,
+    CNISDKCreditCardBrandJCB,
+    CNISDKCreditCardBrandDinersClub
+};
+
 /**
  *  Credit card use case
  */
@@ -43,6 +74,17 @@ typedef NS_ENUM(NSInteger, CNISDKCreditCardUseCase) {
      */
     CNISDKCreditCardUseCaseBusiness
 };
+
+extern NSString *convertCreditCardUseCaseEnum(CNISDKCreditCardUseCase useCase);
+extern CNISDKCreditCardUseCase convertCreditCardUseCase(NSString *useCase);
+
+extern NSString *convertCreditCardBrandEnum(CNISDKCreditCardBrand brand);
+extern CNISDKCreditCardBrand convertCreditCardBrand(NSString *brand);
+
+extern NSString *convertCreditCardProviderEnum(CNISDKCreditCardProvider provider);
+extern CNISDKCreditCardProvider convertCreditCardProvider(NSString *provider);
+
+//************************************************************//
 
 /**
  *  The `CNISDKCreditCard` defines entity that represents guest credit card
@@ -65,6 +107,12 @@ typedef NS_ENUM(NSInteger, CNISDKCreditCardUseCase) {
 @property (nonatomic, strong, readonly) NSString *brand;
 
 /**
+ *  Enum representation of the brand property
+ *  @see CNISDKCreditCardBrand
+ */
+@property (nonatomic, assign, readonly) CNISDKCreditCardBrand brandEnum;
+
+/**
  *  Credit card use case
  *  Supported useCases are kCNISDKCreditCardUseCase...
  */
@@ -75,6 +123,18 @@ typedef NS_ENUM(NSInteger, CNISDKCreditCardUseCase) {
  *  @see CNISDKCreditCardUseCase
  */
 @property (nonatomic, assign, readonly) CNISDKCreditCardUseCase useCaseEnum;
+
+/**
+ *  Credit card provider
+ *  Supported useCases are kCNISDKCreditCardProvider...
+ */
+@property (nonatomic, strong, readonly) NSString *provider;
+
+/**
+ *  Enum representation of the provider property
+ *  @see CNISDKCreditCardProvider
+ */
+@property (nonatomic, assign, readonly) CNISDKCreditCardProvider providerEnum;
 
 /**
  *  Returns card brand base on the given number

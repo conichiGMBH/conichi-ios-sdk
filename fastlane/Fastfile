@@ -24,7 +24,7 @@ platform :ios do
 
     ensure_git_status_clean
     ensure_git_branch(
-      branch: release_branch
+      branchg: release_branch
     )
 
     release_version = options[:release_version]
@@ -143,6 +143,8 @@ platform :ios do
     pod_push(path: ENV['PAYMENT_KIT_PODSPEC'], allow_warnings: true)
     pod_push(path: ENV['GEOFENCING_KIT_PODSPEC'], allow_warnings: true)
     pod_push(path: ENV['PMS_KIT_PODSPEC'], allow_warnings: true)
+    pod_push(path: ENV['SUM_UP_KIT_PODSPEC'], allow_warnings: true)
+    pod_push(path: ENV['PAYLEVEN_KIT_PODSPEC'], allow_warnings: true)
   end
 
   ######################### PRIVATE LANES ##########################

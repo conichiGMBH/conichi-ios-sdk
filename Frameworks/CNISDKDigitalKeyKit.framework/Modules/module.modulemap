@@ -1,0 +1,6 @@
+framework module CNISDKDigitalKeyKit {
+  umbrella header "CNISDKDigitalKeyKit.h"
+
+  export *
+  module * { export * }
+}

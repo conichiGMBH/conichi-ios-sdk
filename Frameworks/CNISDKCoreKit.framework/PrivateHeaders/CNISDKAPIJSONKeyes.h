@@ -84,6 +84,7 @@ extern const struct CNISDKBusinessCreditCardJSONKeyes {
     __unsafe_unretained NSString *brand;
     __unsafe_unretained NSString *useCase;
     __unsafe_unretained NSString *externalIdentifier;
+    __unsafe_unretained NSString *provider;
     __unsafe_unretained NSString *address;
 } CNISDKBusinessCreditCardJSONKeyes;
 
@@ -169,6 +170,7 @@ extern const struct CNISDKPrivateCreditCardJSONKeyes {
     __unsafe_unretained NSString *brand;
     __unsafe_unretained NSString *useCase;
     __unsafe_unretained NSString *externalIdentifier;
+    __unsafe_unretained NSString *provider;
     __unsafe_unretained NSString *address;
 } CNISDKPrivateCreditCardJSONKeyes;
 

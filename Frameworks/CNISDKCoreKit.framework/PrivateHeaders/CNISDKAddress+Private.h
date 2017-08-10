@@ -6,7 +6,8 @@
 //  Copyright (c) 2015 conichi. All rights reserved.
 //
 
-#import "CNISDKAddress.h"
+#import <CNISDKCoreKit/CNISDKCoreKit.h>
+
 #import "CNISDKMapping.h"
 
 NS_ASSUME_NONNULL_BEGIN

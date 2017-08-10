@@ -61,15 +61,6 @@ typedef void (^CNISDKSessionErrorBlock)(CNISDKSession *session, NSError *error);
 typedef void (^CNISDKGuestErrorBlock)(CNISDKGuest *guest, NSError *error);
 
 /**
- *  Typedef for CNISDKCreditCard specific result/error blocks also provides the CNISDKGuest that associated with the card
- *
- *  @param guest guest object associated with the card
- *  @param card  any card object
- *  @param error error object
- */
-typedef void (^CNISDKGuestCreditCardErrorBlock)(CNISDKGuest *guest, CNISDKCreditCard *card, NSError *error);
-
-/**
  *  General typedef for blocks without any parameters
  */
 typedef void (^CNISDKEmptyBlock)();

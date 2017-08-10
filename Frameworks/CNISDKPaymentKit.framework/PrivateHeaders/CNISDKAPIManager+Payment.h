@@ -7,23 +7,12 @@
 //
 
 #import <CNISDKCoreKit/CNISDKCoreKit.h>
+#import <CNISDKPaymentKit/CNISDKPaymentKit.h>
 
 @class CNISDKGuest;
-
+@class CNISDKAddCreditCardRequestInfo;
 
 NS_ASSUME_NONNULL_BEGIN
-
-extern NSString *const kCNISDKAPIManagerCreditCardPaylevenTokenKey;
-extern NSString *const kCNISDKAPIManagerCreditCardLastFourDigitsKey;
-extern NSString *const kCNISDKAPIManagerCreditCardBrandKey;
-extern NSString *const kCNISDKAPIManagerCreditCardUseCaseKey;
-extern NSString *const kCNISDKAPIManagerCreditCardCardHolderKey;
-extern NSString *const kCNISDKAPIManagerCreditCardCountryCodeKey;
-extern NSString *const kCNISDKAPIManagerCreditCardStreetNameKey;
-extern NSString *const kCNISDKAPIManagerCreditCardZipKey;
-extern NSString *const kCNISDKAPIManagerCreditCardCityNameKey;
-extern NSString *const kCNISDKAPIManagerCreditCardBusinessNameKey;
-extern NSString *const kCNISDKAPIManagerCreditCardExternalIdentifierKey;
 
 
 @interface CNISDKAPIManager (Payment)
@@ -39,14 +28,14 @@ extern NSString *const kCNISDKAPIManagerCreditCardExternalIdentifierKey;
 
 /**
  * Adds new credit card with given parameter to the current guest
- * @param parameters - new Guest's credit card parameters. Possible keys are kCNISDKAPIManagerCreditCard*
+ * @param requestInfo - add credit card request information
  * @param guest - guest for whom we age gonna add credit card
  * @param completion - callback block with three parameters
  *                     1. Updated guest object
  *                     2. Added credit card object
  *                     3. NSError object if request failed
  */
-- (void)addCreditCardForGuest:(CNISDKGuest *)guest withParameters:(NSDictionary *)parameters completion:(nullable CNISDKGuestCreditCardErrorBlock)completion;
+- (void)addCreditCardForGuest:(CNISDKGuest *)guest withRequestInfo:(CNISDKAddCreditCardRequestInfo *)requestInfo completion:(nullable CNISDKGuestCreditCardErrorBlock)completion;
 
 /**
  * Deletes credit card with given conichiID from the current guest

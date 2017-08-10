@@ -40,7 +40,12 @@ typedef NS_ENUM(NSInteger, CNIHTTPErrorCode) {
      *  General error code when request could not be understood by the server due to malformed syntax. The client SHOULD NOT repeat the request
      *  without modifications.
      */
-    CNIHTTPErrorCodeBadRequest
+    CNIHTTPErrorCodeBadRequest,
+
+    /**
+     *  General error code when request could not be understood by the server due to forbidden access.
+     */
+    CNIHTTPErrorCodeForbidden
 
 };
 

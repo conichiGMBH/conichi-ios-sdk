@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'CNISDKPaymentKit'
-  s.version      = '3.1.0.2'
+  s.version      = '4.0.0'
   s.summary      = "Payment kit extends the CNISDKCoreKit with payment functionality."
 
   s.description  = <<-DESC
@@ -20,10 +20,7 @@ Pod::Spec.new do |s|
   s.public_header_files   = 'Frameworks/CNISDKPaymentKit.framework/Headers/*.h'
   s.vendored_frameworks   = 'Frameworks/CNISDKPaymentKit.framework'
   s.preserve_paths        = 'Frameworks/CNISDKPaymentKit.framework'
-  s.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(inherited)' }
+  s.xcconfig              = { 'FRAMEWORK_SEARCH_PATHS' => '$(inherited)' }
 
   s.dependency 'CNISDKCoreKit', "#{s.version}"
-  s.dependency 'PaylevenFramework', "~> 1.0"
-
-  s.framework = 'JavaScriptCore'
 end

@@ -1,0 +1,10 @@
+framework module Conichi_Meta {
+  umbrella header "Conichi_Meta.h"
+
+  export *
+  module * { export * }
+}
+
+module Conichi_Meta.Swift {
+    header "Conichi_Meta-Swift.h"
+}

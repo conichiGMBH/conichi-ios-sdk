@@ -6,7 +6,8 @@
 //  Copyright © 2015 conichi. All rights reserved.
 //
 
-#import "CNISDKPersonalAddress.h"
+#import <CNISDKCoreKit/CNISDKCoreKit.h>
+
 #import "CNISDKAddress+Private.h"
 
 NS_ASSUME_NONNULL_BEGIN

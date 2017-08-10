@@ -15,7 +15,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- *  The `CNISDKMutablePaymentKitConfiguration` represents a `CNISDKGeoFencingKitConfiguration` object that can be mutated.
+ *  The `CNISDKMutablePaylevenKitConfiguration` represents a `CNISDKGeoFencingKitConfiguration` object that can be mutated.
  */
 @protocol CNISDKMutableGeoFencingKitConfiguration
 

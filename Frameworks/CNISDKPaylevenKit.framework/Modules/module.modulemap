@@ -1,0 +1,6 @@
+framework module CNISDKPaylevenKit {
+  umbrella header "CNISDKPaylevenKit.h"
+
+  export *
+  module * { export * }
+}

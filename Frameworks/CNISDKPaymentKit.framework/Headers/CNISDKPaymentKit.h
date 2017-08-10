@@ -17,7 +17,7 @@ FOUNDATION_EXPORT const unsigned char CNISDKPaymentKitVersionString[];
 
 #import "CNISDKPaymentBillingAddress.h"
 #import "CNISDKPaymentInstrument.h"
-#import "CNISDKPaymentManager.h"
-#import "CNISDKPayment.h"
-#import "CNISDKPaymentKitConfiguration.h"
+#import "CNISDKPaymentInstrumentManager.h"
 #import "CNISDKPaymentTransaction.h"
+#import "CNISDKPaymentInstrumentsSynchronizer.h"
+#import "CNISDKPaymentKitConstants.h"

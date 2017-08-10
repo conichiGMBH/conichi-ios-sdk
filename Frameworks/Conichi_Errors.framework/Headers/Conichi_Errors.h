@@ -34,3 +34,6 @@ FOUNDATION_EXPORT const unsigned char Conichi_ErrorsVersionString[];
 #import <Conichi_Errors/CNIErrorFactory.h>
 #import <Conichi_Errors/CNIErrorUserInfoBuilder.h>
 #import <Conichi_Errors/CNIErrorCodeConverterFactory.h>
+
+//helpers
+#import <Conichi_Errors/CNIConichiAPIErrorJSONExtractor.h>

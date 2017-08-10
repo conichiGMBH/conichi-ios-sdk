@@ -90,6 +90,9 @@ typedef NS_ENUM(NSInteger, CNISDKPaymentInstrumentUseCase) {
  */
 @property (nonatomic, copy) NSString *externalIdentifier;
 
+
+- (BOOL)isValid:(NSError *__autoreleasing _Nullable *)error;
+
 @end
 
 NS_ASSUME_NONNULL_END

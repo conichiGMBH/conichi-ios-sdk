@@ -21,7 +21,9 @@
 `conichiSDK` is following the idea of splitting functionality into different modules (so called `kit`) and now there are 4 modules available.
 
 * [CNISDKCoreKit](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/CNISDKCoreKit.md) - provides beacon recognition, simple check-in/check-out, and guest personalization
-* [CNISDKPaymentKit](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/CNISDKPaymentKit.md) - provides managing of payment instruments, checkout request with payment
+* [CNISDKPaymentKit](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/CNISDKPaymentKit.md) - provides abstract layer for managing of payment instruments, checkout request with payment
+* [CNISDKPaylevenKit](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/CNISDKPaylevenKit.md) - provides abstract layer for managing payment through Payleven
+* [CNISDKSumUpKit](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/CNISDKSumUpKit.md) - provides abstract layer for managing payment through SumUp
 * [CNISDKGeoFencingKit](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/CNISDKGeoFencingKit.md) - provides conichi's venues tracking by apple geofencing
 * [CNISDKPMSKit](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/CNISDKPMSKit.md) - provides mobile check-in/check-out with property management system integration  
 
@@ -61,6 +63,8 @@ Following the links below you can find the instructions in the __Getting Started
 * [CNISDKCoreKit](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/CNISDKCoreKit.md)
 * [CNISDKGeoFencingKit](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/CNISDKGeoFencingKit.md)
 * [CNISDKPaymentKit](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/CNISDKPaymentKit.md)
+* [CNISDKPaylevenKit](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/CNISDKPaylevenKit.md)
+* [CNISDKSumUpKit](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/CNISDKSumUpKit.md)
 * [CNISDKPMSKit](https://github.com/conichiGMBH/conichi-ios-sdk/blob/master/Docs/CNISDKPMSKit.md)
 </details>
 
@@ -230,7 +234,9 @@ Customization of the tracking behavior is possible with callbacks. All callbacks
 
 Documentation for each kit is available at the following links:
 * [CNISDKCoreKit](https://conichigmbh.github.io/ios/docs/CNISDKCoreKit/apple_doc/index.html)
-* [CNISDKPaymentKit](https://conichigmbh.github.io/ios/docs/CNISDKPaymentKit/apple_doc/index.html)
+* [CNISDKPaymentKit](https://conichigmbh.github.io/ios/docs/CNISDKPaymentKit/apple_doc/html/index.html)
+* [CNISDKPaylevenKit](https://conichigmbh.github.io/ios/docs/CNISDKPaylevenKit/apple_doc/html/index.html)
+* [CNISDKSumUpKit](https://conichigmbh.github.io/ios/docs/CNISDKSumUpKit/apple_doc/html/index.html)
 * [CNISDKGeoFencingKit](https://conichigmbh.github.io/ios/docs/CNISDKGeoFencingKit/apple_doc/index.html)
 * [CNISDKPMSKit](https://conichigmbh.github.io/ios/docs/CNISDKPMSKit/apple_doc/index.html)  
 

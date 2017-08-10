@@ -1,0 +1,6 @@
+framework module CNISDKSumUpKit {
+  umbrella header "CNISDKSumUpKit.h"
+
+  export *
+  module * { export * }
+}

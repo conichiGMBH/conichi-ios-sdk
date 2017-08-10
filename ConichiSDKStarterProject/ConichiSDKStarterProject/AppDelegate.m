@@ -10,6 +10,7 @@
 
 @import CNISDKCoreKit;
 @import CNISDKPaymentKit;
+@import CNISDKSumUpKit;
 @import CNISDKPMSKit;
 @import CNISDKGeoFencingKit;
 
@@ -31,12 +32,9 @@
     }];
     CNISDKKitBundle *geoFencingBundle = [CNISDKKitBundle bundleWithKit:[CNISDKGeoFencing class] configuration:geoFencingKitConfiguration];
     
-    //Initializing Payment Kit
-    CNISDKPaymentKitConfiguration *paymentKitConfiguration = [CNISDKPaymentKitConfiguration configurationWithBlock:^(id<CNISDKMutablePaymentKitConfiguration>  _Nonnull configuration) {
-        // Add your Payleven API key you can take it from https://service.payleven.com/uk/developer?product=apppay:
-        configuration.paymentKey = @"your payleven API key";
-    }];
-    CNISDKKitBundle *paymentBundle = [CNISDKKitBundle bundleWithKit:[CNISDKPayment class] configuration:paymentKitConfiguration];
+    //Initializing SumUp Kit
+    CNISDKSumUpKitConfiguration *sumUpKitConfiguration = [CNISDKSumUpKitConfiguration configurationWithBlock:^(id<CNISDKMutableSumUpKitConfiguration>  _Nonnull configuration) {}];
+    CNISDKKitBundle *sumUpBundle = [CNISDKKitBundle bundleWithKit:[CNISDKSumUp class] configuration:sumUpKitConfiguration];
     
     //Initializing PMS Kit this one comes without internal configuration
     CNISDKKitBundle *pmsBundle = [CNISDKKitBundle bundleWithKit:[CNISDKPMS class] configuration:nil];
@@ -57,7 +55,7 @@
         // Uncomment the following line and change to expected log level;
         // configuration.logLevel = CNISDKLogLevelWarning;
     
-        configuration.kits = @[geoFencingBundle, paymentBundle, pmsBundle];
+        configuration.kits = @[geoFencingBundle, sumUpBundle, pmsBundle];
     }];
     [CNISDK startWithConfiguration:coreConfiguration delegate:nil];
     
