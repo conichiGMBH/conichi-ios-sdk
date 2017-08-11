@@ -25,6 +25,8 @@ To use `CNISDKGeoFencingKit`, head on over to the [releases](https://github.com/
 #### Install via CocoaPods
 The preferred way to integrate `CNISDKGeoFencingKit` is via `CocoaPods`. Add the following line to your `Podfile`:
 ```ruby
+use_frameworks!
+
 pod 'CNISDKGeoFencingKit'
 ```
 Run `pod install`, and you should now have the latest `CNISDKGeoFencingKit` release.

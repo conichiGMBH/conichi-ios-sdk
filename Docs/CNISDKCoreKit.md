@@ -13,6 +13,8 @@ To use `CNISDKCoreKit`, head on over to the [releases](https://github.com/conich
 #### Install via CocoaPods
 The preferred way to integrate `CNISDKCoreKit` is via `CocoaPods`. Add the following line to your `Podfile`:
 ```ruby
+use_frameworks!
+
 pod 'CNISDKCoreKit'
 ```
 Run `pod install`, and you should now have the latest `CNISDKCoreKit` release.

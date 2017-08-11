@@ -14,11 +14,13 @@ PMS is an abbreviation of Property Management System. The `conichiSDK PMSKit` ex
 
 #### Install as a framework
 
-To use `CNISDKPMSKit`, head on over to the [releases](https://github.com/conichiGMBH/conichi-ios-sdk/releases) page, and download the `CNISDK.framework.zip`. Extract the zip file and drag and drop `CNISDKCoreKit.framework`, `Conichi_Meta.framework`, `Conichi_Authentication.framework`, `CNISDKPMSKit.framework`, `CNISDKPaymentKit.framework`, `PaylevenFramework.framework` and `Conichi_Errors.framework` to the `Project target -> general -> Embedded Binaries`. 
+To use `CNISDKPMSKit`, head on over to the [releases](https://github.com/conichiGMBH/conichi-ios-sdk/releases) page, and download the `CNISDK.framework.zip`. Extract the zip file and drag and drop `CNISDKCoreKit.framework`, `Conichi_Meta.framework`, `Conichi_Authentication.framework`, `CNISDKPMSKit.framework`, `CNISDKPaymentKit.framework`, `PaylevenFramework.framework` and `Conichi_Errors.framework` to the `Project target -> general -> Embedded Binaries`.
 
 #### Install via CocoaPods
 The preferred way to integrate `CNISDKPMSKit` is via `CocoaPods`. Add the following line to your `Podfile`:
 ```ruby
+use_frameworks!
+
 pod 'CNISDKPMSKit'
 ```
 Run `pod install`, and you should now have the latest `CNISDKPMSKit` release.

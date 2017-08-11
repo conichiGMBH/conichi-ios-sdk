@@ -34,15 +34,17 @@
 <details>
 <summary>Install as a framework</summary>
 
-To use `CNISDKCoreKit`, head on over to the [releases](https://github.com/conichiGMBH/conichi-ios-sdk/releases) page, and download the `CNISDK.framework.zip`. Extract the zip file and drag and drop all frameworks to the `Project target -> general -> Embedded Binaries`.
+To use `Conichi SDK`, head on over to the [releases](https://github.com/conichiGMBH/conichi-ios-sdk/releases) page, and download the `CNISDK.framework.zip`. Extract the zip file and drag and drop all frameworks to the `Project target -> general -> Embedded Binaries`.
 
 ![Alt text](https://monosnap.com/file/hTEOYYDWNsL2KHqeVP9psO7aGU4ZRc.png)
 </details>
 <details>
 <summary>Install via CocoaPods</summary>
 
-The preferred way to integrate `CNISDKCoreKit` is via `CocoaPods`. Add the following line to your `Podfile`:
+The preferred way to integrate `CNISDKCoreKit` is via `CocoaPods`. Add the following lines to your `Podfile`:
 ```ruby
+use_frameworks!
+
 pod 'CNISDKCoreKit'
 ```
 Run `pod install`, and you should now have the latest `CNISDKCoreKit` release.

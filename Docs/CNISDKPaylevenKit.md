@@ -20,6 +20,8 @@ To use `CNISDKPaylevenKit`, head on over to the [releases](https://github.com/co
 #### Install via CocoaPods
 The preferred way to integrate `CNISDKPaylevenKit` is via `CocoaPods`. Add the following line to your `Podfile`:
 ```ruby
+use_frameworks!
+
 pod 'CNISDKPaylevenKit'
 ```
 Run `pod install`, and you should now have the latest `CNISDKPaylevenKit` release.

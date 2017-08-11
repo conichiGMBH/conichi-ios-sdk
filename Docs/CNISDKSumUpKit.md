@@ -14,11 +14,13 @@ The `CNISDKSumUpKit` provides the way to manage guest's credit cards by using [S
 
 #### Install as a framework
 
-To use `CNISDKSumUpKit`, head on over to the [releases](https://github.com/conichiGMBH/conichi-ios-sdk/releases) page, and download the `CNISDK.framework.zip`. Extract the zip file and drag and drop `CNISDKCoreKit.framework`, `Conichi_Meta.framework`, `Conichi_Authentication.framework`, `CNISDKPaymentKit.framework`, `CNISDKSumUpKit.framework`,  `SumUpFramework.framework` and `Conichi_Errors.framework` to the `Project target -> general -> Embedded Binaries`.
+To use `CNISDKSumUpKit`, head on over to the [releases](https://github.com/conichiGMBH/conichi-ios-sdk/releases) page, and download the `CNISDK.framework.zip`. Extract the zip file and drag and drop `CNISDKCoreKit.framework`, `Conichi_Meta.framework`, `Conichi_Authentication.framework`, `Conichi_Network.framework`, `CNISDKPaymentKit.framework`, `CNISDKSumUpKit.framework` and `Conichi_Errors.framework` to the `Project target -> general -> Embedded Binaries`.
 
 #### Install via CocoaPods
 The preferred way to integrate `CNISDKSumUpKit` is via `CocoaPods`. Add the following line to your `Podfile`:
 ```ruby
+use_frameworks!
+
 pod 'CNISDKSumUpKit'
 ```
 Run `pod install`, and you should now have the latest `CNISDKSumUpKit` release.
