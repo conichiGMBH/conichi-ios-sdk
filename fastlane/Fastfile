@@ -24,7 +24,7 @@ platform :ios do
 
     ensure_git_status_clean
     ensure_git_branch(
-      branchg: release_branch
+      branch: release_branch
     )
 
     release_version = options[:release_version]
