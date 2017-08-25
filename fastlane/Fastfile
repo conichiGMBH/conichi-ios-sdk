@@ -136,11 +136,15 @@ platform :ios do
     version_bump_podspec(path: ENV['PAYMENT_KIT_PODSPEC'], version_number: version)
     version_bump_podspec(path: ENV['GEOFENCING_KIT_PODSPEC'], version_number: version)
     version_bump_podspec(path: ENV['PMS_KIT_PODSPEC'], version_number: version)
+    version_bump_podspec(path: ENV['SUM_UP_KIT_PODSPEC'], version_number: version)
+    version_bump_podspec(path: ENV['PAYLEVEN_KIT_PODSPEC'], version_number: version)
   end
 
   lane :podspecs_push do
     pod_push(path: ENV['CORE_KIT_PODSPEC'], allow_warnings: true)
+    sh("bundle exec pod repo update")
     pod_push(path: ENV['PAYMENT_KIT_PODSPEC'], allow_warnings: true)
+    sh("bundle exec pod repo update")
     pod_push(path: ENV['GEOFENCING_KIT_PODSPEC'], allow_warnings: true)
     pod_push(path: ENV['PMS_KIT_PODSPEC'], allow_warnings: true)
     pod_push(path: ENV['SUM_UP_KIT_PODSPEC'], allow_warnings: true)
@@ -164,8 +168,8 @@ platform :ios do
   private_lane :copy_frameworks_from_cnisdk_framework_folder do |options|
     cnisdk_framework_folder = options[:cnisdk_framework_folder]
     frameworks_to_copy = ["CNISDKCoreKit.framework", "CNISDKGeoFencingKit.framework",
-                          "CNISDKPaymentKit.framework", "CNISDKPMSKit.framework",
-                          "Conichi_Authentication.framework", "Conichi_Errors.framework",
+                          "CNISDKPaylevenKit.framework", "CNISDKPaymentKit.framework", "CNISDKPMSKit.framework",
+                          "CNISDKSumUpKit.framework", "Conichi_Authentication.framework", "Conichi_Errors.framework",
                           "Conichi_Meta.framework", "PaylevenFramework.framework"]
     frameworks_to_copy.each do |framework|
       FileUtils.cp_r("#{cnisdk_framework_folder}/#{framework}", "../Frameworks")
