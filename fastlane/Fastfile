@@ -141,12 +141,6 @@ platform :ios do
   end
 
   lane :podspecs_push do
-    pod_push(path: ENV['CORE_KIT_PODSPEC'], allow_warnings: true)
-    sh("bundle exec pod repo update")
-    pod_push(path: ENV['PAYMENT_KIT_PODSPEC'], allow_warnings: true)
-    sh("bundle exec pod repo update")
-    pod_push(path: ENV['GEOFENCING_KIT_PODSPEC'], allow_warnings: true)
-    pod_push(path: ENV['PMS_KIT_PODSPEC'], allow_warnings: true)
     pod_push(path: ENV['SUM_UP_KIT_PODSPEC'], allow_warnings: true)
     pod_push(path: ENV['PAYLEVEN_KIT_PODSPEC'], allow_warnings: true)
   end
