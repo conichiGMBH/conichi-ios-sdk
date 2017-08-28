@@ -8,7 +8,10 @@
 
 @import Foundation;
 
+NS_ASSUME_NONNULL_BEGIN
 
 @interface CNISDKAPISessionDelegate : NSObject <NSURLSessionDelegate>
 
 @end
+
+NS_ASSUME_NONNULL_END
