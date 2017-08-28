@@ -1,10 +1,12 @@
 ---
 upcoming:
-  version: 4.0.1
+  version: 
+  notes: 
+releases:
+- version: 4.0.1
   notes:
   - Fix handling outside of the beacon region in background
   - Fix app trying to request backend while being killed and phone is locked
-releases:
 - version: 4.0.0
   notes:
   - Introduction of a new CNISDKPaylevenKit
