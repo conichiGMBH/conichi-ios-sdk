@@ -1,8 +1,10 @@
 ---
 upcoming:
-  version: 4.1.0
-  notes: []
+  version: 
+  notes: 
 releases:
+- version: 4.1.0
+  notes: []
 - version: 4.0.1
   notes:
   - Fix handling outside of the beacon region in background
