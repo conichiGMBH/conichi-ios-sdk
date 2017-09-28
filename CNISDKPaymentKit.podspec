@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'CNISDKPaymentKit'
-  s.version      = '4.0.1'
+  s.version      = '4.1.0'
   s.summary      = "Payment kit extends the CNISDKCoreKit with payment functionality."
 
   s.description  = <<-DESC
