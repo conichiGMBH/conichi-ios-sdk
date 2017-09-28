@@ -39,6 +39,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)createCheckoutRequestWithDeliverableCountableItems:(nullable NSArray<CNISDKDeliverableCountableItem *> *)items selectedCreditCard:(NSString *)creditCardID completion:(nullable CNISDKIDErrorBlock)completion;
 
+- (void)createAdHocCheckoutRequestWithVenueID:(NSString*)venueID roomNumber:(NSString*)roomNumber  deliverableCountableItems:(nullable NSArray<CNISDKDeliverableCountableItem *> *)items selectedCreditCard:(NSString *)creditCardID completion:(nullable CNISDKIDErrorBlock)completion;
+
 @end
 
 NS_ASSUME_NONNULL_END

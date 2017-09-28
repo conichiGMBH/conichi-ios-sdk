@@ -11,6 +11,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ * @see http://docs.sumup.com/rest-api/checkouts-api/#customers-payment-instruments-post
+ */
+typedef NS_ENUM(NSInteger, CNISDKSumUpAPIErrorCode) {
+    CNISDKSumUpAPIErrorCodeUnknown,
+    CNISDKSumUpAPIErrorCodeMaxInstrumentCount,
+    CNISDKSumUpAPIErrorCodePaymentInstrumentValidation,
+    CNISDKSumUpAPIErrorCodeProcessingError,
+    CNISDKSumUpAPIErrorCodeCustomerNotFound
+};
+
 extern NSErrorDomain const CNISDKSumUpAPIErrorDomain;
 
 
