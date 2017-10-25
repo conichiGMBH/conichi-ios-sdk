@@ -1,7 +1,10 @@
 ---
 upcoming:
-  version: 
-  notes: 
+  version: 4.1.1
+  notes:
+  - Increase API request timeout
+  - Support images in push notifications payload
+  - Fix outdated ObjC formatting
 releases:
 - version: 4.1.0
   notes: []
