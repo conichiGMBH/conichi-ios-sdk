@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, readwrite) NSString *title;
 @property (nonatomic, strong, readwrite) NSString *message;
+@property (nonatomic, strong, readwrite) NSString *imageURL;
 @property (nonatomic, strong, readwrite) NSString *type;
 @property (nonatomic, strong, readwrite) NSString *venueName;
 @property (nonatomic, assign, getter=isRead, readwrite) BOOL read;

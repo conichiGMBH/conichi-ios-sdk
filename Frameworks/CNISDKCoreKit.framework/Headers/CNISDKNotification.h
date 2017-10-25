@@ -39,6 +39,11 @@ extern NSString *const kCNISDKNotificationTypePaymentConichi;
 @property (nonatomic, strong, readonly, nullable) NSString *message;
 
 /**
+ *  Notification's image URL
+ */
+@property (nonatomic, strong, readonly, nullable) NSString *imageURL;
+
+/**
  *  Notification's type
  *  see constants kCNISDKNotificationType*
  */

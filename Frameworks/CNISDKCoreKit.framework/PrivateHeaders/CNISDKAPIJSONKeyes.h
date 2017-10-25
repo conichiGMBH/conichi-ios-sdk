@@ -129,6 +129,7 @@ extern const struct CNISDKDeliverableItemJSONKeyes {
 extern const struct CNISDKNotificationJSONKeyes {
     __unsafe_unretained NSString *title;
     __unsafe_unretained NSString *message;
+    __unsafe_unretained NSString *imageURL;
     __unsafe_unretained NSString *read;
     __unsafe_unretained NSString *favourite;
     __unsafe_unretained NSString *type;
