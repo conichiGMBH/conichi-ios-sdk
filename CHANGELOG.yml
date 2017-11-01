@@ -1,7 +1,9 @@
 ---
 upcoming:
-  version: 
-  notes: 
+  version: 4.1.2
+  notes:
+  - Adopt UserNotification framework for notifications permission
+  - iOS 11 compatibility
 releases:
 - version: 4.1.1
   notes:
