@@ -10,6 +10,7 @@
 @import UIKit;
 @import CoreBluetooth;
 @import CoreLocation;
+@import UserNotifications;
 
 @class CNISDKBeacon;
 @class CNISDKVenue;
@@ -61,6 +62,18 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithLocationManager:(CLLocationManager *)locationManager centralManager:(CBCentralManager *)centralManager application:(CNISDKApplication *)application NS_DESIGNATED_INITIALIZER;
 
 /**
+ *  Designated initializer to create permission manager instance
+ *
+ *  @param locationManager        system location manager to track background location permissions
+ *  @param centralManager         system central manager to track bluetooth status
+ *  @param application            application to track notifications permissions
+ *  @param userNotificationCenter system user notification center to handle notifications permissions since iOS 10
+ *
+ *  @return new permission manager instance
+ */
+- (instancetype)initWithLocationManager:(CLLocationManager *)locationManager centralManager:(CBCentralManager *)centralManager application:(CNISDKApplication *)application userNotificationCenter:(UNUserNotificationCenter *)userNotificationCenter NS_DESIGNATED_INITIALIZER NS_AVAILABLE_IOS(10);
+
+/**
  *  Ask bluetooth permissions and return response in block
  *
  *  @param response callback block with two parameters
@@ -68,7 +81,10 @@ NS_ASSUME_NONNULL_BEGIN
  *                  2. Success flag - whether request succeeded or not
  *
  */
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunguarded-availability"
 - (void)askBluetoothWithResponse:(nullable void (^)(CBManagerState state, BOOL success))response __attribute((deprecated("use CNISDKBluetoothPermissionManager askAndListenForPermissionChangesWithCallback: instead")));
+#pragma clang diagnostic pop
 
 /**
  *  Ask notifications permissions and return response in block

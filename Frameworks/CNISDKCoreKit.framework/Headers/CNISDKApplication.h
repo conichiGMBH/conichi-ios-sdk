@@ -8,6 +8,7 @@
 
 @import Foundation;
 @import UIKit;
+@import UserNotifications;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -22,6 +23,13 @@ NS_ASSUME_NONNULL_BEGIN
  *  Can be nil if initialized in extension environment
  */
 @property (nonatomic, strong, readonly, nullable) UIApplication *systemApplication;
+
+/**
+ *  Underlined user notification center instance since iOS 10
+ *
+ *  Can be nil if initialized in extension environment
+ */
+@property (nonatomic, strong, readonly, nullable) UNUserNotificationCenter *userNotificationCenter NS_AVAILABLE_IOS(10);
 
 /**
  *  Current CNISDKApplication instance

@@ -63,7 +63,7 @@ typedef void (^CNISDKGuestErrorBlock)(CNISDKGuest *guest, NSError *error);
 /**
  *  General typedef for blocks without any parameters
  */
-typedef void (^CNISDKEmptyBlock)();
+typedef void (^CNISDKEmptyBlock)(void);
 
 /**
  *  General typedef for blocks with boolean parameter

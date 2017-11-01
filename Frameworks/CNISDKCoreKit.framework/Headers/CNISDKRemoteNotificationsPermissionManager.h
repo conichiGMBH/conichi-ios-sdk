@@ -6,6 +6,7 @@
 //  Copyright © 2017 conichi. All rights reserved.
 //
 
+@import UserNotifications;
 #import "CNISDKPermissionManager.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -31,7 +32,7 @@ typedef NS_ENUM(NSInteger, CNISDKRemoteNotificationsPermissionState) {
 /**
  Responsible for enabling the notifications permission and for notifying about the notifications state in call back blocks that are fired on main thread
  */
-@interface CNISDKRemoteNotificationsPermissionManager : NSObject<CNISDKPermissionManager>
+@interface CNISDKRemoteNotificationsPermissionManager : NSObject <CNISDKPermissionManager>
 
 /**
  *  Creates notifications permission manager with default dependencies
@@ -49,6 +50,16 @@ typedef NS_ENUM(NSInteger, CNISDKRemoteNotificationsPermissionState) {
  *  @return new notifications permission manager
  */
 - (instancetype)initWithApplication:(CNISDKApplication *)application;
+
+/**
+ *  Creates notifications permission manager with provided application
+ *
+ *  @param application that notifications permission manager to edit permissions
+ *  @param userNotificationCenter that handles notifications permission since iOS 10
+ *
+ *  @return new notifications permission manager
+ */
+- (instancetype)initWithApplication:(CNISDKApplication *)application userNotificationCenter:(UNUserNotificationCenter *)userNotificationCenter NS_AVAILABLE_IOS(10);
 
 @end
 

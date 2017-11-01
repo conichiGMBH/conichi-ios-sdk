@@ -171,7 +171,10 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @note Always calls from the main thread
  */
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunguarded-availability"
 - (void)conichiSDKDidChangeBluetoothState:(CBManagerState)state;
+#pragma clang diagnostic pop
 
 /**
  *  Calls everytime when notifications permission did change for the current app
