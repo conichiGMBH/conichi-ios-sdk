@@ -35,6 +35,18 @@ extern const struct CNISDKGuestStatusInfoJSONKeyes {
     __unsafe_unretained NSString *preCheckin;
 } CNISDKGuestStatusInfoJSONKeyes;
 
+extern const struct CNISDKGuestStayJSONKeyes {
+    __unsafe_unretained NSString *arrivalDate;
+    __unsafe_unretained NSString *departureDate;
+    __unsafe_unretained NSString *mobileCheckin;
+    __unsafe_unretained NSString *completed;
+    __unsafe_unretained NSString *rating;
+    __unsafe_unretained NSString *reservationNumber;
+    __unsafe_unretained NSString *checkinConichiID;
+    __unsafe_unretained NSString *associatedVenue;
+    __unsafe_unretained NSString *preCheckinRequest;
+} CNISDKGuestStayJSONKeyes;
+
 extern const struct CNISDKGuestJSONKeyes {
     __unsafe_unretained NSString *createdAt;
     __unsafe_unretained NSString *infoProvider;

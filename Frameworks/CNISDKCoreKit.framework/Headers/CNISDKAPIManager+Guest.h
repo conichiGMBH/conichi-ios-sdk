@@ -148,6 +148,15 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)fetchStatusForGuest:(CNISDKGuest *)guest completion:(nullable CNISDKIDErrorBlock)completion;
 
+/**
+ *  Fetches stays for the guest
+ *
+ *  @param completion callback blockwith two paramters
+ *                    1. An array of CNISDKGuestStay if exists
+ *                    2. NSError object if request failed
+ */
+- (void)fetchGuestStaysWithCompletion:(nullable CNISDKIDErrorBlock)completion;
+
 @end
 
 NS_ASSUME_NONNULL_END
