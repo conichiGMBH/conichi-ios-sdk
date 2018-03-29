@@ -43,6 +43,7 @@ extern NSInteger const kCNISDKGuestModelVersion;
 @property (nonatomic, strong, readwrite, nullable) CNISDKTravelDocument *travelDocument;
 @property (nonatomic, strong, readwrite, nullable) NSArray *preferences;
 @property (nonatomic, strong, readwrite, nullable) NSArray<CNISDKPreCheckinRequest *> *preCheckinRequests;
+@property (nonatomic, strong, readwrite, nullable) CNISDKMilesAndMoreCard *milesCard;
 
 @property (nonatomic, strong, readwrite, nullable) CNISDKTrackin *currentTrackin;
 @property (nonatomic, strong, readwrite, nullable) CNISDKCheckin *currentCheckin;

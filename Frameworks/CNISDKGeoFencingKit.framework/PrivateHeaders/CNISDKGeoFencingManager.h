@@ -9,8 +9,11 @@
 @import Foundation;
 
 @class CLLocationManager;
+@class CNISDKGeoFenceVenueRegion;
+@class CNISDKGeoFenceAreaRegion;
 @class CNISDKGeoFenceRegion;
 @class CNISDKGeoFencingManager;
+@class CNISDKAPIManager;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -22,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param manager instance of CNISDKGeoFencingManager
  *  @param region  discovered region
  */
-- (void)geoFencingManager:(CNISDKGeoFencingManager *)manager didEnterRegion:(CNISDKGeoFenceRegion *)region;
+- (void)geoFencingManager:(CNISDKGeoFencingManager *)manager didEnterRegion:(CNISDKGeoFenceVenueRegion *)region;
 
 /**
  *  Calls when underlying location manager notifies about did exist region
@@ -30,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param manager instance of CNISDKGeoFencingManager
  *  @param region  left region
  */
-- (void)geoFencingManager:(CNISDKGeoFencingManager *)manager didExitRegion:(CNISDKGeoFenceRegion *)region;
+- (void)geoFencingManager:(CNISDKGeoFencingManager *)manager didExitRegion:(CNISDKGeoFenceVenueRegion *)region;
 
 /**
  *  Calls when underlying location manager fails
@@ -55,16 +58,19 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Array of CNISDKGeoFenceRegion objects that geo fencing manager is currently geo fencing
  */
-@property (nonatomic, strong, nullable, readonly) NSArray<CNISDKGeoFenceRegion *> *geofencingRegions;
+@property (nonatomic, strong, nullable, readonly) NSArray<CNISDKGeoFenceVenueRegion *> *geofencingVenueRegions;
+
+@property (nonatomic, strong, nullable, readonly) NSArray<CNISDKGeoFenceAreaRegion *> *geofencingAreaRegions;
 
 /**
  *  Initializes new instance of the geo fencing manager
  *
- *  @param locationManager    core location manager to use system geo fencing
+ *  @param locationManager core location manager to use system geo fencing
+ *  @param apiManager api manager to update geofence status with the backend
  *
  *  @return newly created geo fencing manager
  */
-- (instancetype)initWithSystemLocationManager:(CLLocationManager *)locationManager NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithSystemLocationManager:(CLLocationManager *)locationManager apiManager:(CNISDKAPIManager *)apiManager NS_DESIGNATED_INITIALIZER;
 - (instancetype)init NS_UNAVAILABLE;
 
 /**
@@ -77,7 +83,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)startGeoFencingRegions:(NSArray<CNISDKGeoFenceRegion *> *)regions;
 
 /**
- *  Requests ti underlying location manager to stop monitoring for the all currently monitored regions
+ *  Requests to underlying location manager to stop monitoring for the all currently monitored regions
  */
 - (void)stopGeoFencing;
 

@@ -157,6 +157,18 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)fetchGuestStaysWithCompletion:(nullable CNISDKIDErrorBlock)completion;
 
+/**
+ *  Creates Miles and More Card for the current guest
+ *
+ *  @param cardNumber   card number consists of 9 or 15 numbers, e.g. 992003020632539
+ *  @param pin          pin for encryption of card
+ *  @param provider     provider information, for now it's miles_and_more
+ *  @param completion   callback block with two parameters
+ *                      1. CNISDKCheckoutRequest object
+ *                      2. NSError object if request failed
+ */
+- (void)createMilesAndMoreCardWithCardNumber:(NSString *)cardNumber pin:(NSString *)pin provider:(NSString *)provider completion:(nullable CNISDKIDErrorBlock)completion;
+
 @end
 
 NS_ASSUME_NONNULL_END

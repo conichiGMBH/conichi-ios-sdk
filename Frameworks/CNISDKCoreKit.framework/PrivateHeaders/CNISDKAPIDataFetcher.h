@@ -10,7 +10,7 @@
 
 @class CNISDKAPIManager;
 @class CNISDKGuest;
-@class CNISDKLocationManager;
+@class CLLocationManager;
 
 typedef void (^CNISDKAPIDataFetcherResultBlock)(BOOL isVenuesFetched, BOOL isPreferencesFetched, BOOL isCheckedAPIVersion);
 
@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @interface CNISDKAPIDataFetcher : NSObject
 
-- (instancetype)initWithAPIManager:(CNISDKAPIManager *)apiManager locationManager:(CNISDKLocationManager *)locationManager guest:(CNISDKGuest *)guest;
+- (instancetype)initWithAPIManager:(CNISDKAPIManager *)apiManager locationManager:(CLLocationManager *)locationManager guest:(CNISDKGuest *)guest;
 
 /**
  * Fetches venues (with or without location), guest status (and start polling checkin if ),

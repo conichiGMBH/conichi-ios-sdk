@@ -47,17 +47,17 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithCoreLocationManager:(CLLocationManager *)manager NS_DESIGNATED_INITIALIZER;
 
 /**
- * Requests location from CoreLocation and returns current one or error via completion
- * @param completion - Block with two parameters
- *                     1. CLLocation object if exists
- *                     2. NSError object if update location failed
- *                     Always called on main thread
+ * Method replicates the `CLLocationManager` method startUpdatingLocation()
  */
-- (void)fetchCurrentLocation:(CNISDKIDErrorBlock)completion;
+- (void)startUpdatingLocation;
+
+/**
+ * Method replicates the `CLLocationManager` method stopUpdatingLocation()
+ */
+- (void)stopUpdatingLocation;
 
 /**
  * Method replicates the `CLLocationManager` method startMonitoringSignificantLocationChanges()
- * In case of receiving new significant location, the delegate method
  */
 - (void)startMonitoringSignificantLocationChanges;
 

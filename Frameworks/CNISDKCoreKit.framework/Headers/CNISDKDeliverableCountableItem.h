@@ -9,6 +9,7 @@
 @import Foundation;
 
 @class CNISDKDeliverableItem;
+@class CNISDKCreditCard;
 
 #import "CNISDKMacros.h"
 
@@ -34,6 +35,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign, readonly) NSUInteger count;
 
 /**
+ *  Associated credit card
+ */
+@property (nonatomic, strong, readonly) CNISDKCreditCard *creditCard;
+
+/**
  *  Creates deliverable item with underlying item and count of this item
  *
  *  @param item  underlying item
@@ -42,6 +48,17 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return CNISDKDeliverableItem instance
  */
 + (instancetype)itemWithDeliverableItem:(CNISDKDeliverableItem *)item countOf:(NSUInteger)count;
+
+/**
+ *  Creates deliverable item with underlying item, credit card and count of this item
+ *
+ *  @param item  underlying item
+ *  @param card  underlying credit card
+ *  @param count number of times item was chosen
+ *
+ *  @return CNISDKDeliverableItem instance
+ */
++ (instancetype)itemWithDeliverableItem:(CNISDKDeliverableItem *)item creditCard:(CNISDKCreditCard *)card countOf:(NSUInteger)count;
 
 @end
 

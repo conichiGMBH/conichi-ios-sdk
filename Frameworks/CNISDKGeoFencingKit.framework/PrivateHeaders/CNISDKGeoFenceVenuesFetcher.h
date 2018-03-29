@@ -9,9 +9,10 @@
 @import Foundation;
 
 @class CLLocation;
-@class CNISDKLocationManager;
+@class CLLocationManager;
 @class CNISDKAPIManager;
 @class CNISDKVenue;
+@class CNISDKGeoFencingLocationValidator;
 
 #import <CNISDKCoreKit/CNISDKConstants.h>
 
@@ -29,10 +30,11 @@ typedef void (^CNISDKGeoFenceVenuesFetcherCallback)(CLLocation *_Nullable locati
  *
  *  @param locationManager location manager to fetch current location
  *  @param apiManager      api manager to fetch venues from the backend
+ *  @param validator       validator to validate the location
  *
  *  @return newly created CNISDKGeoFenceVenuesFetcher
  */
-- (instancetype)initWithLocationManager:(CNISDKLocationManager *)locationManager apiManager:(CNISDKAPIManager *)apiManager;
+- (instancetype)initWithLocationManager:(CLLocationManager *)locationManager apiManager:(CNISDKAPIManager *)apiManager validator:(CNISDKGeoFencingLocationValidator *)validator;
 
 /**
  *  Fetches venues from the backend based on the current location

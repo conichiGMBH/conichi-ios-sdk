@@ -11,6 +11,7 @@
 #import "CNISDKMapping.h"
 
 @class CNISDKDeliverableItem;
+@class CNISDKCreditCard;
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -23,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readwrite) CNISDKDeliverableItem *deliverableItem;
 
 @property (nonatomic, assign, readwrite) NSUInteger count;
+
+@property (nonatomic, strong, readwrite) CNISDKCreditCard *creditCard;
 
 @end
 

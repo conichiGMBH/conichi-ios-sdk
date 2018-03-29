@@ -27,9 +27,11 @@ extern NSString *const kCNISDKPreCheckinRequestArriveTimeNight;
 @property (nonatomic, strong, readwrite) NSDate *departureDate;
 @property (nonatomic, strong, readwrite) NSString *status;
 @property (nonatomic, strong, readwrite) NSNumber *arriveTime;
-;
 @property (nonatomic, strong, readwrite) CNISDKVenue *venue;
 @property (nonatomic, strong, readwrite) NSArray<CNISDKDeliverableCountableItem *> *requestedItems;
+@property (nonatomic, strong, readwrite) NSNumber *reservationNumber;
+@property (nonatomic, strong, readwrite) NSString *roomType;
+@property (nonatomic, strong, readwrite) NSString *travelPurpose;
 
 @end
 

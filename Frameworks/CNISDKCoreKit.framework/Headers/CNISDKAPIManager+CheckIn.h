@@ -118,6 +118,17 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)checkinGuestWithID:(NSString *)guestID inVenueWithID:(NSString *)venueID completion:(nullable CNISDKIDErrorBlock)completion;
 
+/**
+ *  Uploads the signature svg for the given checkin
+ *
+ *  @param checkinID            conichi ID of the checkin to upload the signature to
+ *  @param signatureSVGData     NSData of the signature SVG
+ *  @param completion callback with two parameters
+ *                    1. updated CNISDKCheckin object if successful
+ *                    2. NSError object if request failed
+ */
+- (void)uploadSignatureForCheckinWithID:(NSString *)checkinID signatureSVGData:(NSData *)signatureSVGData completion:(nullable CNISDKIDErrorBlock)completion;
+
 @end
 
 NS_ASSUME_NONNULL_END

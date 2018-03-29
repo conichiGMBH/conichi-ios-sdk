@@ -12,7 +12,7 @@
 
 @class CNISDKConfiguration;
 
-#import "CNISDKGeoFencingDelegate.h"
+#import "CNISDKGeoFencingVenuesDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, strong, readonly) CNISDKConfiguration *configuration;
 
-@property (nonatomic, weak) id<CNISDKGeoFencingDelegate> delegate;
+@property (nonatomic, weak) id<CNISDKGeoFencingVenuesDelegate> delegate;
 
 /**
  *  Resets current geo fencing regions and creates a new one
@@ -36,3 +36,4 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
+

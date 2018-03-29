@@ -14,6 +14,8 @@
 @class CNISDKVenue;
 @class CNISDKPreferenceCategory;
 @class CNISDKPreference;
+@class CNISDKGeoFence;
+@class CNISDKGeoFenceTrackin;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -86,6 +88,59 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (nullable NSArray<CNISDKVenue *> *)archivedVenuesWithPreCheckinAvailable;
 
+/**
+ * Saves geofences in local file
+ * Previously archived geofences are always replaced
+ *
+ * @param geofences array of CNISDKGeoFence objects to store locally
+ * @param completion boolean/error block to track the result of operation
+ */
+- (void)saveGeoFences:(NSArray<CNISDKGeoFence *> *)geofences completion:(nullable CNISDKBooleanErrorBlock)completion;
+
+/**
+ * Retreives archived geofences
+ * @return Array with CNISDKGeoFence objects from local file
+ */
+- (nullable NSArray<CNISDKGeoFence *> *)archivedGeoFences;
+
+/**
+ * Appends geofence trackin in local file
+ * If same geofence trackin is passed, it removes previous one and adds the new one
+ *
+ * @param newGeofenceTrackin CNISDKGeoFenceTrackin object to store locally
+ * @param completion boolean/error block to track the result of operation
+ */
+- (void)saveGeoFenceTrackin:(CNISDKGeoFenceTrackin *)newGeofenceTrackin completion:(nullable CNISDKBooleanErrorBlock)completion;
+
+/**
+ * Retreives archived opened geofence trackins for particular geofence area
+ * @return Array with CNISDKGeoFenceTrackin objects from local file
+ */
+- (nullable NSArray<CNISDKGeoFenceTrackin *> *)archivedOpenedGeoFenceTrackinsForGeofenceID:(NSString*)geofenceID;
+
+/**
+ * Retreives archived closed geofence trackins for particular geofence area
+ * @return Array with CNISDKGeoFenceTrackin objects from local file
+ */
+- (nullable NSArray<CNISDKGeoFenceTrackin *> *)archivedClosedGeoFenceTrackinsForGeofenceID:(NSString*)geofenceID;
+
+/**
+ * Retreives all opened archived geofence trackins
+ * @return Array with CNISDKGeoFenceTrackin objects from local file
+ */
+- (nullable NSArray<CNISDKGeoFenceTrackin *> *)archivedOpenedGeoFenceTrackins;
+
+/**
+ * Retreives all closed archived geofence trackins
+ * @return Array with CNISDKGeoFenceTrackin objects from local file
+ */
+- (nullable NSArray<CNISDKGeoFenceTrackin *> *)archivedClosedGeoFenceTrackins;
+
+/**
+ * Retreives all archived geofence trackins
+ * @return Array with CNISDKGeoFenceTrackin objects from local file
+ */
+- (nullable NSArray<CNISDKGeoFenceTrackin *> *)archivedGeoFenceTrackins;
 
 /**
  * It deletes all local archives synchronously
@@ -95,3 +150,4 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
+

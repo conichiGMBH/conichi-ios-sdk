@@ -1,21 +1,16 @@
 //
 //  CNISDKGeoFenceRegion.h
-//  conichiSDK
+//  CNISDKGeoFencingKit
 //
-//  Created by Anton Domashnev on 2/22/16.
-//  Copyright © 2016 conichi. All rights reserved.
+//  Created by Mourad on 11/1/17.
 //
 
-@import Foundation;
-
-@class CNISDKVenue;
-@class CLCircularRegion;
+#import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-/**
- *  The 'CNISDKGeoFenceRegion' is the class that contains information about geo fence by conichi SDK region
- */
+@class CLCircularRegion;
+
 @interface CNISDKGeoFenceRegion : NSObject
 
 /**
@@ -24,19 +19,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) CLCircularRegion *clRegion;
 
 /**
- *  Venue that has been discovered or left
- */
-@property (nonatomic, strong, readonly) CNISDKVenue *geoFencedVenue;
-
-/**
- *  Default constructor to create new instance of `CNISDKGeoFenceRegion`
+ *  Default constructor to create new instance of `CNISDKGeoFenceVenueRegion`
  *
- *  @param venue `CNISDKVenue` objects
  *  @param region core location geo fence region
- *  @return newly created instance of `CNISDKGeoFenceRegion`
+ *  @return newly created instance of `CNISDKGeoFenceVenueRegion`
  */
-- (instancetype)initWithVenue:(CNISDKVenue *)venue clRegion:(CLCircularRegion *)region;
+- (instancetype)initWithClRegion:(CLCircularRegion *)region;
 
 @end
 
 NS_ASSUME_NONNULL_END
+

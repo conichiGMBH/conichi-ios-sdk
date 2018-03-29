@@ -49,15 +49,27 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)socialSignInWithRequest:(id<CNISDKSocialSignInRequestInfo>)request completion:(nullable CNISDKGuestErrorBlock)completion;
 
 /**
- *  Signs in to the conichi's cloud with given email & password
+ *  Signs in to conichi's cloud with given email & password
  *
- *  @param email      user email. Should in valid format.
+ *  @param email      user email. Should be in valid format.
  *  @param password   user password. Should be at least 8 characters with at lease one digit and one letter.
  *  @param completion callback block with two parameters
  *                    1. Guest object
  *                    2. NSError object if request failed
  */
 - (void)signInWithEmail:(NSString *)email password:(NSString *)password completion:(nullable CNISDKGuestErrorBlock)completion;
+
+/**
+ *  Signs in to conichi's cloud with given email & password
+ *
+ *  @param email      user email. Should be in valid format.
+ *  @param externalID user externalID. Optional. Should be used if user was registered with external ID.
+ *  @param password   user password. Should be at least 8 characters with at lease one digit and one letter.
+ *  @param completion callback block with two parameters
+ *                    1. Guest object
+ *                    2. NSError object if request failed
+ */
+- (void)signInWithEmail:(NSString *)email externalID:(nullable NSString *)externalID password:(NSString *)password completion:(nullable CNISDKGuestErrorBlock)completion;
 
 /**
  *  Signs in to the conichi cloud with external id

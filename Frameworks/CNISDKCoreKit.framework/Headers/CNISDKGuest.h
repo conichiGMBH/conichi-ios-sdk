@@ -19,6 +19,7 @@
 @class CNISDKPreference;
 @class CNISDKPreCheckinRequest;
 @class CNISDKTaxInfo;
+@class CNISDKMilesAndMoreCard;
 
 #import "CNISDKEnums.h"
 #import "CNISDKMacros.h"
@@ -258,6 +259,11 @@ extern NSString *const kCNISDKGuestGenderFemale;
  * The array of CNISDKPreCheckinRequest objects that guest has created
  */
 @property (nonatomic, strong, readonly) NSArray<CNISDKPreCheckinRequest *> *preCheckinRequests;
+
+/**
+ *  The Miles & More card information of the guest
+ */
+@property (nonatomic, strong, readonly, nullable) CNISDKMilesAndMoreCard *milesCard;
 
 ///--------------------------------------
 /// @name Guest-specific Methods

@@ -38,6 +38,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *email;
 
 /**
+ * Optional external ID for the newly created account
+ */
+@property (nonatomic, copy, nullable) NSString *externalID;
+
+/**
  *  Data represents the avatar image for newly created account profile
  */
 @property (nonatomic, strong, nullable) NSData *avatarImageData;

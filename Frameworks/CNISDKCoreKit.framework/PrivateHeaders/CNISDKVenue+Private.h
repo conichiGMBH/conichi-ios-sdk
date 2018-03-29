@@ -42,6 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign, getter=isPaymentEnabled) BOOL paymentEnabled;
 @property (nonatomic, assign, getter=isPMSIntegrated) BOOL PMSIntegrated;
+@property (nonatomic, assign, getter=isAdhocCheckoutEnabled) BOOL adhocCheckoutEnabled;
 
 @end
 

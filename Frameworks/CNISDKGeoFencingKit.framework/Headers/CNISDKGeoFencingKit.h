@@ -17,8 +17,10 @@ FOUNDATION_EXPORT const unsigned char CNISDKGeoFencingKitVersionString[];
 
 #import "CNISDKGeoFencing.h"
 #import "CNISDKGeoFenceRegion.h"
-#import "CNISDKGeoFencingDelegate.h"
+#import "CNISDKGeoFenceAreaRegion.h"
+#import "CNISDKGeoFenceVenueRegion.h"
+#import "CNISDKGeoFencingVenuesDelegate.h"
 #import "CNISDKGeoFencingKitConfiguration.h"
 #import "CNISDKGeoFencingConstants.h"
-#import "CNISDKGeoFenciesCreator.h"
+#import "CNISDKGeoFencesVenuesCreator.h"
 #import "CLCircularRegion+CNISDKGeoFencing.h"

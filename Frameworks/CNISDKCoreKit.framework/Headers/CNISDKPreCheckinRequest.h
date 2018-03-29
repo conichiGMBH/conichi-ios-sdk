@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 extern NSString *const kCNISDKPreCheckinRequestOpen;
 extern NSString *const kCNISDKPreCheckinRequestClosed;
+extern NSString *const kCNISDKPreCheckinRequestBusiness;
+extern NSString *const kCNISDKPreCheckinRequestLeisure;
 
 /**
  * The `CNISDKPreCheckinRequest` class represents the conichi's pre checkin request object
@@ -57,6 +59,28 @@ extern NSString *const kCNISDKPreCheckinRequestClosed;
  *  Venue associated to the pre checkin
  */
 @property (nonatomic, strong, readonly) CNISDKVenue *venue;
+
+/**
+ *  Reservation number of this pre checkin request
+ */
+@property (nonatomic, strong, readonly) NSNumber *reservationNumber;
+
+/**
+ *  Room type of this pre checkin request
+ */
+@property (nonatomic, strong, readonly) NSString *roomType;
+
+/**
+ *  Travel purpose of this pre checkin request.
+ *  See constants kCNISDKPreCheckinRequestBusiness and kCNISDKPreCheckinRequestLeisure
+ */
+@property (nonatomic, strong, readonly) NSString *travelPurpose;
+
+/**
+ *  The enum representation of pre checkin travel purpose
+ *  @see CNISDKPreCheckinRequestTravelPurpose
+ */
+@property (nonatomic, assign, readonly) CNISDKPreCheckinRequestTravelPurpose travelPurposeEnum;
 
 /**
  *  Requested items by the guest

@@ -70,6 +70,7 @@ extern const struct CNISDKGuestJSONKeyes {
     __unsafe_unretained NSString *preferences;
     __unsafe_unretained NSString *taxInfo;
     __unsafe_unretained NSString *apnToken;
+    __unsafe_unretained NSString *milesCard;
 } CNISDKGuestJSONKeyes;
 
 extern const struct CNISDKPersonalAddressJSONKeyes {
@@ -127,8 +128,10 @@ extern const struct CNISDKDeliverableCategoryJSONKeyes {
 
 extern const struct CNISDKDeliverableCountableItemJSONKeyes {
     __unsafe_unretained NSString *deliverableItem_conichiID;
+    __unsafe_unretained NSString *creditCard_conichiID;
     __unsafe_unretained NSString *count;
     __unsafe_unretained NSString *deliverableItem;
+    __unsafe_unretained NSString *creditCard;
 } CNISDKDeliverableCountableItemJSONKeyes;
 
 extern const struct CNISDKDeliverableItemJSONKeyes {
@@ -137,6 +140,12 @@ extern const struct CNISDKDeliverableItemJSONKeyes {
     __unsafe_unretained NSString *price;
     __unsafe_unretained NSString *currency;
 } CNISDKDeliverableItemJSONKeyes;
+
+extern const struct CNISDKMilesAndMoreCardJSONKeyes {
+    __unsafe_unretained NSString *cardNumber;
+    __unsafe_unretained NSString *pin;
+    __unsafe_unretained NSString *provider;
+} CNISDKMilesAndMoreCardJSONKeyes;
 
 extern const struct CNISDKNotificationJSONKeyes {
     __unsafe_unretained NSString *title;
@@ -156,6 +165,9 @@ extern const struct CNISDKPreCheckinRequestJSONKeyes {
     __unsafe_unretained NSString *arriveTime;
     __unsafe_unretained NSString *venue;
     __unsafe_unretained NSString *requestedItems;
+    __unsafe_unretained NSString *reservationNumber;
+    __unsafe_unretained NSString *roomType;
+    __unsafe_unretained NSString *travelPurpose;
 } CNISDKPreCheckinRequestJSONKeyes;
 
 extern const struct CNISDKPreferenceJSONKeyes {
@@ -224,7 +236,23 @@ extern const struct CNISDKVenueJSONKeyes {
     __unsafe_unretained NSString *cards;
     __unsafe_unretained NSString *address;
     __unsafe_unretained NSString *PMSIntegrated;
+    __unsafe_unretained NSString *adhocCheckoutEnabled;
 } CNISDKVenueJSONKeyes;
+
+extern const struct CNISDKGeoFenceJSONKeyes {
+    __unsafe_unretained NSString *name;
+    __unsafe_unretained NSString *longitude;
+    __unsafe_unretained NSString *latitude;
+    __unsafe_unretained NSString *radius;
+} CNISDKGeoFenceJSONKeyes;
+
+extern const struct CNISDKGeoFenceTrackinJSONKeyes {
+    __unsafe_unretained NSString *createdAt;
+    __unsafe_unretained NSString *updatedAt;
+    __unsafe_unretained NSString *closedAt;
+    __unsafe_unretained NSString *status;
+    __unsafe_unretained NSString *geofenceID;
+} CNISDKGeoFenceTrackinJSONKeyes;
 
 extern const struct CNISDKVenueCardJSONKeyes {
     __unsafe_unretained NSString *name;

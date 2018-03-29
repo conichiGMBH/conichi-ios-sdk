@@ -9,6 +9,7 @@
 @import CoreLocation;
 
 @class CNISDKVenue;
+@class CNISDKGeoFence;
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -24,13 +25,23 @@ extern NSString *const kCLCircularRegionSDKGeoFencingIdentifierPrefix;
 
 /**
  *  Initializes a new instance of `CLCircularRegion` based on the given parameters
-
+ 
  @param venue `CNISDKVenue` to create a geo fence region for
  @param radius geo fence region radius
  @return newly created instance of `CLCircularRegion`
  */
 + (CLCircularRegion *)cnisdk_regionWithVenue:(CNISDKVenue *)venue radius:(CLLocationDistance)radius;
 
+/**
+ *  Initializes a new instance of `CLCircularRegion` based on the given parameters
+ 
+ @param geofence `CNISDKGeoFence` to create a geo fence region for
+ @param radius geo fence region radius
+ @return newly created instance of `CLCircularRegion`
+ */
++ (CLCircularRegion *)cnisdk_regionWithGeofence:(CNISDKGeoFence *)geofence radius:(CLLocationDistance)radius;
+
 @end
 
 NS_ASSUME_NONNULL_END
+

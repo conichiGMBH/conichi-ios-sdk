@@ -107,6 +107,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign, getter=isPaymentEnabled, readonly) BOOL paymentEnabled;
 
 /**
+ *  If venue supports adhoc checkout by conichi or not
+ */
+@property (nonatomic, assign, getter=isAdhocCheckoutEnabled, readonly) BOOL adhocCheckoutEnabled;
+
+/**
  *  Venue's postal address
  */
 @property (nonatomic, strong, readonly) CNISDKAddress *address;

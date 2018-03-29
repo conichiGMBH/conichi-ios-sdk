@@ -85,6 +85,15 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (nullable NSURLRequest *)multipartPUTWithPath:(NSString *)path fileData:(NSData *)data fileName:(NSString *)fileName parameterName:(NSString *)parameterName;
 
+/**
+ * @return PATCH request to the Conichi's API with given path and parameters
+ * @param path - request path
+ * @param data - data to be uploaded with multipart request
+ * @param fileName - uploaded file name
+ * @param parameterName - uploaded file name in request body
+ */
+- (nullable NSURLRequest *)multipartPATCHWithPath:(NSString *)path fileData:(NSData *)data fileName:(NSString *)fileName parameterName:(NSString *)parameterName;
+
 @end
 
 NS_ASSUME_NONNULL_END

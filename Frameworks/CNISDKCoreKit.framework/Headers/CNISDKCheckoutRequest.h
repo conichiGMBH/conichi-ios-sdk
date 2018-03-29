@@ -23,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 extern NSString *const kCNISDKCheckoutRequestStatePending;
 extern NSString *const kCNISDKCheckoutRequestStateReady;
+extern NSString *const kCNISDKCheckoutRequestStateCancelled;
 
 /**
  *  The `CNISDKCheckoutRequest` defines entity that represents guest request to checkout from hotel created on the side
