@@ -1,7 +1,8 @@
 ---
 upcoming:
-  version: 
-  notes: 
+  version: 4.1.15
+  notes:
+  - Extend registration and authentication for external ID support
 releases:
 - version: 4.1.3
   notes:
