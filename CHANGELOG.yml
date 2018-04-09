@@ -1,11 +1,13 @@
 ---
 upcoming:
-  version: 4.1.16
+  version: 
+  notes: 
+releases:
+- version: 4.1.16
   notes:
   - Include external ID as one parameter of updating guest
   - Update signin with externalID
   - Add external ID to CNISDKGuest model
-releases:
 - version: 4.1.15
   notes:
   - Extend registration and authentication for external ID support
