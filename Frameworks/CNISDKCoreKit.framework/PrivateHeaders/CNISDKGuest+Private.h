@@ -35,6 +35,7 @@ extern NSInteger const kCNISDKGuestModelVersion;
 @property (nonatomic, strong, readwrite, nullable) NSString *paylevenToken;
 @property (nonatomic, strong, readwrite, nullable) NSString *optionalValue;
 @property (nonatomic, strong, readwrite, nullable) NSString *status;
+@property (nonatomic, strong, readwrite, nullable) NSString *externalID;
 
 @property (nonatomic, strong, readwrite) NSArray *creditCards;
 @property (nonatomic, strong, readwrite, nullable) CNISDKTaxInfo *taxInfo;

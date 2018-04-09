@@ -265,6 +265,12 @@ extern NSString *const kCNISDKGuestGenderFemale;
  */
 @property (nonatomic, strong, readonly, nullable) CNISDKMilesAndMoreCard *milesCard;
 
+/**
+ *  The external ID used optionally during sign-up
+ */
+@property (nonatomic, strong, readonly, nullable) NSString *externalID;
+
+
 ///--------------------------------------
 /// @name Guest-specific Methods
 ///--------------------------------------

@@ -65,6 +65,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, nullable) NSString *nationalityISOCode;
 
 /**
+ *  New guest's external id
+ */
+@property (nonatomic, copy, nullable) NSString *externalID;
+
+/**
  *  Underlying update guest's related request infos
  */
 @property (nonatomic, strong, nullable) NSArray<CNISDKGuestRelatedRequestInfo> *underlyingUpdateRequestInfos;
