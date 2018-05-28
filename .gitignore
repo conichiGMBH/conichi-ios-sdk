@@ -10,9 +10,6 @@ DerivedData/
 ConichiSDKStarterProject.app.dSYM.zip
 ConichiSDKStarterProject.ipa
 
-## Framework
-conichiSDK.framework
-
 ## Various settings
 *.pbxuser
 !default.pbxuser
@@ -61,7 +58,3 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
-
-# xcov
-
-xcov_output/

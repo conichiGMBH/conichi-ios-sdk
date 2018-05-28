@@ -12,8 +12,8 @@ Pod::Spec.new do |s|
   s.author       = { 'conichiGMBH' => 'support@conichi.com' }
 
   s.source                = { :git => "https://github.com/conichiGMBH/conichi-ios-sdk.git", :tag => s.version.to_s}
-  s.platform              = :ios, '8.0'
-  s.ios.deployment_target = '8.0'
+  s.platform              = :ios, '9.0'
+  s.ios.deployment_target = '9.0'
   s.source_files          = 'Frameworks/CNISDKSumUpKit.framework/Headers/*.h'
   s.requires_arc          = true
   s.module_name           = 'CNISDKSumUpKit'
