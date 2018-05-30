@@ -12,14 +12,14 @@ Pod::Spec.new do |s|
   s.author       = { 'conichiGMBH' => 'support@conichi.com' }
 
   s.source                = { :git => "https://github.com/conichiGMBH/conichi-ios-sdk.git", :tag => s.version.to_s}
-  s.platform              = :ios, '8.0'
-  s.ios.deployment_target = '8.0'
+  s.platform              = :ios, '9.0'
+  s.ios.deployment_target = '9.0'
   s.source_files          = 'Frameworks/CNISDKCoreKit.framework/Headers/*.h'
   s.requires_arc          = true
   s.module_name           = 'CNISDKCoreKit'
   s.public_header_files   = 'Frameworks/CNISDKCoreKit.framework/Headers/*.h'
-  s.vendored_frameworks   = 'Frameworks/CNISDKCoreKit.framework', 'Frameworks/Conichi_Authentication.framework', 'Frameworks/Conichi_Errors.framework', 'Frameworks/Conichi_Meta.framework'
-  s.preserve_paths        = 'Frameworks/CNISDKCoreKit.framework', 'Frameworks/Conichi_Authentication.framework', 'Frameworks/Conichi_Errors.framework', 'Frameworks/Conichi_Meta.framework'
+  s.vendored_frameworks   = 'Frameworks/CNISDKCoreKit.framework', 'Frameworks/ios_global_dependencies.framework'
+  s.preserve_paths        = 'Frameworks/CNISDKCoreKit.framework', 'Frameworks/ios_global_dependencies.framework'
 
   s.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(inherited)' }
 end

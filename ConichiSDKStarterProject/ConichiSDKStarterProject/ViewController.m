@@ -13,7 +13,7 @@
 @import Conichi_Authentication;
 
 
-@interface ViewController () <CNISDKDelegate, CNISDKGeoFencingDelegate>
+@interface ViewController () <CNISDKDelegate, CNISDKGeoFencingVenuesDelegate>
 
 @property (nonatomic, strong) NSMutableString *logText;
 

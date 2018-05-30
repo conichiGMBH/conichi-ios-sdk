@@ -1,7 +1,5 @@
 require 'fileutils'
 
-fastlane_version "1.104.0"
-
 default_platform :ios
 
 platform :ios do
@@ -9,23 +7,17 @@ platform :ios do
   ############################## PRE ##############################
 
   before_all do
-    update_fastlane
+    skip_docs
     import_shared_fastfile
     load_environment_variables
   end
 
-  cnisdk_framework_zip_path = "CNISDK.framework.zip"
-  cnisdk_sample_zip_path = "SampleProject.zip"
-
   ######################### PUBLIC LANES ##########################
 
   lane :release do |options|
-    release_branch = ENV['GITHUB_RELEASE_BRANCH']
+    ensure_branch
 
-    ensure_git_status_clean
-    ensure_git_branch(
-      branch: release_branch
-    )
+    pod_lib_lint(allow_warnings: true)
 
     release_version = options[:release_version]
     private_sdk_release = get_github_release(
@@ -34,30 +26,20 @@ platform :ios do
       api_token: ENV['CONICHI_CI_GITHUB_TOKEN']
     )
 
-    download_frameworks(
-      release:private_sdk_release
-    )
+    download_frameworks(release:private_sdk_release)
 
-    update_changelog_from_release(
-      release: private_sdk_release
-    )
-
-    remote = ENV['GITHUB_REMOTE']
+    update_changelog_from_release(release: private_sdk_release)
 
     upcoming_version = get_upcoming_version.clone
-    upcoming_notes = get_upcoming_notes.clone
     put_upcoming_to_releases
 
-    podspecs_version_bump(
-      version: upcoming_version
-    )
-    git_commit_shell(
-      message: "Bump podspecs to #{upcoming_version}"
-    )
+    podspecs_version_bump(version: upcoming_version)
 
-    tag_name = upcoming_version
+    remote = ENV['GITHUB_REMOTE']
+    release_branch = ENV['GITHUB_RELEASE_BRANCH']
+
     git_add_or_update_tag(
-      tag_name: tag_name,
+      tag_name: upcoming_version,
       remote: remote,
       branch: release_branch
     )
@@ -68,33 +50,44 @@ platform :ios do
       remote_branch: release_branch
     )
 
-    podspecs_push
-
     create_sample_project
 
+    make_github_release(version: upcoming_version)
+
+    podspecs_push
+  end
+
+  ######################### PRIVATE LANES ##########################
+
+  desc "Push podspec files to remote"
+  private_lane :podspecs_push do
+    pod_push(path: ENV['CORE_KIT_PODSPEC'], allow_warnings: true)
+    sh("bundle exec pod repo update")
+    pod_push(path: ENV['PAYMENT_KIT_PODSPEC'], allow_warnings: true)
+    sh("bundle exec pod repo update")
+    pod_push(path: ENV['GEOFENCING_KIT_PODSPEC'], allow_warnings: true)
+    pod_push(path: ENV['PMS_KIT_PODSPEC'], allow_warnings: true)
+    pod_push(path: ENV['SUM_UP_KIT_PODSPEC'], allow_warnings: true)
+    pod_push(path: ENV['PAYLEVEN_KIT_PODSPEC'], allow_warnings: true)
+  end
+
+  desc "Create or updaet github release with the given version"
+  private_lane :make_github_release do |options|
+    tag_name = options[:version]
+    upcoming = get_releases[0]
+    upcoming_notes = "* #{upcoming["notes"].join "\n* "} \n\n"
     set_or_update_github_release(
       release_name: tag_name,
       repository_name: ENV['GITHUB_REPOSITORY'],
       description: upcoming_notes,
       tag_name: tag_name,
       api_token: ENV['CONICHI_CI_GITHUB_TOKEN'],
-      upload_assets: [cnisdk_framework_zip_path, cnisdk_sample_zip_path]
+      upload_assets: [ENV['CNISDK_FRAMEWORK_ZIP_PATH'], ENV['CNISDK_SAMPLE_ZIP_PATH']]
     )
   end
 
-  lane :download_frameworks do |options|
-    release = options[:release]
-    download_cnisdk_framework_zip_from_release(
-      release: release,
-      download_destination: cnisdk_framework_zip_path
-    )
-    unzip(file: cnisdk_framework_zip_path)
-    copy_frameworks_from_cnisdk_framework_folder(
-      cnisdk_framework_folder: "../Carthage/Build/iOS"
-    )
-  end
-
-  lane :create_sample_project do
+  desc "Create the simple project"
+  private_lane :create_sample_project do
     project_name = "SampleProject"
     path_dir = "../#{project_name}"
     FileUtils.mkdir(path_dir)
@@ -104,7 +97,21 @@ platform :ios do
     sh("rm -R #{path_dir}")
   end
 
-  lane :update_changelog_from_release do |options|
+  desc "Bump up podspec version number"
+  private_lane :podspecs_version_bump do |options|
+    version = options[:version]
+    version_bump_podspec(path: ENV['CORE_KIT_PODSPEC'], version_number: version)
+    version_bump_podspec(path: ENV['PAYMENT_KIT_PODSPEC'], version_number: version)
+    version_bump_podspec(path: ENV['GEOFENCING_KIT_PODSPEC'], version_number: version)
+    version_bump_podspec(path: ENV['PMS_KIT_PODSPEC'], version_number: version)
+    version_bump_podspec(path: ENV['SUM_UP_KIT_PODSPEC'], version_number: version)
+    version_bump_podspec(path: ENV['PAYLEVEN_KIT_PODSPEC'], version_number: version)
+
+    git_commit_shell(message: "Bump podspecs to #{version}")
+  end
+
+  desc "Update changelog from private SDK changelog"
+  private_lane :update_changelog_from_release do |options|
     require 'redcarpet'
     require 'redcarpet/render_strip'
 
@@ -130,28 +137,24 @@ platform :ios do
     end
   end
 
-  lane :podspecs_version_bump do |options|
-    version = options[:version]
-    version_bump_podspec(path: ENV['CORE_KIT_PODSPEC'], version_number: version)
-    version_bump_podspec(path: ENV['PAYMENT_KIT_PODSPEC'], version_number: version)
-    version_bump_podspec(path: ENV['GEOFENCING_KIT_PODSPEC'], version_number: version)
-    version_bump_podspec(path: ENV['PMS_KIT_PODSPEC'], version_number: version)
-    version_bump_podspec(path: ENV['SUM_UP_KIT_PODSPEC'], version_number: version)
-    version_bump_podspec(path: ENV['PAYLEVEN_KIT_PODSPEC'], version_number: version)
+  desc "Download private SDK frameworks"
+  private_lane :download_frameworks do |options|
+    release = options[:release]
+    download_cnisdk_framework_zip_from_release(
+      release: release,
+      download_destination: ENV['CNISDK_FRAMEWORK_ZIP_PATH']
+    )
+    unzip(file: ENV['CNISDK_FRAMEWORK_ZIP_PATH'])
+    copy_frameworks_from_cnisdk_framework_folder(
+      cnisdk_framework_folder: "../Carthage/Build/iOS"
+    )
   end
 
-  lane :podspecs_push do
-    pod_push(path: ENV['CORE_KIT_PODSPEC'], allow_warnings: true)
-    sh("bundle exec pod repo update")
-    pod_push(path: ENV['PAYMENT_KIT_PODSPEC'], allow_warnings: true)
-    sh("bundle exec pod repo update")
-    pod_push(path: ENV['GEOFENCING_KIT_PODSPEC'], allow_warnings: true)
-    pod_push(path: ENV['PMS_KIT_PODSPEC'], allow_warnings: true)
-    pod_push(path: ENV['SUM_UP_KIT_PODSPEC'], allow_warnings: true)
-    pod_push(path: ENV['PAYLEVEN_KIT_PODSPEC'], allow_warnings: true)
+  desc "Ensure the branch is a release branch and no uncommitted changes"
+  private_lane :ensure_branch do
+    ensure_git_branch(branch: ENV['GITHUB_RELEASE_BRANCH'])
+    ensure_git_status_clean
   end
-
-  ######################### PRIVATE LANES ##########################
 
   private_lane :import_shared_fastfile do
     import_from_git(
@@ -169,8 +172,7 @@ platform :ios do
     cnisdk_framework_folder = options[:cnisdk_framework_folder]
     frameworks_to_copy = ["CNISDKCoreKit.framework", "CNISDKGeoFencingKit.framework",
                           "CNISDKPaylevenKit.framework", "CNISDKPaymentKit.framework", "CNISDKPMSKit.framework",
-                          "CNISDKSumUpKit.framework", "Conichi_Authentication.framework", "Conichi_Errors.framework",
-                          "Conichi_Meta.framework", "PaylevenFramework.framework"]
+                          "CNISDKSumUpKit.framework", "ios_global_dependencies.framework", "PaylevenFramework.framework"]
     frameworks_to_copy.each do |framework|
       FileUtils.cp_r("#{cnisdk_framework_folder}/#{framework}", "../Frameworks")
     end
