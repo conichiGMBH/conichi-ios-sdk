@@ -1,9 +1,11 @@
 ---
 upcoming:
-  version: 4.1.19
+  version: 
+  notes: 
+releases:
+- version: 4.1.19
   notes:
   - 'Fix releasing script '
-releases:
 - version: 4.1.16
   notes:
   - Include external ID as one parameter of updating guest
