@@ -206,6 +206,8 @@ extern const struct CNISDKRegionJSONKeyes {
 
 extern const struct CNISDKTrackinJSONKeyes {
     __unsafe_unretained NSString *status;
+    __unsafe_unretained NSString *type;
+    __unsafe_unretained NSString *venueID;
     __unsafe_unretained NSString *associatedRegion;
 } CNISDKTrackinJSONKeyes;
 

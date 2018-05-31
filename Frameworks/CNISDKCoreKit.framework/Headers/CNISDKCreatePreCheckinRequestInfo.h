@@ -57,7 +57,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, nullable) NSString *bookedRoomType;
 
 /**
- *  Guest's travel purpose
+ *  Guest's travel purpose (optional)
  */
 @property (nonatomic, assign) CNISDKPreCheckinRequestTravelPurpose travelPurpose;
 

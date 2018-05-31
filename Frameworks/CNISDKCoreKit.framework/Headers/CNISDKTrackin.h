@@ -22,6 +22,19 @@ NS_ASSUME_NONNULL_BEGIN
 extern NSString *const kCNISDKTrackinStatusOpen;
 extern NSString *const kCNISDKTrackinStatusClosed;
 
+typedef NS_ENUM(NSUInteger, CNISDKTrackinType) {
+    CNISDKTrackinTypeDefault,
+    CNISDKTrackinTypeTimeBased
+};
+
+extern NSString *const kCNISDKTrackinTypeDefault;
+extern NSString *const kCNISDKTrackinTypeTimeBased;
+
+typedef NS_ENUM(NSUInteger, CNISDKTrackinStatus) {
+    CNISDKTrackinStatusOpen,
+    CNISDKTrackinStatusClosed
+};
+
 /**
  *  The `CNISDKTrackin` class represents the status of the guest for the specific beacon.
  *  This class is a subclass of a <CNISDKObject>.
@@ -34,6 +47,19 @@ extern NSString *const kCNISDKTrackinStatusClosed;
  *  see constants kCNISDKTrackinStatus, kCNISDKTrackinStatusClosed
  */
 @property (nonatomic, strong, readonly) NSString *status;
+@property (nonatomic, assign, readonly) CNISDKTrackinStatus statusEnum;
+
+/**
+ *  The type of the trackin
+ *  see constants kCNISDKTrackinType*
+ */
+@property (nonatomic, strong, readonly) NSString *type;
+@property (nonatomic, assign, readonly) CNISDKTrackinType typeEnum;
+
+/**
+ *  The venue ID of the trackin
+ */
+@property (nonatomic, strong, readonly) NSString *venueID;
 
 /**
  *  The associated region of the trackin

@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, readwrite) CNISDKRegion *associatedRegion;
 @property (nonatomic, strong, readwrite) NSString *status;
+@property (nonatomic, strong, readwrite) NSString *type;
+@property (nonatomic, strong, readwrite) NSString *venueID;
 
 @end
 

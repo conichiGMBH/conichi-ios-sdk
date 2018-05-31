@@ -1,0 +1,6 @@
+framework module ios_global_dependencies {
+  umbrella header "ios_global_dependencies.h"
+
+  export *
+  module * { export * }
+}

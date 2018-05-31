@@ -7,10 +7,11 @@
 //
 
 @import Foundation;
-@import Conichi_Network;
+@import ios_global_dependencies;
 
 
 NS_ASSUME_NONNULL_BEGIN
+
 
 @interface CNISDKSumUpAPIRequestHeaderBuilder : NSObject <CNIAPIRequestHeaderBuilder>
 
