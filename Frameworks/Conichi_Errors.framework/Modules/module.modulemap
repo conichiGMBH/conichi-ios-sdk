@@ -1,6 +1,0 @@
-framework module Conichi_Errors {
-  umbrella header "Conichi_Errors.h"
-
-  export *
-  module * { export * }
-}

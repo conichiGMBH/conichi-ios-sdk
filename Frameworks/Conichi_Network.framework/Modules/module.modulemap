@@ -1,6 +1,0 @@
-framework module Conichi_Network {
-  umbrella header "Conichi_Network.h"
-
-  export *
-  module * { export * }
-}

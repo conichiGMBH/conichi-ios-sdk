@@ -10,7 +10,7 @@
 
 @import CNISDKCoreKit;
 @import CNISDKGeoFencingKit;
-@import Conichi_Authentication;
+@import ios_global_dependencies;
 
 
 @interface ViewController () <CNISDKDelegate, CNISDKGeoFencingVenuesDelegate>

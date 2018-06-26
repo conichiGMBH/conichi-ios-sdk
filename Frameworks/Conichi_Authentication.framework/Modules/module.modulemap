@@ -1,6 +1,0 @@
-framework module Conichi_Authentication {
-  umbrella header "Conichi_Authentication.h"
-
-  export *
-  module * { export * }
-}
