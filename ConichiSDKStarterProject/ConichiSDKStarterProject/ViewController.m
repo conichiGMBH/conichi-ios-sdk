@@ -44,7 +44,15 @@
     [super viewWillAppear:animated];
     [self updateButtonsVisibility];
     [[CNISDKAPIManager manager] fetchVenuesWithCompletion:^(id object, NSError *error) {
-        NSLog(@"%@, %@", object, error);
+        if (error) {
+            if (![self isAuthorized]) {
+                NSLog(@"Please sign in before any action");
+            } else {
+                NSLog(@"%@", error);
+            }
+        } else {
+            NSLog(@"%@", object);
+        }
     }];
 }
 

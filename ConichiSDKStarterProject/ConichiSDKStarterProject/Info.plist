@@ -56,7 +56,7 @@
 				<key>NSThirdPartyExceptionAllowsInsecureHTTPLoads</key>
 				<true/>
 			</dict>
-			<key>staging.conichi.com</key>
+			<key>staging.app.conichi.com</key>
 			<dict>
 				<key>NSIncludeSubdomains</key>
 				<true/>
