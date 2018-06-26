@@ -82,7 +82,7 @@ platform :ios do
       description: upcoming_notes,
       tag_name: tag_name,
       api_token: ENV['CONICHI_CI_GITHUB_TOKEN'],
-      upload_assets: [ENV['CNISDK_FRAMEWORK_ZIP_PATH'], ENV['CNISDK_SAMPLE_ZIP_PATH']]
+      upload_assets: [ENV['FRAMEWROKS_FOLDER_ZIP_PATH'], ENV['CNISDK_SAMPLE_ZIP_PATH']]
     )
   end
 
@@ -176,6 +176,10 @@ platform :ios do
     frameworks_to_copy.each do |framework|
       FileUtils.cp_r("#{cnisdk_framework_folder}/#{framework}", "../Frameworks")
     end
+
+    frameworks_folder_zip_name = ENV['FRAMEWROKS_FOLDER_ZIP_PATH']
+    sh("zip -r ../#{frameworks_folder_zip_name} ../Frameworks")
+
     unless git_status_clean?
       cni_git_add(
         pathspec: "Frameworks/*"
