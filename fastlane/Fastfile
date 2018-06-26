@@ -15,9 +15,9 @@ platform :ios do
   ######################### PUBLIC LANES ##########################
 
   lane :release do |options|
-    # ensure_branch
-    #
-    # pod_lib_lint(allow_warnings: true)
+    ensure_branch
+
+    pod_lib_lint(allow_warnings: true)
 
     release_version = options[:release_version]
     private_sdk_release = get_github_release(
