@@ -1,9 +1,11 @@
 ---
 upcoming:
-  version: 4.1.21
+  version: 
+  notes: 
+releases:
+- version: 4.1.21
   notes:
   - Create CNISDKDigitalKeyInformation
-releases:
 - version: 4.1.19
   notes:
   - 'Fix releasing script '
