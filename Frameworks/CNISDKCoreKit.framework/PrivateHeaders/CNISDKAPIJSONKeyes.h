@@ -108,6 +108,7 @@ extern const struct CNISDKCheckinJSONKeyes {
     __unsafe_unretained NSString *createdAt;
     __unsafe_unretained NSString *associatedVenue;
     __unsafe_unretained NSString *reservation;
+    __unsafe_unretained NSString *digitalKeys;
 } CNISDKCheckinJSONKeyes;
 
 extern const struct CNISDKCheckoutRequestJSONKeyes {

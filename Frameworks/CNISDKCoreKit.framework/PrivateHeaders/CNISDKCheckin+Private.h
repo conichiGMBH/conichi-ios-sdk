@@ -11,6 +11,7 @@
 #import "CNISDKMapping.h"
 
 @class CNISDKReservation;
+@class CNISDKDigitalKeyInformation;
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -29,6 +30,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readwrite) CNISDKVenue *associatedVenue;
 
 @property (nonatomic, strong, readwrite, nullable) CNISDKReservation *reservation;
+
+@property (nonatomic, strong, readwrite) NSArray<CNISDKDigitalKeyInformation *> *digitalKeys;
 
 @end
 
