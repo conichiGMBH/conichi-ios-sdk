@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'CNISDKPMSKit'
-  s.version      = '4.1.21'
+  s.version      = '4.1.30'
   s.summary      = "PMS kit extends the CNISDKCoreKit with property management system functionality."
 
   s.description  = <<-DESC
