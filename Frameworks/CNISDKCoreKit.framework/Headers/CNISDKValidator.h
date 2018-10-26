@@ -87,6 +87,18 @@ NS_ASSUME_NONNULL_BEGIN
 + (BOOL)validateCreditCardExpiryMonth:(nullable NSString *)expiryMonth error:(NSError *__nullable *)error;
 + (BOOL)validateCreditCardExpiryMonth:(nullable NSString *)expiryMonth;
 
+/**
+ *  Validate credit expiry year
+ *
+ *  @param expiryYear expiry year to validate
+ *  @param expiryMonth expiry month to help to validate expiry year
+ *  @param error validation result error
+ *
+ *  @return validation result Boolean flag
+ */
++ (BOOL)validateCreditCardExpiryYear:(nullable NSString *)expiryYear expiryMonth:(nullable NSString *)expiryMonth error:(NSError *__nullable *)error;
++ (BOOL)validateCreditCardExpiryYear:(nullable NSString *)expiryYear expiryMonth:(nullable NSString *)expiryMonth;
+
 @end
 
 NS_ASSUME_NONNULL_END

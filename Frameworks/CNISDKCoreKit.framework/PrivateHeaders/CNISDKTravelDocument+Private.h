@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readwrite, nullable) NSDate *dateOfIssue;
 @property (nonatomic, strong, readwrite, nullable) NSDate *dateOfExpiry;
 @property (nonatomic, strong, readwrite, nullable) NSString *authority;
+@property (nonatomic, strong, readwrite, nullable) NSString *placeOfIssue;
 
 @end
 

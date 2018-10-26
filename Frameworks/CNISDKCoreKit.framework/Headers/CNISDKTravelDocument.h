@@ -47,6 +47,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, strong, readonly, nullable) NSString *authority;
 
+/**
+ *  New document's place of Issue
+ */
+@property (nonatomic, strong, readonly, nullable) NSString *placeOfIssue;
+
 @end
 
 NS_ASSUME_NONNULL_END

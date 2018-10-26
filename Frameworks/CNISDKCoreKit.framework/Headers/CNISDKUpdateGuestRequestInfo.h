@@ -28,9 +28,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, nullable) NSString *lastName;
 
 /**
- *  New guest's email
+ *  New guest's phone
  */
-@property (nonatomic, copy, nullable) NSString *email;
+@property (nonatomic, copy, nullable) NSString *phone;
 
 /**
  *  New guest's gender

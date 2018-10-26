@@ -8,9 +8,15 @@
 
 @import Foundation;
 
+@class CNISDKConfiguration;
+
 NS_ASSUME_NONNULL_BEGIN
 
+
 @interface CNISDKAPISessionDelegate : NSObject <NSURLSessionDelegate>
+
+- (instancetype)initWithSDKConfiguration:(CNISDKConfiguration *)configuration NS_DESIGNATED_INITIALIZER;
+- (instancetype)init NS_UNAVAILABLE;
 
 @end
 

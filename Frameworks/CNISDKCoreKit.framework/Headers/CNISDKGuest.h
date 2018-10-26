@@ -143,6 +143,11 @@ extern NSString *const kCNISDKGuestGenderFemale;
 @property (nonatomic, strong, readonly, nullable) NSString *email;
 
 /**
+ *  Guest's phone
+ */
+@property (nonatomic, strong, readonly, nullable) NSString *phone;
+
+/**
  * Any optional value provided with Guest object
  */
 @property (nonatomic, strong, readonly, nullable) NSDictionary *optionalValue;

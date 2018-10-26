@@ -432,6 +432,11 @@ typedef NS_ENUM(NSInteger, CNIConichiAPIErrorCode) {
      * The error code when arrival date can not to be later than departure date
      */
     CNIConichiAPIErrorCodeArrivalDateIsLaterThanDepartureDate,
+    
+    /**
+     * Generic error code used by CBE for different use cases
+     */
+    CNIConichiAPIErrorCodeValidationError,
 };
 
 #endif /* CNIConichiAPIErrorCodes_h */

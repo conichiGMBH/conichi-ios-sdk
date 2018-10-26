@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CNISDKBusinessAddress (Properties)
 
 @property (nonatomic, strong, readwrite) NSString *businessName;
+@property (nonatomic, strong, readwrite) NSString *businessVAT;
 
 @end
 

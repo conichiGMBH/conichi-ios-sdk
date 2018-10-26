@@ -26,6 +26,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, strong, readonly) NSString *businessName;
 
+/**
+ *  Business VAT ID
+ */
+@property (nonatomic, strong, readonly) NSString *businessVAT;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -27,6 +27,7 @@ extern NSInteger const kCNISDKGuestModelVersion;
 @property (nonatomic, strong, readwrite, nullable) NSString *firstName;
 @property (nonatomic, strong, readwrite, nullable) NSString *lastName;
 @property (nonatomic, strong, readwrite, nullable) NSString *email;
+@property (nonatomic, strong, readwrite, nullable) NSString *phone;
 @property (nonatomic, strong, readwrite, nullable) NSString *picturePath;
 @property (nonatomic, strong, readwrite, nullable) NSDate *dateOfBirthday;
 @property (nonatomic, strong, readwrite, nullable) NSString *locale;

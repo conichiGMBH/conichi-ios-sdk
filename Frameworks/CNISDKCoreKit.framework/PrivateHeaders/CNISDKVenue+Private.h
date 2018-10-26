@@ -34,6 +34,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readwrite, nullable) NSString *email;
 @property (nonatomic, strong, readwrite, nullable) NSNumber *latitude;
 @property (nonatomic, strong, readwrite, nullable) NSNumber *longitude;
+@property (nonatomic, strong, readwrite) NSString *checkinTime;
+@property (nonatomic, strong, readwrite) NSString *checkoutTime;
 
 @property (nonatomic, strong, readwrite) CNISDKAddress *address;
 @property (nonatomic, strong, readwrite) NSArray<CNISDKRegion *> *regions;
@@ -43,6 +45,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign, getter=isPaymentEnabled) BOOL paymentEnabled;
 @property (nonatomic, assign, getter=isPMSIntegrated) BOOL PMSIntegrated;
 @property (nonatomic, assign, getter=isAdhocCheckoutEnabled) BOOL adhocCheckoutEnabled;
+@property (nonatomic, assign, getter=isRequiresTravelDocument) BOOL requiresTravelDocument;
+@property (nonatomic, assign, getter=isRequireUserPersonalAddress) BOOL requireUserPersonalAddress;
+@property (nonatomic, assign, getter=isRequireUserSignature) BOOL requireUserSignature;
 
 @end
 

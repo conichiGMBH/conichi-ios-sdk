@@ -55,4 +55,9 @@
  */
 @property (nonatomic, copy, nullable) NSString *businessName;
 
+/**
+ *  New address's business VAT
+ */
+@property (nonatomic, copy, nullable) NSString *businessVAT;
+
 @end

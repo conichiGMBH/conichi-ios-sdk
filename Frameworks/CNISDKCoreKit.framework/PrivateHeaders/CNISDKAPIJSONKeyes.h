@@ -53,6 +53,7 @@ extern const struct CNISDKGuestJSONKeyes {
     __unsafe_unretained NSString *firstName;
     __unsafe_unretained NSString *lastName;
     __unsafe_unretained NSString *email;
+    __unsafe_unretained NSString *phone;
     __unsafe_unretained NSString *externalEmail;
     __unsafe_unretained NSString *externalID;
     __unsafe_unretained NSString *picturePath;
@@ -218,6 +219,7 @@ extern const struct CNISDKTravelDocumentJSONKeyes {
     __unsafe_unretained NSString *authority;
     __unsafe_unretained NSString *dateOfIssue;
     __unsafe_unretained NSString *dateOfExpiry;
+    __unsafe_unretained NSString *placeOfIssue;
 } CNISDKTravelDocumentJSONKeyes;
 
 extern const struct CNISDKVenueJSONKeyes {
@@ -240,6 +242,11 @@ extern const struct CNISDKVenueJSONKeyes {
     __unsafe_unretained NSString *address;
     __unsafe_unretained NSString *PMSIntegrated;
     __unsafe_unretained NSString *adhocCheckoutEnabled;
+    __unsafe_unretained NSString *requiresTravelDocument;
+    __unsafe_unretained NSString *checkinTime;
+    __unsafe_unretained NSString *checkoutTime;
+    __unsafe_unretained NSString *requireUserPersonalAddress;
+    __unsafe_unretained NSString *requireUserSignature;
 } CNISDKVenueJSONKeyes;
 
 extern const struct CNISDKGeoFenceJSONKeyes {
@@ -284,6 +291,8 @@ extern const struct CNISDKBusinessAddressJSONKeyes {
     __unsafe_unretained NSString *countryCode;
     __unsafe_unretained NSString *zip;
     __unsafe_unretained NSString *businessName;
+    __unsafe_unretained NSString *businessVAT;
+    __unsafe_unretained NSString *vat; // This is for encoding business VAT
 } CNISDKBusinessAddressJSONKeyes;
 
 extern const struct CNISDKCreditCardBusinessAddressJSONKeyes {
@@ -292,6 +301,7 @@ extern const struct CNISDKCreditCardBusinessAddressJSONKeyes {
     __unsafe_unretained NSString *countryCode;
     __unsafe_unretained NSString *zip;
     __unsafe_unretained NSString *businessName;
+    __unsafe_unretained NSString *businessVAT;
 } CNISDKCreditCardBusinessAddressJSONKeyes;
 
 extern const struct CNISDKTaxInfoJSONKeyes {

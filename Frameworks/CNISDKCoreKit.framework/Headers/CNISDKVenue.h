@@ -112,6 +112,31 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign, getter=isAdhocCheckoutEnabled, readonly) BOOL adhocCheckoutEnabled;
 
 /**
+ *  If venue requires travel document or not
+ */
+@property (nonatomic, assign, getter=isRequiresTravelDocument, readonly) BOOL requiresTravelDocument;
+
+/**
+ *  If venue requires user personal address or not
+ */
+@property (nonatomic, assign, getter=isRequireUserPersonalAddress, readonly) BOOL requireUserPersonalAddress;
+
+/**
+ *  If venue requires user signature or not
+ */
+@property (nonatomic, assign, getter=isRequireUserSignature, readonly) BOOL requireUserSignature;
+
+/**
+ *  The latest check-in time of the venue
+ */
+@property (nonatomic, strong, readonly) NSString *checkinTime;
+
+/**
+ *  The latest check-out time of the venue
+ */
+@property (nonatomic, strong, readonly) NSString *checkoutTime;
+
+/**
  *  Venue's postal address
  */
 @property (nonatomic, strong, readonly) CNISDKAddress *address;

@@ -27,12 +27,7 @@ typedef NS_ENUM(NSInteger, CNISDKEnvironment) {
     /**
      *  Live environment
      */
-    CNISDKEnvironmentProduction,
-
-    /**
-     *  External development environment
-     */
-    CNISDKEnvironmentSandbox
+    CNISDKEnvironmentProduction
 };
 
 /**

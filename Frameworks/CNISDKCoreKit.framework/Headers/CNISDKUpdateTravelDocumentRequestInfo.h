@@ -37,6 +37,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, copy, nullable) NSDate *dateOfExpiry;
 
+/**
+ *  New document's place of Issue
+ */
+@property (nonatomic, copy, nullable) NSString *placeOfIssue;
+
 @end
 
 NS_ASSUME_NONNULL_END
