@@ -1,10 +1,12 @@
 ---
 upcoming:
-  version: 4.1.30
+  version: 
+  notes: 
+releases:
+- version: 4.1.30
   notes:
   - Disable SSL pinning for development and staging environments
   - 'Update for Xcode 10 '
-releases:
 - version: 4.1.21
   notes:
   - Create CNISDKDigitalKeyInformation
