@@ -10,23 +10,17 @@
 
 #import "CNISDKLogger.h"
 #import "CNISDKConsoleLogger.h"
-#import "CNISDKRemoteLogger.h"
 
-#define CNISDKLogTrace(frmt, ...)                                                                                                                               \
-    [[CNISDKRemoteLogger sharedLogger] logWithLevel:CNISDKLogLevelTrace path:__FILE__ line:__LINE__ function:__PRETTY_FUNCTION__ format:(frmt), ##__VA_ARGS__]; \
+#define CNISDKLogTrace(frmt, ...) \
     [[CNISDKConsoleLogger sharedLogger] logWithLevel:CNISDKLogLevelTrace path:__FILE__ line:__LINE__ function:__PRETTY_FUNCTION__ format:(frmt), ##__VA_ARGS__];
 
-#define CNISDKLogInfo(frmt, ...)                                                                                                                               \
-    [[CNISDKRemoteLogger sharedLogger] logWithLevel:CNISDKLogLevelInfo path:__FILE__ line:__LINE__ function:__PRETTY_FUNCTION__ format:(frmt), ##__VA_ARGS__]; \
+#define CNISDKLogInfo(frmt, ...) \
     [[CNISDKConsoleLogger sharedLogger] logWithLevel:CNISDKLogLevelInfo path:__FILE__ line:__LINE__ function:__PRETTY_FUNCTION__ format:(frmt), ##__VA_ARGS__];
 
-#define CNISDKLogWarning(frmt, ...)                                                                                                                               \
-    [[CNISDKRemoteLogger sharedLogger] logWithLevel:CNISDKLogLevelWarning path:__FILE__ line:__LINE__ function:__PRETTY_FUNCTION__ format:(frmt), ##__VA_ARGS__]; \
+#define CNISDKLogWarning(frmt, ...) \
     [[CNISDKConsoleLogger sharedLogger] logWithLevel:CNISDKLogLevelWarning path:__FILE__ line:__LINE__ function:__PRETTY_FUNCTION__ format:(frmt), ##__VA_ARGS__];
 
-#define CNISDKLogError(frmt, ...)                                                                                                                               \
-    [[CNISDKRemoteLogger sharedLogger] logWithLevel:CNISDKLogLevelError path:__FILE__ line:__LINE__ function:__PRETTY_FUNCTION__ format:(frmt), ##__VA_ARGS__]; \
+#define CNISDKLogError(frmt, ...) \
     [[CNISDKConsoleLogger sharedLogger] logWithLevel:CNISDKLogLevelError path:__FILE__ line:__LINE__ function:__PRETTY_FUNCTION__ format:(frmt), ##__VA_ARGS__];
 
 #define CNISDKConfigureConcoleLog(logLevel) [[CNISDKConsoleLogger sharedLogger] setLogLevel:logLevel];
-#define CNISDKConfigureRemoteLog(logLevel) [[CNISDKRemoteLogger sharedLogger] setLogLevel:logLevel];

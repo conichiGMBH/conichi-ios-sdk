@@ -52,6 +52,16 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, strong, readonly, nullable) NSString *placeOfIssue;
 
+/**
+ *  New document's place of birth
+ */
+@property (nonatomic, strong, readonly, nullable) NSString *placeOfBirth;
+
+/**
+ *  New document's issuing country
+ */
+@property (nonatomic, strong, readonly, nullable) NSString *issuingCountry;
+
 @end
 
 NS_ASSUME_NONNULL_END

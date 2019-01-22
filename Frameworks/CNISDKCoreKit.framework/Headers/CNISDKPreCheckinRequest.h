@@ -53,7 +53,7 @@ extern NSString *const kCNISDKPreCheckinRequestLeisure;
 /**
  * @see CNISDKPreCheckinRequestArriveTime
  */
-@property (nonatomic, strong, readonly) NSNumber *arriveTime;
+@property (nonatomic, strong, readonly) NSNumber *arriveTime DEPRECATED_ATTRIBUTE;
 
 /**
  *  Venue associated to the pre checkin

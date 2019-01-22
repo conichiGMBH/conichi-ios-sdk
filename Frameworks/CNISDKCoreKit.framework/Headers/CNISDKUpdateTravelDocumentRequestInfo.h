@@ -38,9 +38,24 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, nullable) NSDate *dateOfExpiry;
 
 /**
+ *  New document's date of issue
+ */
+@property (nonatomic, copy, nullable) NSDate *dateOfIssue;
+
+/**
  *  New document's place of Issue
  */
 @property (nonatomic, copy, nullable) NSString *placeOfIssue;
+
+/**
+ *  New document's place of Birth
+ */
+@property (nonatomic, copy, nullable) NSString *placeOfBirth;
+
+/**
+ *  New document's issuing country
+ */
+@property (nonatomic, copy, nullable) NSString *issuingCountry;
 
 @end
 

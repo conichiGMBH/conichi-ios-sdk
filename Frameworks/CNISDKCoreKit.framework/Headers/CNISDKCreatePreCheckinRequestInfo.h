@@ -39,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Guest's arrive time (optional)
  */
-@property (nonatomic, assign) CNISDKPreCheckinRequestArriveTime arriveTime;
+@property (nonatomic, assign) CNISDKPreCheckinRequestArriveTime arriveTime DEPRECATED_ATTRIBUTE;
 
 /**
  *  Guest's requested items (optional)
@@ -62,13 +62,18 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) CNISDKPreCheckinRequestTravelPurpose travelPurpose;
 
 /**
+ *  Flag to differenciate precheckin from smartcheckin
+ */
+@property (nonatomic, assign, getter=isGuestCheckinCompleted) BOOL guestCheckinCompleted;
+
+/**
  *  Converts CNISDKPreCheckinRequestArriveTime enum value into NSString value
  *
  *  @param arriveTime enum arrive time value
  *
  *  @return string arrive time value
  */
-+ (nullable NSString *)convertArriveTimeEnumToString:(CNISDKPreCheckinRequestArriveTime)arriveTime;
++ (nullable NSString *)convertArriveTimeEnumToString:(CNISDKPreCheckinRequestArriveTime)arriveTime DEPRECATED_ATTRIBUTE;
 
 /**
  *  Converts CNISDKPreCheckinRequestTravelPurpose enum value into NSString value

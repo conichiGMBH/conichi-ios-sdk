@@ -118,17 +118,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)updateGuestAvatar:(NSData *)avatarData completion:(nullable CNISDKGuestErrorBlock)completion;
 
 /**
- *  Fetches current status for the given guest
- *  @see https://github.com/conichiGMBH/backend-api/wiki/V1-UserStatus
- *
- *  @param guest      current guest object
- *  @param completion callback block with two parameters
- *                    1. CNISDKGuestStatusInfo object
- *                    2. NSError object if request failed
- */
-- (void)fetchCurrentStatusForGuest:(CNISDKGuest *)guest withCompletion:(nullable CNISDKIDErrorBlock)completion;
-
-/**
  *  Fethes current session's guest information
  *
  *  @param completion callback block with two parameters

@@ -135,7 +135,7 @@ typedef NS_ENUM(NSInteger, CNISDKPreCheckinRequestArriveTime) {
      *  Guest is arriving to the hotel in the night
      */
     CNISDKPreCheckinRequestArriveTimeNight
-};
+} DEPRECATED_ATTRIBUTE;
 
 /**
  *  Guest's arrival time. Can be used to specify period of the guest's arrival date

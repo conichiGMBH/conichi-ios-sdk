@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readwrite, nullable) NSDate *dateOfExpiry;
 @property (nonatomic, strong, readwrite, nullable) NSString *authority;
 @property (nonatomic, strong, readwrite, nullable) NSString *placeOfIssue;
+@property (nonatomic, strong, readwrite, nullable) NSString *placeOfBirth;
+@property (nonatomic, strong, readwrite, nullable) NSString *issuingCountry;
 
 @end
 

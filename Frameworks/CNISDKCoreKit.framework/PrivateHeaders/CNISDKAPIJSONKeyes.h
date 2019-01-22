@@ -220,6 +220,8 @@ extern const struct CNISDKTravelDocumentJSONKeyes {
     __unsafe_unretained NSString *dateOfIssue;
     __unsafe_unretained NSString *dateOfExpiry;
     __unsafe_unretained NSString *placeOfIssue;
+    __unsafe_unretained NSString *placeOfBirth;
+    __unsafe_unretained NSString *issuingCountry;
 } CNISDKTravelDocumentJSONKeyes;
 
 extern const struct CNISDKVenueJSONKeyes {
