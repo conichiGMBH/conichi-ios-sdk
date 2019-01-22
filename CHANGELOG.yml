@@ -1,9 +1,11 @@
 ---
 upcoming:
-  version: 4.1.33
+  version: 
+  notes: 
+releases:
+- version: 4.1.33
   notes:
   - 'Update base API url for dev and staging '
-releases:
 - version: 4.1.30
   notes:
   - Disable SSL pinning for development and staging environments
