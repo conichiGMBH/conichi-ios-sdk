@@ -1,10 +1,12 @@
 ---
 upcoming:
-  version: 4.1.36
+  version: 
+  notes: 
+releases:
+- version: 4.1.36
   notes:
   - Fix wrong travel document date format
   - 'Update encoding key for travel document fields '
-releases:
 - version: 4.1.33
   notes:
   - 'Update base API url for dev and staging '
