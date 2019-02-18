@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'CNISDKSumUpKit'
-  s.version      = '4.1.33'
+  s.version      = '4.1.36'
   s.summary      = "SumUp kit extends the CNISDKCoreKit with payment functionality through SumUp provider."
 
   s.description  = <<-DESC

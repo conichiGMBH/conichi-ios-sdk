@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'CNISDKPaylevenKit'
-  s.version      = '4.1.33'
+  s.version      = '4.1.36'
   s.summary      = "Payleven kit extends the CNISDKCoreKit with payment functionality through Payleven provider."
 
   s.description  = <<-DESC
