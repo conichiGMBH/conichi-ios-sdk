@@ -33,12 +33,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly, nullable) NSString *number;
 
 /**
- *  Travel document's date of Issue in ISO8601 format
+ *  Travel document's date of Issue in ISO8601 date format
  */
 @property (nonatomic, strong, readonly, nullable) NSDate *dateOfIssue;
 
 /**
- *  Travel document's date of Expiry in ISO8601 format
+ *  Travel document's date of Expiry in ISO8601 date format
  */
 @property (nonatomic, strong, readonly, nullable) NSDate *dateOfExpiry;
 
