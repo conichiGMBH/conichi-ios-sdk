@@ -13,5 +13,5 @@
 
 + (NSString *)conichiVenuesUUID;
 + (NSString *)conichiBeaconIdentifier;
-+ (NSString *)conichiServerCertificatePublicKey;
+
 @end
