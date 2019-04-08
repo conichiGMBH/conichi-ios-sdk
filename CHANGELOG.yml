@@ -1,10 +1,12 @@
 ---
 upcoming:
-  version: 4.1.37
+  version: 
+  notes: 
+releases:
+- version: 4.1.37
   notes:
   - Use SSH for scripts
   - Disable SSL pinning
-releases:
 - version: 4.1.36
   notes:
   - Fix wrong travel document date format
